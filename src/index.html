@@ -1,17 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
+  <!-- This element simply specifies the document's character encoding — the character set that the document is 
+       permitted to use. utf-8 is a universal character set that includes pretty much any character from any human language -->
   <meta charset="utf-8">
+  
+  <!-- The <title> element is metadata that represents the title of the overall HTML document (not the document's content.) -->
   <title>Abhishek's Library</title>
+  
+  <!-- Most routing applications should add a <base> element to the index.html as the first child in the <head> tag 
+       to tell the router how to compose navigation URLs -->
   <base href="/">
   
+  <!-- Mobile Safari introduced the "viewport meta tag" to let web developers control the viewport's 
+       size and scale. Many other mobile browsers now support this tag, although it is not part of any web standard -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!---->
+  
+  <!-- Adding author name has advantages like, some content management systems have facilities to 
+       automatically extract page author information and make it available for such purposes -->
   <meta name="author" content="Abhishek Sharma">
+
+  <!-- Specifying a description that includes keywords relating to the content of your page is useful 
+       as it has the potential to make your page appear higher in relevant searches performed in search engines -->
   <meta name="description" content="The Library aims to provide knowledge to
                                     complete beginners on Angular2 with all they need to know to get
-                                    started with developing web sites and applications."> 
-
+                                    started with developing web sites and applications.">
+  
+  <!--  Open Graph Data is a metadata protocol that Facebook invented to provide richer metadata for websites.
+        One effect of this is that when you link to this Library on facebook, the link appears along with an image and 
+        description: a richer experience for users -->
+  <meta property="og:image" content="opengraph.jpg">
+  <meta property="og:description" content="The Library Management System provides
+  information about workings of library using semantic HTML, CSS and Angular2">
+  <meta property="og:title" content="Library Management in Angular2">                                   
+  
+  <!--  The favicons are displayed in the browser tab containing each open page, and next to 
+        bookmarked pages in the bookmarks panel -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
