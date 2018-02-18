@@ -1,3 +1,4 @@
+
 # Library Managment System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
@@ -32,20 +33,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. What is this website about ?
 
-   Library Management System
+       Library Management System
 
 2. What should this website actually do ?
 
-  Library management system will help people do the following :-  
+      Library management system will help people do the following :-  
   
-  Borrow different kinds of books from vast resources of books from the library
+      Borrow different kinds of books from vast resources of books from the library
   
 3. What does my website look like ?
   
-  https://zsr.wfu.edu/
+       https://zsr.wfu.edu/
   
-  a. What's the background color ? #ffefd5 (Papaya Whip)
-  b. What kind of font is appropriate ? <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      a. What's the background color ? #ffefd5 (Papaya Whip)
+      b. What kind of font is appropriate ? 
+      `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
   
 4. Design guide ?
    
