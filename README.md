@@ -1,3 +1,4 @@
+<!-- Use https://stackedit.io/app to edit and test md files  -->
 
 # Library Managment System
 
@@ -39,7 +40,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
       Library management system will help people do the following :-  
   
-      Borrow different kinds of books from vast resources of books from the library
+      `Borrow different kinds of books from from the library, add users, maintain existing users`
   
 3. What does my website look like ?
   
@@ -50,7 +51,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
   
 4. Design guide ?
+    
+    Please refer to links below :-
    
-   a. https://blog.hubspot.com/blog/tabid/6307/bid/30557/6-guidelines-for-exceptional-website-design-and-usability.aspx
+   `a. https://blog.hubspot.com/blog/tabid/6307/bid/30557/6-guidelines-for-exceptional-website-design-and-usability.aspx`
    
-   b. https://www.sitepoint.com/creating-web-style-guide/
+   `b. https://www.sitepoint.com/creating-web-style-guide/`
