@@ -22,11 +22,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual("Abhishek's Library");
   }));
   
-  it('should render heading in a h1 tag', async(() => {
+  it('should render heading in a href of h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain("Abhishek's Library");
+    expect(compiled.querySelector('h1').querySelector('a').title).toContain("Abhishek's Library");
   }));
 
 });
