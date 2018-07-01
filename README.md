@@ -57,3 +57,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    `a. https://blog.hubspot.com/blog/tabid/6307/bid/30557/6-guidelines-for-exceptional-website-design-and-usability.aspx`
    
    `b. https://www.sitepoint.com/creating-web-style-guide/`
+
+5. SASS installation into project and usage.
+
+    a. ng config schematics.@schematics/angular:component.styleext sass (angular6+)
+    b. changed references from css to scss in angular.json file
+    c. changed css files to scss manually
