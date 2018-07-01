@@ -34,13 +34,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. What is this website about ?
 
-       Library Management System
+       Anime Library Management System
 
 2. What should this website actually do ?
 
-      Library management system will help people do the following :-  
+      Anime Library management system will help people do the following :-  
   
-      `Borrow different kinds of books from from the library, add users, maintain existing users`
+      `REad, Borrow different kinds of books, videos, articles from the library, add users, maintain existing users, etc.`
   
 3. What does my website look like ?
   
@@ -63,3 +63,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     a. ng config schematics.@schematics/angular:component.styleext sass (angular6+)
     b. changed references from css to scss in angular.json file
     c. changed css files to scss manually
+
+6. Added Bootstrap css using follwing :-
+
+    a. npm install bootstrap --save
+    b. @import "~bootstrap/scss/bootstrap.scss";  // importing to styles.scss
