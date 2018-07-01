@@ -1,8 +1,8 @@
 <!-- Use https://stackedit.io/app to edit and test md files  -->
 
-# Library Managment System
+# Anime Library Managment System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
 
@@ -40,13 +40,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
       Anime Library management system will help people do the following :-  
   
-      `REad, Borrow different kinds of books, videos, articles from the library, add users, maintain existing users, etc.`
+      `Read, Borrow different kinds of mangas, videos, articles from the library. Add new users, maintain existing users, etc.`
   
 3. What does my website look like ?
   
        https://zsr.wfu.edu/
+       https://tubitv.com/category/anime
+       https://konohastuff.com/blogs/news/top-5-best-websites-for-fans-to-watch-and-stream-anime-online-in-2017
   
-      a. What's the background color ? #ffefd5 (Papaya Whip)
+      a. What's the background color ? #26262D (Black)
       b. What kind of font is appropriate ? 
       `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
   
@@ -60,11 +62,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 5. SASS installation into project and usage.
 
-    a. ng config schematics.@schematics/angular:component.styleext sass (angular6+)
-    b. changed references from css to scss in angular.json file
-    c. changed css files to scss manually
+    - ng config schematics.@schematics/angular:component.styleext sass (angular6+)
+    - changed references from css to scss in angular.json file
+    - changed css files to scss manually
 
 6. Added Bootstrap css using follwing :-
 
-    a. npm install bootstrap --save
-    b. @import "~bootstrap/scss/bootstrap.scss";  // importing to styles.scss
+    - npm install bootstrap --save
+    - @import "~bootstrap/scss/bootstrap.scss"; into scss file
