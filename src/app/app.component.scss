@@ -1,12 +1,63 @@
 @import '~scss/variables';
 
 .header-container {
-    display: block;
+    display: flex;
+    align-items: center;
     box-sizing: inherit;
     color: white;
-    background-color: #0D0d0F;
+    background-color: rgba(32,32,38,.8);
 }
 
 .library-imprint {
-    font-size: 1.5rem;
+    transition: transform .3s,-webkit-transform .3s;
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 108px;
+    padding: 54px 0;
+    font-size: 1.2rem;
+    background: rgba(32,32,38,.8);
+}
+
+//@media only screen and (min-width: 960px)
+.site-menu {
+    background: none;
+    font-size: 1em;
+    margin: 0 9rem 0 0;
+    padding: 0;
+    position: absolute;
+    top: 2.8rem;
+    right: 5%;
+    left: auto;
+    text-align: left;
+    width: auto;
+    z-index: 1;
+}
+
+.menu-register {
+    display: block;
+    margin: 0;
+}
+
+.menu-register>li {
+    float: left;
+    list-style: none;
+    text-align: left;
+}
+
+
+// main section below
+
+main {
+    display: block;
+    height: 500px;
+    width: 100%;
+}
+
+#content {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

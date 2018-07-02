@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'Abhishek"s Anime Library';
+  photo = 'http://otakukart.com/animeblog/wp-content/uploads/2016/05/Awesome-ANime-Villains.png';
 }
