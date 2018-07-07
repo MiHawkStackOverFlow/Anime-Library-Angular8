@@ -78,13 +78,41 @@ li {
 
 main {
     display: block;
-    height: 500px;
+    height: 100%;
     width: 100%;
 }
 
-#content {
+.content {
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.searchSection {
+    display: table !important;
+    position: absolute !important;
+    height: 450px;
+    width: 100%;
+    @media only screen and (max-width: 600px) {
+        height: 350px;
+    }
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#searchBox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 700px;
+    @media only screen and (max-width: 600px) {
+        width: 300px;
+    }
+}
+
+
+

@@ -38,7 +38,16 @@
     </div>
 </header>
 
-<main id="content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
-
+<main role="main">
+   <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+        <form class="middle">
+            <div class="input-group" id="searchBox">
+                <input type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+   </section>
 </main>
 
