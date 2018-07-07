@@ -70,3 +70,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     - npm install bootstrap --save
     - @import "~bootstrap/scss/bootstrap.scss"; into scss file
+
+7. Added font awesome using follwing :-
+
+    - npm install font-awesome --save
+    - $fa-font-path: "~font-awesome/fonts"; into scss file  
+    - @import '~font-awesome/scss/font-awesome'; into scss file     
