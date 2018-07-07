@@ -1,53 +1,57 @@
-<header class="container-fluid">
-    <div class="header-container">
-        <!-- Logo of library at top left -->
-        <h1 class="library-imprint">
-            <a href="http://bangaloreuniversity.ac.in/library/" [attr.title]="title">
-                <img src="assets/images/hisoka.png" id="headerImage" alt="Abhishek's Anime Library Image">
-            </a>
-            Abhishek's Anime Library
-        </h1>
-        
-        <!--Library hours displayed at top  -->
-        <!-- <div class="library-hours">
-             <span>Library Timings Are: 10am to 7pm</span>
-             <img src="">
-        </div> -->
+<div *ngIf="!spinner.active">
+    <header class="container-fluid">
+        <div class="header-container">
+            <!-- Logo of library at top left -->
+            <h1 class="library-imprint">
+                <a href="http://bangaloreuniversity.ac.in/library/" [attr.title]="title">
+                    <img src="assets/images/hisoka.png" id="headerImage" alt="Abhishek's Anime Library Image">
+                </a>
+                Abhishek's Anime Library
+            </h1>
+            
+            <!--Library hours displayed at top  -->
+            <!-- <div class="library-hours">
+                <span>Library Timings Are: 10am to 7pm</span>
+                <img src="">
+            </div> -->
 
-        <!-- Navigation list will come here -->        
-        <!-- <nav class="site-menu">
-           <ul class="menu-register">
-                <li class="menu dwell">
-                    <a class="menu-quoin" href="#site-find">Find</a>
-                    <ul class="menu-block">
-                        <li><a href="/catalog/">Books &amp; More</a></li>
-                        <li><a href="/reserves/">Course Reserves</a></li>
-                        <li><a href="/databases/">Databases</a></li>
-                        <li><a href="/films/">Films</a></li>
-                        <li><a href="/journals/">Journals</a></li>
-                        <li><a href="/research/guides/">Research Guides</a></li>
-                        <li class="rule"><a href="/about/spaces/maps/">Maps &amp; Directions</a></li>
-                        <li><a href="/special/">Special Collections &amp; Archives</a></li>
-                        <li><a href="/studyrooms/">Study Rooms</a></li>
-                        <li class="rule"><a href="/ask">Ask a Librarian ›</a></li>
-                    </ul>
-                </li>
-           </ul>
-        </nav>           -->
+            <!-- Navigation list will come here -->        
+            <!-- <nav class="site-menu">
+            <ul class="menu-register">
+                    <li class="menu dwell">
+                        <a class="menu-quoin" href="#site-find">Find</a>
+                        <ul class="menu-block">
+                            <li><a href="/catalog/">Books &amp; More</a></li>
+                            <li><a href="/reserves/">Course Reserves</a></li>
+                            <li><a href="/databases/">Databases</a></li>
+                            <li><a href="/films/">Films</a></li>
+                            <li><a href="/journals/">Journals</a></li>
+                            <li><a href="/research/guides/">Research Guides</a></li>
+                            <li class="rule"><a href="/about/spaces/maps/">Maps &amp; Directions</a></li>
+                            <li><a href="/special/">Special Collections &amp; Archives</a></li>
+                            <li><a href="/studyrooms/">Study Rooms</a></li>
+                            <li class="rule"><a href="/ask">Ask a Librarian ›</a></li>
+                        </ul>
+                    </li>
+            </ul>
+            </nav>           -->
 
-    </div>
-</header>
+        </div>
+    </header>
 
-<main role="main">
-   <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
-        <form class="middle">
-            <div class="input-group" id="searchBox">
-                <input type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger">Search</button>
+    <main role="main">
+    <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+            <form class="middle">
+                <div class="input-group" id="searchBox">
+                    <input type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger">Search</button>
+                    </div>
                 </div>
-            </div>
-        </form>
-   </section>
-</main>
-
+            </form>
+    </section>
+    </main>
+</div>
+<div *ngIf="spinner.active">
+   <app-spinner></app-spinner>
+</div>
