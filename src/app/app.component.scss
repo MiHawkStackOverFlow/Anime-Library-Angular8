@@ -1,85 +1,50 @@
 @import '~scss/variables';
 
-header {
+#headerImage {
+    height: inherit;
+    display: inline-block;
+}
+
+.paddingZero {
+    padding: 0px !important;
+}
+
+// navigation section
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
     border: 0;
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    z-index: 999;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+}
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+    @media only screen and (max-width: 600px) {
+        font-size: 14px;
+    }
+}
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
 }
 
-.header-container {
-    background-color: black;
-    color: white;
-    clear: both;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    height: 50px;
-}
-
-.library-imprint {
-    transition: transform .3s,-webkit-transform .3s;
-    z-index: 99;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: inherit;   
-    font-size: 1.2rem;
-}
-
-//@media only screen and (min-width: 960px)
-.site-menu {
-    background: none;
-    font-size: 1em;
-    margin: 0 9rem 0 0;
-    padding: 0;
-    position: absolute;
-    top: 2.8rem;
-    right: 5%;
-    left: auto;
-    text-align: left;
-    width: auto;
-    z-index: 1;
-}
-
-.menu-register {
-    display: block;
-    margin: 0;
-}
-
-.menu-register > li {
-    float: left;
-    list-style: none;
-    text-align: left;
-}
-
-.menu-dwell {
-    padding: 0 5px 0 0;
-    position: relative;
-}
-
-.menu-dwell a {
-    border: none;
-    color: #353331;
-    float: none;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-li {
-    display: list-item;
-}
+// navigation section end
 
 // main section below
 
 main {
     display: block;
-    height: 100%;
-    width: 100%;
+    height: $hundredPercent;
+    width: $hundredPercent;
 }
 
 .content {
@@ -87,16 +52,21 @@ main {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 10;
 }
 
 .searchSection {
-    display: table !important;
-    position: absolute !important;
+    display: table;
+    position: absolute;
     height: 450px;
-    width: 100%;
+    width: $hundredPercent;
     @media only screen and (max-width: 600px) {
-        height: 350px;
+        height: 450px;
     }
+}
+
+#searchButton {
+    height: 34px !important;
 }
 
 .middle {
@@ -107,12 +77,51 @@ main {
 #searchBox {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
-    width: 700px;
+    margin-bottom: 100px;
+    width: 600px;
     @media only screen and (max-width: 600px) {
-        width: 300px;
+        width: inherit;
+        margin-left: 17px;
+        margin-right: 10px;
     }
 }
+
+#searchFormInput {
+    font-size: 1.75rem !important;
+}
+
+// carousel 
+
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+ .carousel-caption {
+    z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+ .carousel .item {
+    width: 100%;
+    height: 500px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+@media (min-width: 768px) {
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+}
+
+// carousel end
 
 
 

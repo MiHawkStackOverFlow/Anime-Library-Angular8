@@ -1,55 +1,90 @@
 <div *ngIf="!spinner.active">
-    <header class="container-fluid">
-        <div class="header-container">
-            <!-- Logo of library at top left -->
-            <h1 class="library-imprint">
-                <a href="http://bangaloreuniversity.ac.in/library/" [attr.title]="title">
-                    <img src="assets/images/hisoka.png" id="headerImage" alt="Abhishek's Anime Library Image">
-                </a>
-                Abhishek's Anime Library
-            </h1>
-            
-            <!--Library hours displayed at top  -->
-            <!-- <div class="library-hours">
-                <span>Library Timings Are: 10am to 7pm</span>
-                <img src="">
-            </div> -->
-
-            <!-- Navigation list will come here -->        
-            <!-- <nav class="site-menu">
-            <ul class="menu-register">
-                    <li class="menu dwell">
-                        <a class="menu-quoin" href="#site-find">Find</a>
-                        <ul class="menu-block">
-                            <li><a href="/catalog/">Books &amp; More</a></li>
-                            <li><a href="/reserves/">Course Reserves</a></li>
-                            <li><a href="/databases/">Databases</a></li>
-                            <li><a href="/films/">Films</a></li>
-                            <li><a href="/journals/">Journals</a></li>
-                            <li><a href="/research/guides/">Research Guides</a></li>
-                            <li class="rule"><a href="/about/spaces/maps/">Maps &amp; Directions</a></li>
-                            <li><a href="/special/">Special Collections &amp; Archives</a></li>
-                            <li><a href="/studyrooms/">Study Rooms</a></li>
-                            <li class="rule"><a href="/ask">Ask a Librarian ›</a></li>
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand paddingZero" href="https://github.com/MiHawkStackOverFlow/Anime-Library-Management-System-Angular6" [attr.title]="title">
+                            <img src="assets/images/hisoka.png" id="headerImage" alt="Abhishek's Anime Library Image"> 
+                            <span>{{title}}</span>
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#myPage">HOME</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Merchandise</a></li>
+                            <li><a href="#">Extras</a></li>
+                            <li><a href="#">Media</a></li> 
                         </ul>
-                    </li>
-            </ul>
-            </nav>           -->
-
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
     <main role="main">
-    <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
-            <form class="middle">
-                <div class="input-group" id="searchBox">
-                    <input type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-danger">Search</button>
+        <!-- search section -->
+        <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+                <form class="middle">
+                    <div class="input-group" id="searchBox">
+                        <input id="searchFormInput" type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
+                        <div class="input-group-btn">
+                            <button id="searchButton" type="button" class="btn btn-danger ">Search</button>
+                        </div>
                     </div>
+                </form>
+        </section>
+
+        <section role="section" class="searchSection content" style="z-index: 1; top:450px; background-color:blue;">
+        </section>
+        
+       
+        <section role="section" class="searchSection content" style="z-index: 1; top:900px;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                
+                   
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item" *ngFor="let image of sliderImages; let i = index;" [ngClass]="{'active' : i == 0}">
+                            <img [src]="image.img" alt="Attack On Titan" width="1200" height="700">
+                            <div class="carousel-caption">
+                                <h3>{{ image.name }}</h3>
+                                <p>{{ image.description }}</p>
+                            </div> 
+                        </div>
+                    </div>
+                
+                   
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-            </form>
-    </section>
+        </section>
+       
     </main>
 </div>
 <div *ngIf="spinner.active">
