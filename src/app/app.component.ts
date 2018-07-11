@@ -1,16 +1,32 @@
 import { Component } from '@angular/core';
 import { SpinnerService } from './spinner/spinner.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateY(179.9deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateY(0)'
+      })),
+      transition('active => inactive', animate('500ms ease-out')),
+      transition('inactive => active', animate('500ms ease-in'))
+    ])  
+  ]
 })
 export class AppComponent {
-  title = `Abhishek's Anime Library`;
-  photo = 'https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg';
-
-  sliderImages = [ 
+  title: string = `Abhishek's Anime Library`;
+  photo: string = 'https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg';
+  flip1: string = 'inactive';
+  flip2: string = 'inactive';
+  flip3: string = 'inactive';
+  flip4: string = 'inactive';
+  sliderImages: Array<Object> = [ 
                     { img: 'https://www.animelab.com/assets/images/home/covers/attack-on-titan-s2.png',
                       name: 'Attack On Titan',
                       description: 'Attack on Titan is a Japanese manga series written and illustrated by Hajime Isayama'
@@ -39,5 +55,10 @@ export class AppComponent {
     setTimeout(() => {
       this.spinner.stop()
     }, 2000);  
+  }
+
+  toggleFlip(flipNum: number) {
+    let flipper = 'flip' + flipNum;
+    this[flipper] = (this[flipper] == 'inactive') ? 'active' : 'inactive';
   }
 }

@@ -74,6 +74,49 @@ main {
     vertical-align: middle;
 }
 
+// animation css
+
+  .tp-wrapper {
+    perspective: 800px;
+  }
+
+  .tp-box {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin: 3rem auto;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+
+  .tp-box__side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    //font-weight: 100;
+    cursor: pointer;
+    user-select: none;
+  }
+  .tp-box__front {
+    background: #f30d36;
+  }
+  .tp-box__back {
+    background: #23262d;
+    transform: rotateY(179.9deg);
+  }
+
+  .inheritHeightWidth {
+     width: inherit;
+     height: inherit;
+  }
+
+// animation css end
+
 #searchBox {
     margin-left: auto;
     margin-right: auto;
