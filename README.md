@@ -66,10 +66,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - changed references from css to scss in angular.json file
     - changed css files to scss manually
 
-6. Added Bootstrap css using follwing :-
+6. Added Bootstrap css and Jquery using follwing :-
 
-    - npm install bootstrap --save
-    - @import "~bootstrap/scss/bootstrap.scss"; into scss file
+    - included links in index.html file along wtih jquery link
+    - installed jquery using npm install --save @types/jquery
+
 
 7. Added font awesome using follwing :-
 

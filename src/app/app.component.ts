@@ -26,6 +26,7 @@ export class AppComponent {
   flip2: string = 'inactive';
   flip3: string = 'inactive';
   flip4: string = 'inactive';
+  id: any;
   sliderImages: Array<Object> = [ 
                     { img: 'https://www.animelab.com/assets/images/home/covers/attack-on-titan-s2.png',
                       name: 'Attack On Titan',
@@ -49,6 +50,9 @@ export class AppComponent {
 
   ngOnInit() {
     this.spinner.start();
+    this.id = setInterval(() => {
+      ($("#myCarousel") as any).carousel("next");
+    }, 4000);
   }
 
   ngAfterViewInit() {
@@ -60,5 +64,11 @@ export class AppComponent {
   toggleFlip(flipNum: number) {
     let flipper = 'flip' + flipNum;
     this[flipper] = (this[flipper] == 'inactive') ? 'active' : 'inactive';
+  }
+
+  ngOnDestroy() {
+    if (this.id) {
+      clearInterval(this.id);
+    }
   }
 }
