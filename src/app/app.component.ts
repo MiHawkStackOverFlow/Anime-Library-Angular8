@@ -22,7 +22,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class AppComponent {
   title: string = `Abhishek's Anime Library`;
-  photo: string = 'https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg';
+  //photo: string = 'https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg';
   flip1: string = 'inactive';
   flip2: string = 'inactive';
   flip3: string = 'inactive';

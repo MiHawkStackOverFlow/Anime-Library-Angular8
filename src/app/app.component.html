@@ -1,6 +1,5 @@
 <div *ngIf="!spinner.active">
-    <header>        
-        <div class="container-fluid">
+    <header>   
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -21,7 +20,7 @@
                         <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
                         <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu navbarDropDown">
                             <li><a href="#">Merchandise</a></li>
                             <li><a href="#">Extras</a></li>
                             <li><a href="#">Media</a></li> 
@@ -31,12 +30,11 @@
                     </ul>
                     </div>
                 </div>
-            </nav>
-        </div>        
+            </nav>              
     </header>
 
     <main role="main">
-        <section class="jumbotron content text-center" style="background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg');">
+        <section class="jumbotron content text-center" style="background-image: url('https://besthqwallpapers.com/Uploads/31-12-2017/35874/thumb2-uchiha-madara-japanese-manga-characters-black-dragon-sword.jpg');">
             <form id="indexSearchForm">
                 <div class="input-group">
                     <input list="browsers" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
@@ -54,8 +52,7 @@
             </form>           
         </section>
 
-        <section role="section" style="background-color:#00004c;">
-            
+        <section role="section" class="darkGreyBackGround">            
                 <div class="tp-wrapper col-md-3">
                     <div class="tp-box" (mouseenter)="toggleFlip(1)" (mouseleave)="toggleFlip(1)" [@flipState]="flip1">
                         <div class="tp-box__side tp-box__front">
@@ -105,8 +102,7 @@
                             along with the actions of his captain, sometimes led others to believe he was the true captain of the crew before he obtained his first bounty.
                         </div>
                     </div>
-                </div>     
-           
+                </div>                
         </section>        
        
         <section role="section" class="displayBlock">            
@@ -132,11 +128,11 @@
 
     <footer id="footer">
         <div class="footer-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
             <div class="col-lg-3 col-md-6 footer-info">
-                <h3>BizPage</h3>
+                <h4>{{title}}</h4>
                 <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
             </div>
 
@@ -185,10 +181,10 @@
 
         <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+            &copy; Copyright <strong>Abhishek</strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://stackoverflow.com/users/6504463/mihawk">Abhishek</a>
         </div>
         </div>
     </footer>

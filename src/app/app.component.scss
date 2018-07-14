@@ -7,43 +7,60 @@
 }
 
 .paddingZero {
-    padding: 0px !important;
+    padding: $zeroPixels !important;
 }
 
 .borderRadiusZero {
-  border-radius: 0px !important;
+  border-radius: $zeroPixels !important;
 }
 
 .displayBlock {
   display: block;
 }
 
+.darkGreyBackGround {
+  background-color: $darkGrey !important;
+}
+
+.inheritHeightWidth {
+  width: inherit;
+  height: inherit;
+}
+
 // navigation section
 
 .navbar {
     font-family: Montserrat, sans-serif;
-    margin-bottom: 0;
-    background-color: #1b082d;
-    border: 0;
+    margin-bottom: $zeroPixels;
+    background-color: $black;
+    border: $zeroPixels;
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity: 0.9;
 }
-.navbar li a, .navbar .navbar-brand { 
-    color: #d5d5d5 !important;
+.navbar li a, .navbar .navbar-brand {
+    color: $white;
     @media only screen and (max-width: 600px) {
         font-size: 14px;
     }
 }
 .navbar-nav li a:hover {
-    color: #fff !important;
+    color: $dimGrey !important;
 }
 .navbar-nav li.active a {
-    color: #fff !important;
-    background-color: #29292c !important;
+    color: $dimGrey !important;
+    background-color: $black !important;
 }
 .navbar-default .navbar-toggle {
     border-color: transparent;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+  background-color: $black;
+}
+
+.navbarDropDown {
+  background-color: $black !important;
 }
 
 // navigation section end
@@ -58,15 +75,15 @@ main {
 
 section {
     @include make-row();
-    margin: 0px !important;
+    margin: $zeroPixels !important;
 }
 
 .jumbotron {
     height: 600px;
-    width: 100%;
-    color: #fff;
+    width: $hundredPercent;
+    color: $white;
     font-family: Montserrat, sans-serif;
-    margin-bottom: 0px !important;    
+    margin-bottom: $zeroPixels !important;    
 }
 
 .content {
@@ -78,7 +95,7 @@ section {
 }
 
 #indexSearchForm {
-  padding-top:250px; 
+  padding-top:390px; 
   width:700px; 
   position: absolute; 
   top:0; 
@@ -87,7 +104,8 @@ section {
   right: 0; 
   margin: auto;
   @media only screen and (max-width: 600px) {
-    width: 300px;    
+    width: 300px;
+    padding-top: 380px;    // change when image changes to shift search box top or bottom
   }
 }
 
@@ -107,29 +125,23 @@ section {
 }
 
 .tp-box__side {
-  width: 100%;
-  height: 100%;
+  width: $hundredPercent;
+  height: $hundredPercent;
   position: absolute;
   backface-visibility: hidden;
-  color: #fff;
+  color: $white;
   text-align: center;
   line-height: 30px;
   font-size: 13px;
-  //font-weight: 100;
   cursor: pointer;
   user-select: none;
 }
 .tp-box__front {
-  background: #f30d36;
+  background: $black;
 }
 .tp-box__back {
-  background: #23262d;
+  background: $black;
   transform: rotateY(179.9deg);
-}
-
-.inheritHeightWidth {
-    width: inherit;
-    height: inherit;
 }
 
 // animation css end
@@ -138,7 +150,6 @@ section {
 
 .carousel {
     height: 500px;
-    //margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
  .carousel-caption {
@@ -146,22 +157,22 @@ section {
 }
 /* Declare heights because of positioning of img element */
  .carousel .item {
-    width: 100%;
+    width: $hundredPercent;
     height: 500px;
-    background-color: #4f3e8e;
+    background-color: $silver;
 }
 .carousel-inner > .item > img {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 100%;
+    min-width: $hundredPercent;
     height: 500px;
 }
 @media (min-width: 768px) {
     .carousel-caption p {
-        margin-bottom: 20px;
-        font-size: 21px;
-        line-height: 1.4;
+      margin-bottom: 20px;
+      font-size: 21px;
+      line-height: 1.4;
     }
 }
 
@@ -170,163 +181,162 @@ section {
 // footer start
 
 #footer {
-    background: #000;
-    padding: 0 0 30px 0;
-    color: #eee;
-    font-size: 14px;
-    bottom: 0;
-  }
-  
-  #footer .footer-top {
-    background: #111;
-    padding: 60px 0 30px 0;
-  }
-  
-  #footer .footer-top .footer-info {
-    margin-bottom: 30px;
-  }
-  
-  #footer .footer-top .footer-info h3 {
-    font-size: 34px;
-    margin: 0 0 20px 0;
-    padding: 2px 0 2px 10px;
-    line-height: 1;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    letter-spacing: 3px;
-    border-left: 4px solid #18d26e;
-  }
-  
-  #footer .footer-top .footer-info p {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 0;
-    font-family: "Montserrat", sans-serif;
-    color: #eee;
-  }
-  
-  #footer .footer-top .social-links a {
-    font-size: 18px;
-    display: inline-block;
-    background: #333;
-    color: #eee;
-    line-height: 1;
-    padding: 8px 0;
-    margin-right: 4px;
-    border-radius: 50%;
-    text-align: center;
-    width: 36px;
-    height: 36px;
-    transition: 0.3s;
-  }
-  
-  #footer .footer-top .social-links a:hover {
-    background: #18d26e;
-    color: #fff;
-  }
-  
-  #footer .footer-top h4 {
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 12px;
-  }
-  
-  #footer .footer-top h4::before, #footer .footer-top h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-  }
-  
-  #footer .footer-top h4::before {
-    right: 0;
-    background: #555;
-  }
-  
-  #footer .footer-top h4::after {
-    background: #18d26e;
-    width: 60px;
-  }
-  
-  #footer .footer-top .footer-links {
-    margin-bottom: 30px;
-  }
-  
-  #footer .footer-top .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #footer .footer-top .footer-links ul i {
-    padding-right: 8px;
-    color: #ddd;
-  }
-  
-  #footer .footer-top .footer-links ul li {
-    border-bottom: 1px solid #333;
-    padding: 10px 0;
-  }
-  
-  #footer .footer-top .footer-links ul li:first-child {
-    padding-top: 0;
-  }
-  
-  #footer .footer-top .footer-links ul a {
-    color: #eee;
-  }
-  
-  #footer .footer-top .footer-links ul a:hover {
-    color: #18d26e;
-  }
-  
-  #footer .footer-top .footer-contact {
-    margin-bottom: 30px;
-  }
-  
-  #footer .footer-top .footer-contact p {
-    line-height: 26px;
-  }
-  
-  #footer .footer-top .footer-newsletter {
-    margin-bottom: 30px;
-  }
-  
-  #footer .footer-top .footer-newsletter input[type="email"] {
-    border: 0;
-    padding: 6px 8px;
-    width: 65%;
-  }
-  
-  #footer .footer-top .footer-newsletter input[type="submit"] {
-    background: #18d26e;
-    border: 0;
-    width: 35%;
-    padding: 6px 0;
-    text-align: center;
-    color: #fff;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-  
-  #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-    background: #13a456;
-  }
-  
-  #footer .copyright {
-    text-align: center;
-    padding-top: 30px;
-  }
-  
-  #footer .credits {
-    text-align: center;
-    font-size: 13px;
-    color: #ddd;
-  }
+  background: $black;
+  padding: 0 0 30px 0;
+  color: $lightGrey;
+  font-size: 14px;
+  bottom: 0;
+}
 
+#footer .footer-top {
+  background: $darkGrey;
+  padding: 60px 0 30px 0;
+}
 
-  // footer end 
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 34px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 10px;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-left: 4px solid $lightRed;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  color: $lightGrey;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: $lightGrey;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: $lightRed;
+  color: $white;
+}
+
+#footer .footer-top h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: $white;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top h4::before, #footer .footer-top h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+#footer .footer-top h4::before {
+  right: 0;
+  background: $dimGrey;
+}
+
+#footer .footer-top h4::after {
+  background: $lightRed;
+  width: 60px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 8px;
+  color: $white;
+}
+
+#footer .footer-top .footer-links ul li {
+  border-bottom: 1px solid $darkGrey;
+  padding: 10px 0;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: $lightGrey;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: $lightRed;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+#footer .footer-top .footer-newsletter {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-newsletter input[type="email"] {
+  border: 0;
+  padding: 6px 8px;
+  width: 65%;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"] {
+  background: $lightRed;
+  border: 0;
+  width: 35%;
+  padding: 6px 0;
+  text-align: center;
+  color: $white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
+  background: #13a456;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: #ddd;
+}
+
+// footer end 
