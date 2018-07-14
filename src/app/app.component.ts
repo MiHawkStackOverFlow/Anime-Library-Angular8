@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SpinnerService } from './spinner/spinner.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+// import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',

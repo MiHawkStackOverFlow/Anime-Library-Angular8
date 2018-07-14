@@ -1,4 +1,5 @@
 @import '~scss/variables';
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 #headerImage {
     height: inherit;
@@ -7,6 +8,14 @@
 
 .paddingZero {
     padding: 0px !important;
+}
+
+.borderRadiusZero {
+  border-radius: 0px !important;
+}
+
+.displayBlock {
+  display: block;
 }
 
 // navigation section
@@ -47,6 +56,19 @@ main {
     width: $hundredPercent;
 }
 
+section {
+    @include make-row();
+    margin: 0px !important;
+}
+
+.jumbotron {
+    height: 600px;
+    width: 100%;
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0px !important;    
+}
+
 .content {
     background-attachment: fixed;
     background-position: center center;
@@ -55,89 +77,68 @@ main {
     z-index: 10;
 }
 
-.searchSection {
-    display: table;
-    position: absolute;
-    height: 450px;
-    width: $hundredPercent;
-    @media only screen and (max-width: 600px) {
-        height: 450px;
-    }
-}
-
-#searchButton {
-    height: 34px !important;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
+#indexSearchForm {
+  padding-top:250px; 
+  width:700px; 
+  position: absolute; 
+  top:0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  margin: auto;
+  @media only screen and (max-width: 600px) {
+    width: 300px;    
+  }
 }
 
 // animation css
 
-  .tp-wrapper {
-    perspective: 800px;
-  }
+.tp-wrapper {
+  perspective: 800px;
+}
 
-  .tp-box {
-    position: relative;
-    width: 200px;
-    height: 400px;
-    margin: 3rem auto;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-  }
+.tp-box {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  margin: 3rem auto;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
 
-  .tp-box__side {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    color: #fff;
-    text-align: center;
-    line-height: 30px;
-    font-size: 13px;
-    //font-weight: 100;
-    cursor: pointer;
-    user-select: none;
-  }
-  .tp-box__front {
-    background: #f30d36;
-  }
-  .tp-box__back {
-    background: #23262d;
-    transform: rotateY(179.9deg);
-  }
+.tp-box__side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  //font-weight: 100;
+  cursor: pointer;
+  user-select: none;
+}
+.tp-box__front {
+  background: #f30d36;
+}
+.tp-box__back {
+  background: #23262d;
+  transform: rotateY(179.9deg);
+}
 
-  .inheritHeightWidth {
-     width: inherit;
-     height: inherit;
-  }
+.inheritHeightWidth {
+    width: inherit;
+    height: inherit;
+}
 
 // animation css end
-
-#searchBox {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    width: 600px;
-    @media only screen and (max-width: 600px) {
-        width: inherit;
-        margin-left: 17px;
-        margin-right: 10px;
-    }
-}
-
-#searchFormInput {
-    font-size: 1.75rem !important;
-}
 
 // carousel 
 
 .carousel {
     height: 500px;
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
  .carousel-caption {
@@ -166,16 +167,14 @@ main {
 
 // carousel end
 
+// footer start
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
 #footer {
     background: #000;
     padding: 0 0 30px 0;
     color: #eee;
     font-size: 14px;
-    top: 1500px;
+    bottom: 0;
   }
   
   #footer .footer-top {
@@ -328,3 +327,6 @@ main {
     font-size: 13px;
     color: #ddd;
   }
+
+
+  // footer end 

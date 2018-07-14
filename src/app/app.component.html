@@ -36,13 +36,12 @@
     </header>
 
     <main role="main">
-        <section role="section" class="searchSection content" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
-                <form class="middle">
-                    <div class="input-group" id="searchBox">
-                        <input list="browsers" id="searchFormInput" type="text" class="form-control" size="50" placeholder="What can we help you find?" required>
-                        <div class="input-group-btn">
-                            <button id="searchButton" type="button" class="btn btn-danger ">Search</button>
-                        </div>
+        <section class="jumbotron content text-center" style="background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/03/24/308257/8e834bc087354f282ca06f4d6c92b37d-700.jpg');">
+            <form id="indexSearchForm">
+                <div class="input-group">
+                    <input list="browsers" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger borderRadiusZero">Search</button>
                     </div>
                     <datalist id="browsers">
                         <option value="Internet Explorer">
@@ -51,11 +50,12 @@
                         <option value="Opera">
                         <option value="Safari">
                     </datalist>
-                </form>
+                </div>
+            </form>           
         </section>
 
-        <section role="section" class="searchSection content container-fluid" style="z-index: 1; top:450px; background-color:#00004c;">
-            <div class="row">
+        <section role="section" style="background-color:#00004c;">
+            
                 <div class="tp-wrapper col-md-3">
                     <div class="tp-box" (mouseenter)="toggleFlip(1)" (mouseleave)="toggleFlip(1)" [@flipState]="flip1">
                         <div class="tp-box__side tp-box__front">
@@ -106,19 +106,17 @@
                         </div>
                     </div>
                 </div>     
-            </div>
+           
         </section>        
        
-        <section role="section" class="searchSection content" style="z-index: 1; top:900px;">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    
+        <section role="section" class="displayBlock">            
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">                    
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                         <li data-target="#myCarousel" data-slide-to="3"></li>
-                    </ol>                
-                   
+                    </ol>                   
                     <div class="carousel-inner" role="listbox">
                         <div class="item" *ngFor="let image of sliderImages; let i = index;" [ngClass]="{'active' : i == 0}">
                             <img [src]="image.img" alt="Attack On Titan" width="1200" height="700">
@@ -128,8 +126,8 @@
                             </div> 
                         </div>
                     </div>
-                </div>
-        </section>       
+                </div>                
+        </section>
     </main>
 
     <footer id="footer">
