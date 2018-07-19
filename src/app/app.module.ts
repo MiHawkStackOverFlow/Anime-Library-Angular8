@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { SharedModule } from'./shared/shared.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   declarations: [
-    AppComponent,
-    SpinnerComponent
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
