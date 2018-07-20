@@ -1,5 +1,5 @@
 <div *ngIf="!spinner.active">
-    <app-header></app-header>
+    <app-header [title]="title"></app-header>
 
     <main role="main">
         <section class="jumbotron content text-center" style="background-image: url('assets/images/madara_black.jpg');">
@@ -94,7 +94,7 @@
         </section>
     </main>
 
-    <app-footer></app-footer>
+    <app-footer [title]="title"></app-footer>
 </div>
 <div *ngIf="spinner.active">
    <app-spinner></app-spinner>
