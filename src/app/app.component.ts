@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpinnerService } from './shared/spinner/spinner.service';
+import { SpinnerService } from './services/spinner.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 declare var $: any;
 
