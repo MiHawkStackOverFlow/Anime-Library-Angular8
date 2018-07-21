@@ -1,0 +1,19 @@
+@import '~scss/variables';
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.darkGreyBackGround {
+  background-color: $darkGrey !important;
+}
+
+// main section below
+
+main {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  @include make-row();
+  margin: 0px !important;
+}

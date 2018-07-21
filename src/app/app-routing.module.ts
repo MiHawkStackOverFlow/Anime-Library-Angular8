@@ -6,7 +6,8 @@ import { AnimeListComponent }   from './anime-list/anime-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-      { path: '', component: LandingPageComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'home', component: LandingPageComponent },
       { path: 'anime-list', component: AnimeListComponent }
 ];
 
