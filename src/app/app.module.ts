@@ -4,7 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from'./shared/shared.module';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AnimeListComponent } from './anime-list/anime-list.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    AnimeListComponent,
+    LandingPageComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
