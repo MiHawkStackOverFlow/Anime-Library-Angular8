@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { AnimeListComponent }   from './anime-list/anime-list.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: 'anime-list', component: AnimeListComponent }
+      { path: '', component: LandingPageComponent },
+      { path: 'anime-list', component: AnimeListComponent }
 ];
 
 @NgModule({
