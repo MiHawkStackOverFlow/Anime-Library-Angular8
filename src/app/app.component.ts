@@ -1,4 +1,4 @@
-import { Component, NgZone, Renderer, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { SpinnerService } from './services/spinner.service';
 import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
