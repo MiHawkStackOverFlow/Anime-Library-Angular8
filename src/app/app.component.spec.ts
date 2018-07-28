@@ -3,8 +3,6 @@ import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 @Component({selector: 'app-header', template: ''})
 class HeaderStubComponent {}
 
