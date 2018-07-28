@@ -14,7 +14,7 @@
     margin-bottom: 0px;
     background-color: $black;
     border: 0px;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 4px;
     opacity: 0.9;
     
@@ -46,6 +46,7 @@
     }
   
     .dropdown-menu {
+      font-size: 13px !important;
       background-color: $black !important;
     }
     
