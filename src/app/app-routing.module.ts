@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimeListComponent }   from './anime-list/anime-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
-const routes: Routes = [
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+export const routes: Routes = [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: LandingPageComponent },
       { path: 'anime-list', component: AnimeListComponent }
 ];
