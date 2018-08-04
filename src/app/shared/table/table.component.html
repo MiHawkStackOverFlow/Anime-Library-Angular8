@@ -1,17 +1,17 @@
-<table class="table table-dark table-bordered table-responsive">
+<table class="table table-dark table-bordered table-responsive" style="margin-bottom:0px;">
   <thead>
     <tr>
-      <th><input type="checkbox"></th>
+      <th class="smallWidth"><input type="checkbox"></th>
       <th>Name</th>
       <th>Episodes</th>
       <th>Genre</th>
       <th>Rating</th>
       <th>Popularity</th>
-      <th>Add</th>
+      <th class="mediumWidth">Add</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let anime of myAnimeList">
+    <tr *ngFor="let anime of allAnimes">
       <td><input type="checkbox"></td>
       <td>{{ anime.name }}</td>
       <td>{{ anime.episodes }}</td>
