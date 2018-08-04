@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeList } from './../../anime-list/anime-list';
+import { Anime } from '../../anime-list/anime';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +9,7 @@ import { AnimeList } from './../../anime-list/anime-list';
 export class TableComponent implements OnInit {
   isLiked: boolean = false;
 
-  myAnimeList: Array<AnimeList> = [
+  myAnimeList: Array<Anime> = [
     { name: "Angel Beats",         episodes: 13,  genre: "Drama",       rating: 7.8, popularity: "Low",      isLiked: false },
     { name: "Attack On Titan",     episodes: 40,  genre: "Apocalyptic", rating: 8.7, popularity: "High",     isLiked: false },
     { name: "Clannad",             episodes: 24,  genre: "Fantasy",     rating: 7.5, popularity: "Low",      isLiked: false },
@@ -36,8 +36,8 @@ export class TableComponent implements OnInit {
 
   ngOnInit() { }
 
-  toggleLike() : void {
-    this.isLiked = !this.isLiked;
+  toggleLike(selectedAnime:Anime) : void {
+    selectedAnime.isLiked = !selectedAnime.isLiked;
   }
 
 }

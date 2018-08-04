@@ -1,4 +1,4 @@
-export interface AnimeList {
+export interface Anime {
     name: string,
     episodes: number,
     genre: string,
