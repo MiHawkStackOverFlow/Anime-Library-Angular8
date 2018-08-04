@@ -5,14 +5,30 @@
     table-layout: fixed;
     word-wrap: break-word;
     color: $white;
+    text-align: center;
     background-color: $black;
+    thead {
+      tr {
+        th {
+          text-align: center;
+        }
+      }
+    }
     tbody {
       tr {
         &:hover {
           background-color: $dimGrey !important;
         }
       }  
-    }  
+    } 
+}
+
+.smallWidth {
+  width: 30px;
+}
+
+.mediumWidth {
+  width: 50px;
 }
 
 .dropdown-menu {

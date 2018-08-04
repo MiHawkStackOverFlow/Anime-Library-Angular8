@@ -3,7 +3,7 @@ import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header.component';
-import { RouterLinkDirectiveStub } from './../../../testing/router-link-directive-stub';
+import { RouterLinkDirectiveStub } from '../../../testing/router-link-directive-stub';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
