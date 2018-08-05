@@ -31,8 +31,7 @@ export const myAnimeList: Array<Anime> = [
 })
 export class TableComponent implements OnInit {
   isLiked: boolean = false;
-  allAnimes: Array<Anime> = myAnimeList;
-   
+  allAnimes: Array<Anime> = myAnimeList;   
   
   constructor() { }
 

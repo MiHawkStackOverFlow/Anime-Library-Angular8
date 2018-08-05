@@ -7,6 +7,7 @@ import { SharedModule } from'./shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { PopularAnimeComponent } from './popular-anime/popular-anime.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   declarations: [
     AppComponent,
     AnimeListComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    PopularAnimeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
