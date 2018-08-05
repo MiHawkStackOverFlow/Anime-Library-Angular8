@@ -1,0 +1,21 @@
+<main role="main">
+    <section class="content" style="width:100%; height:500px; text-align: center;
+    background-image: url('https://pre00.deviantart.net/59bc/th/pre/i/2013/143/c/1/edo_minato_vs_edo_madara_by_lukebig-d666fxa.png');">  
+       <h1 style="margin: 0 auto; margin-top: 420px; border: solid black 1px; height: 40px; background-color: black; color: white;">Popular Anime Series</h1>    
+    </section>
+    <section role="section" style="background-color: grey;">            
+        <div *ngFor="let anime of popularAnimes" class="col-md-3" style="text-align: center;">
+            <div class="tp-box">
+                <div class="tp-box__side">
+                    <img src="{{ anime.imageUrl }}" alt="anime.name" class="inheritHeightWidth">
+                    <div style="background-color: lightgrey; color: black; position:absolute; z-index:100; width: inherit;">                       
+                        <!-- <i class="fa fa-heart-o"> </i> Like -->
+                        <i class="fa" [ngClass]="{ 'fa-heart': anime.isLiked, 'fa-heart-o': !anime.isLiked  }"></i> 
+                            {{ anime.isLiked ? "UnLike" : "Like" }}
+                    </div> 
+                </div> 
+                <h4 style="color:black; margin-top:20px;"> {{anime.name}} </h4>                
+            </div>
+        </div>              
+    </section>   
+</main>

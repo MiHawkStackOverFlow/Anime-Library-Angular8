@@ -30,6 +30,7 @@ import { AppModule }            from './app.module';
 import { AppComponent }         from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AnimeListComponent }   from './anime-list/anime-list.component';
+import { PopularAnimeComponent } from './popular-anime/popular-anime.component';
 import { HeaderComponent } from './shared/header/header.component';
 
 let comp:     AppComponent;
@@ -75,6 +76,25 @@ describe('AppComponent & RouterTestingModule', () => {
     expectElementOf(AnimeListComponent);
   }));
 
+  xit('should navigate to "Popular Anime" on click', fakeAsync(() => {
+    createComponent();
+    click(page.popularAnime);
+    // page.aboutLinkDe.nativeElement.click(); // ok but fails in phantom
+     
+    advance();
+    tick(5000);
+    expectPathToBe('/popular-anime');
+    expectElementOf(PopularAnimeComponent);    
+  }));
+
+  xit('should navigate to "Popular Anime" w/ browser location URL change', fakeAsync(() => {
+    createComponent();
+    location.simulateHashChange('/popular-anime');
+    advance();
+    expectPathToBe('/popular-anime');
+    expectElementOf(PopularAnimeComponent);
+  }));
+
 });
 
 ////// Helpers /////////
@@ -104,8 +124,7 @@ function createComponent() {
 
 class Page {
   animeList: DebugElement;
-  //dashboardLinkDe: DebugElement;
-  //heroesLinkDe:    DebugElement;
+  popularAnime: DebugElement;
 
   // for debugging
   comp: HeaderComponent;
@@ -117,8 +136,7 @@ class Page {
     this.fixture = TestBed.createComponent(HeaderComponent);
     const links = this.fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
     this.animeList = links[0];
-    //this.dashboardLinkDe = links[0];
-    //this.heroesLinkDe    = links[1];
+    this.popularAnime = links[1];
 
     // // for debugging
     // this.comp    = comp;
