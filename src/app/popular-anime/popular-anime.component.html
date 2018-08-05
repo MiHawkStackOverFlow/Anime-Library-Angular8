@@ -4,15 +4,17 @@
        <h1 style="margin: 0 auto; margin-top: 420px; border: solid black 1px; height: 40px; background-color: black; color: white;">Popular Anime Series</h1>    
     </section>
     <section role="section" style="background-color: grey;">            
-        <div class="col-md-3" style="text-align: center;">
+        <div *ngFor="let anime of popularAnimes" class="col-md-3" style="text-align: center;">
             <div class="tp-box">
                 <div class="tp-box__side">
-                    <img src="https://img00.deviantart.net/4566/i/2018/023/c/e/vegeta_by_wizyakuza-dc0zqa9.jpg" alt="Vegeta Dragon Ball" class="inheritHeightWidth">
-                    <div style="background-color: white; color: black; position:absolute; z-index:100; width: inherit;">                       
-                        <i class="fa fa-heart-o"> </i> Like
+                    <img src="{{ anime.imageUrl }}" alt="anime.name" class="inheritHeightWidth">
+                    <div style="background-color: lightgrey; color: black; position:absolute; z-index:100; width: inherit;">                       
+                        <!-- <i class="fa fa-heart-o"> </i> Like -->
+                        <i class="fa" [ngClass]="{ 'fa-heart': anime.isLiked, 'fa-heart-o': !anime.isLiked  }"></i> 
+                            {{ anime.isLiked ? "UnLike" : "Like" }}
                     </div> 
                 </div> 
-                <h4 style="color:black; margin-top:20px;"> Dragon Ball Super </h4>                
+                <h4 style="color:black; margin-top:20px;"> {{anime.name}} </h4>                
             </div>
         </div>              
     </section>   

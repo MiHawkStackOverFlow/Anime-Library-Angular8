@@ -8,11 +8,17 @@ import { Anime } from './../anime-list/anime';
   styleUrls: ['./popular-anime.component.scss']
 })
 export class PopularAnimeComponent implements OnInit {
-  popularAnime: Array<Anime> = myAnimeList; 
+  popularAnimes: Array<Anime> = myAnimeList; 
 
   constructor() { }
 
   ngOnInit() {
+    // sort anime using rating values
+    let sortedArray = this.popularAnimes.sort((anime1: Anime, anime2:Anime) => {
+      return anime2.rating - anime1.rating;
+    });
+    // show first 12 popular animes based on rating
+    this.popularAnimes = sortedArray.slice(0, 12);
   }
 
 }

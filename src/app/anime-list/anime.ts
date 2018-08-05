@@ -4,5 +4,6 @@ export interface Anime {
     genre: string,
     rating: number,
     popularity: string,
-    isLiked: boolean
+    isLiked: boolean,
+    imageUrl: string;
 }
