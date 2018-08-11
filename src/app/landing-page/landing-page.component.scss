@@ -20,7 +20,7 @@ section {
 }
 
 .jumbotron {
-  height: 600px;
+  height: 700px;
   width: 100%;
   color: $white;
   font-family: Montserrat, sans-serif;
@@ -36,17 +36,18 @@ section {
 }
 
 #indexSearchForm {
-  padding-top: 200px; 
-  width:700px; 
+  padding-top: 300px; 
+  width:400px; 
   position: absolute; 
   top:0; 
   bottom: 0; 
   left: 0; 
-  right: 0; 
+  right: 60%; 
   margin: auto;
-  @media only screen and (max-width: 600px) {
-    width: 300px;
-    padding-top: 380px;    // change when image changes to shift search box top or bottom
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    padding-top: 460px;
+    right: 0;
   }
 }
 
