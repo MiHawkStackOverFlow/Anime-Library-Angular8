@@ -46,9 +46,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   
 3. What does my website look like ?
   
-       - [AnimeFreak](http://www.animefreak.tv/)
-       - [Tubitv](https://tubitv.com/category/anime)
-       - [KonohaStuff](https://konohastuff.com/)
+       - <http://www.animefreak.tv/>
+       - <https://tubitv.com/category/anime>
+       - <https://konohastuff.com/>
   
       `a. What's the background color ? #26262D (Black)`
       
