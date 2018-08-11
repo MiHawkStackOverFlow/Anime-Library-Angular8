@@ -1,5 +1,4 @@
 @import '~scss/variables';
-@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .table-dark {
     table-layout: fixed;
@@ -33,4 +32,13 @@
 
 .dropdown-menu {
   min-width: 0px !important;
+}
+
+.threeDotButton {
+  padding: 0px 10px !important; 
+  margin-top: -5px; 
+  font-size: 13px !important; 
+  line-height: 1 !important; 
+  height: 28px !important; 
+  background-color: #000000 !important;
 }
