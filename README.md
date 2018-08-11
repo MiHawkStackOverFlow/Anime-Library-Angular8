@@ -40,16 +40,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
       Anime Library management system will help people do the following :-  
   
-      `Read, Borrow different kinds of mangas, videos, articles from the library. Add new users, maintain existing users, etc.`
+      - Read, Borrow different kinds of mangas, videos, articles from the library.      
+      - Add new users, maintain existing users.
+      - WishList Anime Series, Mangas
   
 3. What does my website look like ?
   
-       https://zsr.wfu.edu/
-       https://tubitv.com/category/anime
-       https://konohastuff.com/blogs/news/top-5-best-websites-for-fans-to-watch-and-stream-anime-online-in-2017
+       - [AnimeFreak](http://www.animefreak.tv/)
+       - [Tubitv](https://tubitv.com/category/anime)
+       - [KonohaStuff](https://konohastuff.com/)
   
-      a. What's the background color ? #26262D (Black)
-      b. What kind of font is appropriate ? 
+      `a. What's the background color ? #26262D (Black)`
+      
+      `b. What kind of font is appropriate ?` 
+      
       `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
   
 4. Design guide ?
