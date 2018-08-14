@@ -80,7 +80,7 @@
               </ol>                   
               <div class="carousel-inner" role="listbox">
                   <div class="item" *ngFor="let image of sliderImages; let i = index;" [ngClass]="{'active' : i == 0}">
-                      <img [src]="image.img" alt="Attack On Titan" width="1200" height="700">
+                      <img [src]="image.img" alt="image.name" width="1200" height="700">
                       <div class="carousel-caption">
                           <h3>{{ image.name | uppercase }}</h3>
                           <p>{{ image.description }}</p>

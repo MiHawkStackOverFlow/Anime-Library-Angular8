@@ -52,7 +52,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   
       `a. What's the background color ? #26262D (Black)`
       
-      `b. What kind of font is appropriate ?` 
+      `b. What kind of font is appropriate ? (https://fonts.google.com/)` 
       
       `<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`
   
