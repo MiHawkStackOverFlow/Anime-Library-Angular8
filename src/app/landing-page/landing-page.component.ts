@@ -48,9 +48,9 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.id = setInterval(() => {
-      ($("#myCarousel") as any).carousel("next");
-    }, 4000);
+    // this.id = setInterval(() => {
+    //   ($("#myCarousel") as any).carousel("next");
+    // }, 4000);
   }
 
   toggleFlip(flipNum: number) {
@@ -59,9 +59,9 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.id) {
-      clearInterval(this.id);
-    }
+    // if (this.id) {
+    //   clearInterval(this.id);
+    // }
   }
 
 }
