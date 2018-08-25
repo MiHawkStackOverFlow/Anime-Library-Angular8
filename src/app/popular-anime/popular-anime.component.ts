@@ -12,13 +12,25 @@ export class PopularAnimeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  sortAnime(animeList: Array<Anime>) {
     // sort anime using rating values
-    let sortedArray = this.popularAnimes.sort((anime1: Anime, anime2:Anime) => {
+    let sortedArray = animeList.sort((anime1: Anime, anime2:Anime) => {
       return anime2.rating - anime1.rating;
     });
+    return sortedArray;
+  }
+
+  sliceAnime(animeList: Array<Anime>, start: number, end: number) {
+    return this.sortAnime(animeList).slice(start, end);
+  }
+
+  ngOnInit() {
     // show first 12 popular animes based on rating
-    this.popularAnimes = sortedArray.slice(0, 12);
+    this.popularAnimes = this.sliceAnime(this.popularAnimes, 0, 12);
+  }
+
+  toggleLike(selectedAnime:Anime) : void {
+    selectedAnime.isLiked = !selectedAnime.isLiked;
   }
 
 }

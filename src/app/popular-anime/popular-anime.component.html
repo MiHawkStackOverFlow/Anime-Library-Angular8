@@ -8,7 +8,7 @@
             <div class="tp-box">
                 <div class="tp-box__side">
                     <img src="{{ anime.imageUrl }}" alt="{{ anime.name }}" class="inheritHeightWidth">
-                    <div class="animeLike">                       
+                    <div class="animeLike" (click)="toggleLike(anime);">                       
                         <!-- <i class="fa fa-heart-o"> </i> Like -->
                         <i class="fa" [ngClass]="{ 'fa-heart': anime.isLiked, 'fa-heart-o': !anime.isLiked  }"></i> 
                             {{ anime.isLiked ? "UnLike" : "Like" }}
