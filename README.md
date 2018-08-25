@@ -42,7 +42,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   
       - Read, Borrow different kinds of mangas, videos, articles from the library.      
       - Add new users, maintain existing users.
-      - WishList Anime Series, Mangas
+      - Wishlist by liking/disliking Anime Series, Mangas
   
 3. What does my website look like ?
   
@@ -70,7 +70,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - changed references from css to scss in angular.json file
     - changed css files to scss manually
 
-6. Added Bootstrap css and Jquery using follwing :-
+6. Added Bootstrap css and Jquery using following :-
 
     - included links in index.html file along wtih jquery link
     - installed jquery using npm install --save @types/jquery

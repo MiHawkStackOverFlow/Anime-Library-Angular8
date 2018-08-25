@@ -37,7 +37,8 @@ describe('HeaderComponent', () => {
   });
 
   it('can get RouterLinks from template', () => {
-    expect(routerLinks.length).toBe(1, 'should have 1 routerLinks');
+    expect(routerLinks.length).toBe(2, 'should have 2 routerLinks');
     expect(routerLinks[0].linkParams).toBe('/anime-list');
+    expect(routerLinks[1].linkParams).toBe('/popular-anime');
   });
 });

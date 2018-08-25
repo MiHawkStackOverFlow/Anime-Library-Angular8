@@ -9,14 +9,14 @@
               </button>
               <a class="navbar-brand paddingZero" href="https://github.com/MiHawkStackOverFlow/Anime-Library-Management-System-Angular6" [attr.title]="title">
                   <img src="assets/images/hisoka.png" id="headerImage" alt="Abhishek's Anime Library Image"> 
-                  <span class="headerMain">{{title}}</span>
+                  <h1 class="headerMain">{{title}}</h1>
               </a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
               <!-- <li><a href="https://nationaltoday.com/what-is-today/">{{ today | date }}</a></li> -->
               <li><a routerLink="/anime-list">Anime List</a></li>
-              <li><a href="/popular-anime">Popular Anime</a></li>
+              <li><a routerLink="/popular-anime">Popular Anime</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
                 <ul class="dropdown-menu">

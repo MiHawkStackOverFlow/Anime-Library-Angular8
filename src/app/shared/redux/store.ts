@@ -4,7 +4,7 @@ import { LIKE_ANIME, DISLIKE_ANIME, DISLIKE_ALL_ANIME } from './actions';
 
 export interface AnimeAppState {
     animes: Array<Anime>;
-    lastUpdate: Date;
+    lastUpdate: any;
 }
 
 export const INITIAL_STATE: AnimeAppState = {

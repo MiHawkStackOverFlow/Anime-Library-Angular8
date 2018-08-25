@@ -50,7 +50,7 @@ describe('AppComponent & RouterTestingModule', () => {
 
   it('should navigate to "Home" immediately', fakeAsync(() => {
     createComponent();
-    tick(1000); // wait for async data to arrive
+    tick(4000); // wait for async data to arrive
     expect(location.path()).toEqual('/home', 'after initialNavigation()');
     expectElementOf(LandingPageComponent);
   }));

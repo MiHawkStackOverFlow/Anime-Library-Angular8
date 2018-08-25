@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Anime } from '../anime';
-import { myAnimeList } from '../mock-animes';
+import { Anime } from './../anime';
+import { myAnimeList } from '../mock-data/mock-animes';
 
 @Component({
   selector: 'app-table',

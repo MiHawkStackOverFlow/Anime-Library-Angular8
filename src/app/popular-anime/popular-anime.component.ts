@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { myAnimeList } from '../shared/mock-animes';
+import { myAnimeList } from '../shared/mock-data/mock-animes';
 import { Anime } from '../shared/anime';
 
 @Component({
