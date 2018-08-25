@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./favourite-anime.component.scss']
 })
 export class FavouriteAnimeComponent implements OnInit {
-  @select() animes$: Observable<any>;
+  @select() favAnimes$: Observable<any>;
 
   constructor(private ngRedux: NgRedux<AnimeAppState>) { }
 
