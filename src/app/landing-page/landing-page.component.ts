@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 declare var $: any;
 
@@ -24,6 +24,7 @@ export class LandingPageComponent implements OnInit {
   flip2: string = 'inactive';
   flip3: string = 'inactive';
   flip4: string = 'inactive';
+  villainsSectionHeading: string = 'Popular Anime Villains Across Popular Anime Series';
 
   id: any;
   sliderImages: Array<Object> = [ 
@@ -45,12 +46,14 @@ export class LandingPageComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
-    // this.id = setInterval(() => {
-    //   ($("#myCarousel") as any).carousel("next");
-    // }, 4000);
+    this.ngZone.runOutsideAngular(() => {
+      this.id = setInterval(() => {
+        ($("#myCarousel") as any).carousel("next");
+      }, 4000);
+    });
   }
 
   toggleFlip(flipNum: number) {
@@ -59,9 +62,11 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    // if (this.id) {
-    //   clearInterval(this.id);
-    // }
+    this.ngZone.runOutsideAngular(() => {
+      if (this.id) {
+        clearInterval(this.id);
+      }
+    });
   }
 
 }
