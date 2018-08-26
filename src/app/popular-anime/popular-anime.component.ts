@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { myAnimeList } from '../shared/mock-data/mock-animes';
-import { Anime } from './../anime-list/anime';
+import { Anime } from '../shared/interfaces/anime';
 
 @Component({
   selector: 'app-popular-anime',

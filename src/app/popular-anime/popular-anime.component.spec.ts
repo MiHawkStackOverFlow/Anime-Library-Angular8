@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Anime } from '../anime-list/anime';
+import { Anime } from '../shared/interfaces/anime';
 import { PopularAnimeComponent } from './popular-anime.component';
 
 describe('PopularAnimeComponent', () => {
