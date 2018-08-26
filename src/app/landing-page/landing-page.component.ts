@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { timer, Observable, Subscription } from 'rxjs';
 
 import { Carousel } from '../shared/interfaces/carousel';
 import { Villain } from '../shared/interfaces/villain';
@@ -26,9 +25,7 @@ import { villains } from '../shared/mock-data/mock-villains';
   ]
 })
 export class LandingPageComponent implements OnInit {
-  flip: string = 'inactive';
-  searchTitle: string = 'Search mangas and videos';
-  villainsSectionHeading: string = 'Popular Anime Villains Across Popular Anime Series';
+  searchTitle: string = 'Search Anime Manga And Videos';
   animeVillains: Array<Villain> = villains; 
 
   // data for carousel component
