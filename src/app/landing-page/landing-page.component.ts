@@ -26,7 +26,7 @@ import { villains } from '../shared/mock-data/mock-villains';
 })
 export class LandingPageComponent implements OnInit {
   searchTitle: string = 'Search Anime Manga And Videos';
-  animeVillains: Array<Villain> = villains; 
+  animeVillains: Array<Villain> = villains;
 
   // data for carousel component
   height: number = 500; 

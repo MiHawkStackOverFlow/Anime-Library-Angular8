@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { Anime } from '../anime';
+import { Anime } from '../interfaces/anime';
 import { LIKE_ANIME, DISLIKE_ANIME, DISLIKE_ALL_ANIME } from './actions';
 
 export interface AnimeAppState {
