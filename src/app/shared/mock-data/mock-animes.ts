@@ -1,4 +1,4 @@
-import { Anime } from '../../anime-list/anime';
+import { Anime } from '../interfaces/anime';
 
 export const myAnimeList: Array<Anime> = [
     { name: "Angel Beats",         episodes: 13,  genre: "Drama",       rating: 7.8, popularity: "Low",      isLiked: false, 
@@ -37,7 +37,7 @@ export const myAnimeList: Array<Anime> = [
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpy-9wE5df1rd7pqyYgs4iG8nZKvBg3lAeSHw8-Hc4hgSUUfPD" },
     { name: "Samurai Champloo",    episodes: 26,  genre: "Action",      rating: 7.4, popularity: "Moderate", isLiked: false, 
       imageUrl: "https://i.pinimg.com/originals/11/4a/fe/114afe2c881d2d186926f5ac1a15821d.jpg" },
-    { name: "Seven deadly sins",   episodes: 48,  genre: "Adventure",   rating: 8.3, popularity: "High",     isLiked: false, 
+    { name: "Seven Deadly Sins",   episodes: 48,  genre: "Adventure",   rating: 8.3, popularity: "High",     isLiked: false, 
       imageUrl: "https://orig00.deviantart.net/f2c1/f/2014/350/d/3/the_seven_deadly_sins___rus_poster_by_dragonmaxmd-d8a1c0y.png" },
     { name: "Wolf's Rain",         episodes: 30,  genre: "Action",      rating: 8.2, popularity: "High",     isLiked: false, 
       imageUrl: "https://i.pinimg.com/originals/8f/f6/41/8ff641365179be0baf3cd8218c829832.jpg" }

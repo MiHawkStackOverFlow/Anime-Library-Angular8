@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { myAnimeList } from '../shared/mock-data/mock-animes';
-import { Anime } from './../anime-list/anime';
+import { Anime } from '../shared/interfaces/anime';
 
 @Component({
   selector: 'app-popular-anime',
@@ -8,7 +8,8 @@ import { Anime } from './../anime-list/anime';
   styleUrls: ['./popular-anime.component.scss']
 })
 export class PopularAnimeComponent implements OnInit {
-  popularAnimes: Array<Anime> = myAnimeList; 
+  popularAnimes: Array<Anime> = myAnimeList;
+  popularAnimeHeading: string = 'Popular Anime Series'; 
 
   constructor() { }
 

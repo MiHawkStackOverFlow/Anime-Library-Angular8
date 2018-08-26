@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Anime } from '../anime-list/anime';
+import { Anime } from '../shared/interfaces/anime';
 import { PopularAnimeComponent } from './popular-anime.component';
 
 describe('PopularAnimeComponent', () => {
@@ -27,6 +27,10 @@ describe('PopularAnimeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have heading as 'Popular Anime Series'`, async(() => {
+    expect(component.popularAnimeHeading).toEqual(`Popular Anime Series`);
+  }));
 
   it('sortAnime method should sort animes based on rating', () => {
     expect(component.sortAnime(dummyAnimes)[0].rating).toEqual(3, 'anime with highest rating first');
