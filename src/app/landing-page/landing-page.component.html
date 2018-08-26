@@ -1,13 +1,13 @@
 <main role="main">
     <section class="jumbotron content text-center" style="background-image: url('https://images4.alphacoders.com/738/thumb-1920-73806.jpg');">
         <form id="indexSearchForm">
-            <label for="search">{{ 'Search mangas and videos:' | naturalType:100 }}</label>
+            <label for="search">{{ searchTitle | naturalType:100 }}</label>
             <div class="input-group">
                 <input list="browsers" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
-                <datalist id="browsers">
+                <datalist id="topAnimes">
                     <option value="Dragon Ball Z">
                     <option value="One Piece">
                     <option value="Code Geass">

@@ -27,6 +27,7 @@ import { villains } from '../shared/mock-data/mock-villains';
 })
 export class LandingPageComponent implements OnInit {
   flip: string = 'inactive';
+  searchTitle: string = 'Search mangas and videos';
   villainsSectionHeading: string = 'Popular Anime Villains Across Popular Anime Series';
   animeVillains: Array<Villain> = villains; 
 
