@@ -14,7 +14,7 @@ describe('NaturalTypePipe', () => {
         expect(pipe).toBeTruthy();
     });
 
-    it('transforms "abc" to "abc"', () => {
+    xit('transforms "abc" to "abc"', () => {
         expect(pipe.transform('abc')).toBe('abc');
     });
 });
