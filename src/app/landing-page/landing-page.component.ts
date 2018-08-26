@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 declare var $: any;
+import { timer, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-landing-page',
@@ -20,13 +21,14 @@ declare var $: any;
   ]
 })
 export class LandingPageComponent implements OnInit {
+  id: any;
   flip1: string = 'inactive';
   flip2: string = 'inactive';
   flip3: string = 'inactive';
   flip4: string = 'inactive';
-  villainsSectionHeading: string = 'Popular Anime Villains Across Popular Anime Series';
-
-  id: any;
+  
+  subscribe: Subscription;
+  villainsSectionHeading: string = 'Popular Anime Villains Across Popular Anime Series';  
   sliderImages: Array<Object> = [ 
     { img: 'https://www.animelab.com/assets/images/home/covers/attack-on-titan-s2.png',
       name: 'Attack On Titan',
@@ -49,11 +51,10 @@ export class LandingPageComponent implements OnInit {
   constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
-    this.ngZone.runOutsideAngular(() => {
-      this.id = setInterval(() => {
+      let source: Observable<number> = timer(3000, 4000);
+      this.subscribe = source.subscribe(() => {
         ($("#myCarousel") as any).carousel("next");
-      }, 4000);
-    });
+      });    
   }
 
   toggleFlip(flipNum: number) {
@@ -62,11 +63,9 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.ngZone.runOutsideAngular(() => {
-      if (this.id) {
-        clearInterval(this.id);
-      }
-    });
+    if(this.subscribe) {
+      this.subscribe.unsubscribe();
+    }
   }
 
 }

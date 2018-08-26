@@ -28,6 +28,10 @@ describe('PopularAnimeComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it(`should have heading as 'Popular Anime Series'`, async(() => {
+    expect(component.popularAnimeHeading).toEqual(`Popular Anime Series`);
+  }));
+
   it('sortAnime method should sort animes based on rating', () => {
     expect(component.sortAnime(dummyAnimes)[0].rating).toEqual(3, 'anime with highest rating first');
     expect(component.sortAnime(dummyAnimes)[1].rating).toEqual(2, 'anime with second highest rating second');
