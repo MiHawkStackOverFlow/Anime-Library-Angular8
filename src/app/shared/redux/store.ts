@@ -12,13 +12,19 @@ export const INITIAL_STATE: AnimeAppState = {
     lastUpdate: new Date()
 }
 
-export function rootReducer(state: AnimeAppState, action: Action): AnimeAppState {
+export function rootReducer(state: AnimeAppState, action): AnimeAppState {
     switch(action.type) {
         case LIKE_ANIME:
-          return Object.assign({}, state, {
-            animes: state.animes.concat(Object.assign({})),
-            lastUpdate: new Date()
-          }); 
+            action.anime.id = state.animes.length + 1;
+            return Object.assign({}, state, {
+                animes: state.animes.concat(Object.assign({}, action.anime)),
+                lastUpdate: new Date()
+            });
+        case DISLIKE_ANIME:
+            return Object.assign({}, state, {
+                animes: state.animes.filter(anime => anime.id !== action.id),
+                lastUpdate: new Date()
+            });    
     }
     return state;
 } 

@@ -21,9 +21,12 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/scss/styles.scss"
+              "src/scss/styles.scss",
+              "node_modules/izitoast/dist/css/iziToast.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/izitoast/dist/js/iziToast.min.js"
+            ]
           },
           "configurations": {
             "production": {

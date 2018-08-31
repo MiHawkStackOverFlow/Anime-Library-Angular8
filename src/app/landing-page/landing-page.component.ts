@@ -26,7 +26,7 @@ import { villains } from '../shared/mock-data/mock-villains';
 })
 export class LandingPageComponent implements OnInit {
   searchTitle: string = 'Search Anime Manga And Videos';
-  animeVillains: Array<Villain> = villains;
+  animeVillains: Array<Villain> = [];
 
   // data for carousel component
   height: number = 500; 
@@ -34,10 +34,20 @@ export class LandingPageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.sliceData('forward');
+  }
 
   toggleFlip(villain: Villain) {
    villain['flip'] = (villain['flip'] == 'active') ? 'inactive' : 'active';
+  }
+
+  sliceData(direction: string) {
+    if(direction === 'forward') {
+      this.animeVillains = villains.slice(0,4);
+    } else if(direction === 'backward') {
+      this.animeVillains = villains.slice(4,8);
+    }    
   }
 
 }

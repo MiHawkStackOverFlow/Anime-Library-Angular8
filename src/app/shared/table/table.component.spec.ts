@@ -3,13 +3,16 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TableComponent } from './table.component';
 
+import { NgReduxModule } from '@angular-redux/store';
+
 describe('TableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableComponent ]
+      declarations: [ TableComponent ],
+      imports: [ NgReduxModule ]
     })
     .compileComponents();
   }));
