@@ -83,5 +83,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - @import '~font-awesome/scss/font-awesome'; into scss file
 
 8. Added iziToast as following :-
-   https://www.npmjs.com/package/ng2-izitoast
-   Note :- (Had to add css and js to angular json file importing them from node modules) 
+    - https://www.npmjs.com/package/ng2-izitoast
+    - Note :- (Had to add css and js to angular json file importing them from node modules) 
