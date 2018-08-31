@@ -3,7 +3,7 @@
         <form id="indexSearchForm">
             <label for="search">{{ searchTitle | naturalType:100 }}</label>
             <div class="input-group">
-                <input list="browsers" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
+                <input list="topAnimes" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
@@ -16,6 +16,15 @@
                 </datalist>
             </div>
         </form>           
+    </section>
+
+    <section class="darkGreyBackGround">
+        <h3 class="headerDecorator">Popular Anime Villains</h3>
+        <div style="padding:10px; position: absolute; right: 10px; z-index: 12345;">
+            <button (click)="sliceData('forward')" type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;"><span class="glyphicon glyphicon-chevron-left"></span></button>
+            <button (click)="sliceData('backward')" type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            <button type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;">See All <span class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>    
     </section>
 
     <section role="section" class="darkGreyBackGround">

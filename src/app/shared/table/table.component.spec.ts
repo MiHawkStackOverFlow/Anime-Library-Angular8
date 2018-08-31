@@ -3,13 +3,16 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TableComponent } from './table.component';
 
+import { NgReduxModule } from '@angular-redux/store';
+
 describe('TableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableComponent ]
+      declarations: [ TableComponent ],
+      imports: [ NgReduxModule ]
     })
     .compileComponents();
   }));
@@ -23,6 +26,11 @@ describe('TableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  xit('should have a table to display the animes', () => {
+    //expect(element.innerHTML).toContain("thead");
+    //expect(element.innerHTML).toContain("tbody");
+  })
 
   it('should have table 2nd column header as `Name`', () => {
     const secondColumnHeader = fixture.nativeElement.querySelector('table th:nth-child(2)');
