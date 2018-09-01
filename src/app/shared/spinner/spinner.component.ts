@@ -9,8 +9,10 @@ import { SpinnerService } from '../../services/spinner.service';
 export class SpinnerComponent {
   public active: boolean;
 
-  constructor(spinner: SpinnerService) { 
-    spinner.status.subscribe((status: boolean) => {
+  constructor(public spinner: SpinnerService) { }
+
+  ngOnInit() {
+    this.spinner.status.subscribe((status: boolean) => {
       this.active = status;
     });
   }
