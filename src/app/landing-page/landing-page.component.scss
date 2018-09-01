@@ -64,3 +64,17 @@
 }
 
 // animation css end
+
+.button-container {
+  padding:10px; position: 
+  absolute; right: 10px; 
+  z-index: 12345;
+}
+
+.slider-button {
+  background-color: rgb(217, 83, 79); 
+  color: white; 
+  border-color: rgb(217, 83, 79); 
+  border-radius: 0;
+  margin:2px;
+}
