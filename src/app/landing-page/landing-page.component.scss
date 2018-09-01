@@ -1,5 +1,11 @@
 @import '~scss/variables';
 
+.p10-top {
+  @media only screen and (max-width: 500px) {
+    padding-top: 20px;
+  }  
+}
+
 .headerDecorator {
   margin-top: 20px;
   border: none;
@@ -66,9 +72,14 @@
 // animation css end
 
 .button-container {
-  padding:10px; position: 
-  absolute; right: 10px; 
+  padding:10px; 
+  position: absolute; 
+  right: 10px; 
   z-index: 12345;
+  @media only screen and (max-width: 500px) {
+    padding: 60px;
+    right: 45px;
+  }
 }
 
 .slider-button {
