@@ -25,28 +25,44 @@ import { villains } from '../shared/mock-data/mock-villains';
   ]
 })
 export class LandingPageComponent implements OnInit {
+  carouselHeight: number = 500;
+  allVillains: Array<Villain>;
+  animeVillains: Array<Villain>;
+  carouselImages: Array<Carousel>;
   searchTitle: string = 'Search Anime Manga And Videos';
-  animeVillains: Array<Villain> = [];
-
-  // data for carousel component
-  height: number = 500; 
-  sliderImages: Array<Carousel> = sliderImages;
-
+  animeVillainsTitle: string = 'Popular Anime Villains'; 
+  
   constructor() { }
 
-  ngOnInit() { 
-    this.sliceData('forward');
+  ngOnInit(): void {
+    // set anime villains from data
+    this.allVillains = villains;
+    // anime villains section set to show 4 anime villains 
+    this.sliceData('backward');    
+    // input to carousel component
+    this.carouselImages = sliderImages;   
+    // set all anime villains flip to inactive initially
+    this.setFlip(this.animeVillains);
   }
 
-  toggleFlip(villain: Villain) {
+  // set flip property to inactive
+  setFlip(villains: Array<Villain>): void {
+    villains.forEach(villain => {
+      villain['flip'] = "inactive";
+    });
+  }
+
+  // toggle flip to show/hide villain details
+  toggleFlip(villain: Villain): void {
    villain['flip'] = (villain['flip'] == 'active') ? 'inactive' : 'active';
   }
 
-  sliceData(direction: string) {
-    if(direction === 'forward') {
-      this.animeVillains = villains.slice(0,4);
-    } else if(direction === 'backward') {
-      this.animeVillains = villains.slice(4,8);
+  // slide data to show for villains section
+  sliceData(direction: string): void {   
+    if(direction === 'backward') {
+      this.animeVillains = this.allVillains.slice(0,4);
+    } else if(direction === 'forward') {
+      this.animeVillains = this.allVillains.slice(4,8);
     }    
   }
 

@@ -19,11 +19,11 @@
     </section>
 
     <section class="darkGreyBackGround">
-        <h3 class="headerDecorator">Popular Anime Villains</h3>
-        <div style="padding:10px; position: absolute; right: 10px; z-index: 12345;">
-            <button (click)="sliceData('forward')" type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;"><span class="glyphicon glyphicon-chevron-left"></span></button>
-            <button (click)="sliceData('backward')" type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;"><span class="glyphicon glyphicon-chevron-right"></span></button>
-            <button type="button" class="btn btn-default" style="background-color: rgb(217, 83, 79); color: white; border-color: rgb(217, 83, 79); border-radius: 0;margin:2px;">See All <span class="glyphicon glyphicon-chevron-right"></span></button>
+        <h3 class="headerDecorator">{{animeVillainsTitle}}</h3>
+        <div class="button-container">
+            <button (click)="sliceData('backward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span></button>
+            <button (click)="sliceData('forward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            <button type="button" class="btn btn-default slider-button">See All <span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>    
     </section>
 
@@ -41,6 +41,6 @@
     </section>        
     
     <section role="section" class="displayBlock">
-        <app-carousel [sliderImages]="sliderImages" [sliderHeight]="height"></app-carousel>
+        <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight"></app-carousel>
     </section>
 </main>
