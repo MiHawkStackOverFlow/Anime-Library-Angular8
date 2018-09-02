@@ -16,11 +16,16 @@ export class CarouselComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  // start carousel slideshow using rxjs timer
+  slideShow(): void {
     let source: Observable<number> = timer(3000, 4000);
     this.subscribe = source.subscribe(() => {
       ($("#myCarousel") as any).carousel("next");
-    });    
+    });
+  }
+
+  ngOnInit() {
+    this.slideShow();
   }
 
   ngOnDestroy() {

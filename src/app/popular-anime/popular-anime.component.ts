@@ -20,14 +20,15 @@ export class PopularAnimeComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<AnimeAppState>, public iziToast: Ng2IzitoastService) { }
 
+  // sort anime using rating values
   sortAnime(animeList: Array<Anime>) {
-    // sort anime using rating values
     let sortedArray = animeList.sort((anime1: Anime, anime2:Anime) => {
       return anime2.rating - anime1.rating;
     });
     return sortedArray;
   }
 
+  // slice return portion of data from anime list
   sliceAnime(animeList: Array<Anime>, start: number, end: number) {
     return this.sortAnime(animeList).slice(start, end);
   }
@@ -37,6 +38,7 @@ export class PopularAnimeComponent implements OnInit {
     this.popularAnimes = this.sliceAnime(this.popularAnimes, 0, 12);
   }
 
+  // like & dislike anime
   toggleLike(selectedAnime:Anime) : void {
     selectedAnime.isLiked = !selectedAnime.isLiked;
     this.iziToast.destroy();

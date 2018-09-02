@@ -19,6 +19,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() { }
   
+  // like / dislike anime
   toggleLike(selectedAnime:Anime) : void {
     selectedAnime.isLiked = !selectedAnime.isLiked;
     if(selectedAnime.isLiked) {
