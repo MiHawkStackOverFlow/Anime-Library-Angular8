@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
-import { ChangeDetectorRef, NgZone } from '@angular/core';
 
 // created modules
 import { AnimeModule } from './anime/anime.module';
@@ -16,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 // created components
 import { AppComponent } from './app.component';
-
 
 // redux store
 import { AnimeAppState, rootReducer, INITIAL_STATE } from './core/redux/store';

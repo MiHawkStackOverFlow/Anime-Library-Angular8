@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { myAnimeList } from '../../../shared/mock-data/mock-animes';
-import { Anime } from '../../../shared/interfaces/anime';
+import { myAnimeList } from '../../model/mock-animes';
+import { Anime } from '../../model/anime';
 
 import { NgRedux, select } from '@angular-redux/store';
 import { AnimeAppState } from '../../../core/redux/store';

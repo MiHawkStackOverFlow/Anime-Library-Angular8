@@ -3,8 +3,8 @@ import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LandingPageComponent } from './landing-page.component';
-import { NaturalType } from './../shared/pipes/natural-type.pipe';
-import { Villain } from '../shared/interfaces/villain';
+import { NaturalType } from './../../shared/pipes/natural-type.pipe';
+import { Villain } from '../../shared/model/villain';
 
 @Component({selector: 'app-carousel', template: ''})
 class CarouselStubComponent {}

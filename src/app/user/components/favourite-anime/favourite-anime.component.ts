@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-import { Anime } from '../../../shared/interfaces/anime';
+import { Anime } from '../../../anime/model/anime';
 import { LIKE_ANIME, DISLIKE_ANIME, DISLIKE_ALL_ANIME } from '../../../core/redux/actions';
 import { AnimeAppState } from '../../../core/redux/store';
 import { Observable } from 'rxjs';

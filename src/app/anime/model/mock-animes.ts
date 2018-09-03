@@ -1,4 +1,4 @@
-import { Anime } from '../interfaces/anime';
+import { Anime } from './anime';
 
 export const myAnimeList: Array<Anime> = [
     { name: "Angel Beats",         episodes: 13,  genre: "Drama",       rating: 7.8, popularity: "Low",      isLiked: false, 

@@ -1,4 +1,4 @@
-import { Villain } from '../interfaces/villain';
+import { Villain } from './villain';
 
 export const villains: Array<Villain> = [ 
     { image: 'https://img00.deviantart.net/4566/i/2018/023/c/e/vegeta_by_wizyakuza-dc0zqa9.jpg',

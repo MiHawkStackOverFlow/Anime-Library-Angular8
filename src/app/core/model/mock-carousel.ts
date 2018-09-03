@@ -1,4 +1,4 @@
-import { Carousel } from '../interfaces/carousel';
+import { Carousel } from '../../shared/model/carousel';
 
 export const sliderImages: Array<Carousel> = [ 
     { image: 'https://www.animelab.com/assets/images/home/covers/attack-on-titan-s2.png',
