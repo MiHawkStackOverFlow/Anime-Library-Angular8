@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpinnerService } from './services/spinner.service';
+import { SpinnerService } from './shared/services/spinner.service';
 import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 @Component({

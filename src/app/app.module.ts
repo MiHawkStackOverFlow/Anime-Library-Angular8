@@ -18,6 +18,8 @@ import { AnimeListComponent } from './anime-list/anime-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { PopularAnimeComponent } from './popular-anime/popular-anime.component';
 import { FavouriteAnimeComponent } from './favourite-anime/favourite-anime.component';
+import { TableComponent } from './table/table.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 // redux store
 import { AnimeAppState, rootReducer, INITIAL_STATE } from './shared/redux/store';
@@ -43,6 +45,8 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
     LandingPageComponent,
     PopularAnimeComponent,
     FavouriteAnimeComponent,
+    TableComponent,
+    CarouselComponent,
     NaturalType
   ],
   providers: [ ],
