@@ -2,9 +2,9 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { AnimeListComponent }   from './anime/anime-list/anime-list.component';
+import { AnimeListComponent }   from './anime/components/anime-list/anime-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { PopularAnimeComponent } from './anime/popular-anime/popular-anime.component';
+import { PopularAnimeComponent } from './anime/components/popular-anime/popular-anime.component';
 
 export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
