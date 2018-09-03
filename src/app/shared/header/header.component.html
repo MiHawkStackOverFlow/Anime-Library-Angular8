@@ -1,5 +1,6 @@
 <header>   
-  <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- actual website header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -20,13 +21,31 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Log In</a></li>
+                            <li><a (click)="signin()" data-toggle="modal" data-target="#myModal">Log In</a></li>
                             <li><a href="#">Sign Up</a></li>
                             <li><a href="#">My <i class="fa fa-heart"></i>  Animes  {{ (animes | async).length }}</a></li> 
                         </ul>
                     </li>
                 </ul>
             </div>
-        </div>
-  </nav>              
+        </div>  
+    </nav>
+    <!-- Modal box for sign in -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Login Modal Work In Progress</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>    
+    </div>            
 </header>
