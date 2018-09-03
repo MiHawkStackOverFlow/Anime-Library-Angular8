@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-import { AnimeAppState } from '../redux/store';
+import { AnimeAppState } from '../../redux/store';
 
 @Component({
   selector: 'app-header',

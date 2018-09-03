@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { timer, Observable, Subscription } from 'rxjs';
-import { Carousel } from '../interfaces/carousel';
+import { Carousel } from '../../interfaces/carousel';
 declare var $: any;
 
 @Component({

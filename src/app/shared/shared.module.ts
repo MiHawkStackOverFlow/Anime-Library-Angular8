@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 
 // components
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TableComponent } from './table/table.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   imports: [ CommonModule, AppRoutingModule ],
