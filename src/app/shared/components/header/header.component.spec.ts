@@ -6,8 +6,8 @@ import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/testing'
 import { NgRedux } from '@angular-redux/store';
 
 import { HeaderComponent } from './header.component';
-import { RouterLinkDirectiveStub } from '../../../testing/router-link-directive-stub';
-import { AnimeAppState } from '../redux/store';
+import { RouterLinkDirectiveStub } from '../../../../testing/router-link-directive-stub';
+import { AnimeAppState } from '../../redux/store';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

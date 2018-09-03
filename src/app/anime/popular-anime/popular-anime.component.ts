@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { myAnimeList } from '../shared/mock-data/mock-animes';
-import { Anime } from '../shared/interfaces/anime';
+import { myAnimeList } from '../../shared/mock-data/mock-animes';
+import { Anime } from '../../shared/interfaces/anime';
 
 import { NgRedux, select } from '@angular-redux/store';
-import { AnimeAppState } from '../shared/redux/store';
-import { LIKE_ANIME, DISLIKE_ANIME } from '../shared/redux/actions';
+import { AnimeAppState } from '../../shared/redux/store';
+import { LIKE_ANIME, DISLIKE_ANIME } from '../../shared/redux/actions';
 import { Ng2IzitoastService } from 'ng2-izitoast';
 
 @Component({
