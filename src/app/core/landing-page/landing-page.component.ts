@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import { Carousel } from '../shared/interfaces/carousel';
-import { Villain } from '../shared/interfaces/villain';
+import { Carousel } from '../../shared/interfaces/carousel';
+import { Villain } from '../../shared/interfaces/villain';
 
-import { sliderImages } from '../shared/mock-data/mock-carousel';
-import { villains } from '../shared/mock-data/mock-villains';
+import { sliderImages } from '../../shared/mock-data/mock-carousel';
+import { villains } from '../../shared/mock-data/mock-villains';
 
 @Component({
   selector: 'app-landing-page',

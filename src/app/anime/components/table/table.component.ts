@@ -3,8 +3,8 @@ import { Anime } from '../../../shared/interfaces/anime';
 import { myAnimeList } from '../../../shared/mock-data/mock-animes';
 
 import { NgRedux, select } from '@angular-redux/store';
-import { AnimeAppState } from '../../../shared/redux/store';
-import { LIKE_ANIME, DISLIKE_ANIME } from '../../../shared/redux/actions';
+import { AnimeAppState } from '../../../core/redux/store';
+import { LIKE_ANIME, DISLIKE_ANIME } from '../../../core/redux/actions';
 
 @Component({
   selector: 'app-table',

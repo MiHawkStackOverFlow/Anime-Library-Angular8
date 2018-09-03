@@ -3,8 +3,8 @@ import { NgRedux } from '@angular-redux/store';
 import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/testing';
 
 import { FavouriteAnimeComponent } from './favourite-anime.component';
-import { LIKE_ANIME, DISLIKE_ANIME, DISLIKE_ALL_ANIME } from '../shared/redux/actions';
-import { AnimeAppState } from '../shared/redux/store';
+import { LIKE_ANIME, DISLIKE_ANIME, DISLIKE_ALL_ANIME } from '../../../core/redux/actions';
+import { AnimeAppState } from '../../../core/redux/store';
 
 describe('FavouriteAnimeComponent', () => {
   let component: FavouriteAnimeComponent;
