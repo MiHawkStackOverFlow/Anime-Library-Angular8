@@ -28,16 +28,7 @@
     </section>
 
     <section role="section" class="darkGreyBackGround p10-top">
-        <div *ngFor="let villain of animeVillains" class="tp-wrapper col-md-3">
-            <div class="tp-box" (mouseenter)="toggleFlip(villain)" (mouseleave)="toggleFlip(villain)" [@flipState]="villain.flip">
-                <div class="tp-box__side tp-box__front">
-                    <img [src]="villain.image" alt="{{ villain.alt }}" class="inheritHeightWidth"> 
-                </div>
-                <div class="tp-box__side tp-box__back">
-                    {{ villain.description }}
-                </div>
-            </div>
-        </div>
+        <app-villain-list [animeVillains]="animeVillains" style="width:100%;"></app-villain-list>
     </section>        
     
     <section role="section" class="displayBlock">
