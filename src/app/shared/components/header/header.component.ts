@@ -9,7 +9,7 @@ import { AnimeAppState } from '../../../core/redux/store';
 })
 export class HeaderComponent implements OnInit {
   @select() animes;
-  @Input() title: string;
+  @Input('title') headerTitle: string;
   today: number = Date.now();
   
   constructor(private ngRedux: NgRedux<AnimeAppState>) { }

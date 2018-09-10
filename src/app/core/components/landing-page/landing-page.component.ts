@@ -13,6 +13,7 @@ import { villains } from '../../../villain/model/mock-villains';
 })
 export class LandingPageComponent implements OnInit {
   carouselHeight: number = 500;
+  slideShow: boolean = true;
   allVillains: Array<Villain>;
   // inputs to other components
   animeVillains: Array<Villain>;

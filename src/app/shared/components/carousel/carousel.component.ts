@@ -11,13 +11,14 @@ declare var $: any;
 export class CarouselComponent implements OnInit {
   @Input() sliderImages: Array<Carousel>;
   @Input() sliderHeight: number;
+  @Input() slideShow: boolean;  
   
   subscribe: Subscription;
 
   constructor() { }
 
   // start carousel slideshow using rxjs timer
-  slideShow(): void {
+  startSlideShow(): void {
     let source: Observable<number> = timer(3000, 4000);
     this.subscribe = source.subscribe(() => {
       ($("#myCarousel") as any).carousel("next");
@@ -25,7 +26,17 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.slideShow();
+    if(this.slideShow) {
+      this.startSlideShow();
+    }
+  }
+
+  nextSlide(): void {
+    ($("#myCarousel") as any).carousel("next");
+  }
+
+  previousSlide(): void {
+    ($("#myCarousel") as any).carousel("prev");
   }
 
   ngOnDestroy() {

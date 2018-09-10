@@ -6,10 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  @Input() title: string;
+  footerTitle = '';
   constructor() { }
 
-  ngOnInit() {
+  @Input()
+  set title(title:string) {
+    this.footerTitle = (title.toUpperCase()) || `ABHISHEK'S ANIME LIBRARY`;
   }
+
+  ngOnInit() { }
 
 }

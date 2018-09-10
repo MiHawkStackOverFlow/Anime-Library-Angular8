@@ -32,6 +32,10 @@
     </section>        
     
     <section role="section" class="displayBlock">
-        <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight"></app-carousel>
+        <div class="carousel-button">
+            <button (click)="mainPageCarousel.previousSlide()" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span>Previous Slide</button>
+            <button (click)="mainPageCarousel.nextSlide()" type="button" class="btn btn-default slider-button">Next Slide <span class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>
+        <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight" [slideShow]="slideShow" #mainPageCarousel></app-carousel>
     </section>
 </main>

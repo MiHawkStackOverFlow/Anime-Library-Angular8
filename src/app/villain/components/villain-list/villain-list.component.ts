@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { Villain } from '../../../villain/model/villain';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -20,13 +20,14 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])  
   ]
 })
-export class VillainListComponent implements OnInit {
+export class VillainListComponent implements OnChanges {
   @Input() animeVillains: Array<Villain> = [];
+  changeLog: string[] = [];
 
   constructor() {
     // set all anime villains flip to inactive initially
     this.setFlip(this.animeVillains);
-   }
+  }
 
   // set flip property to inactive
   setFlip(villains: Array<Villain>): void {
@@ -40,7 +41,35 @@ export class VillainListComponent implements OnInit {
    villain['flip'] = (villain['flip'] == 'active') ? 'inactive' : 'active';
   }
 
-  ngOnInit() {
-  }
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+    // console.log("Changes", changes);
+    let log: string[] = [];
+    for (let propName in changes) {
+      // get the animeVillains changes object
+      let changedProp = changes[propName];
+      
+      // get current values
+      let currentArray = changedProp.currentValue;
+      let currentValues: Array<string> = [];
+      currentArray.forEach(element => {
+        currentValues.push(element.alt);
+      });
+
+      // log the first change and then subsequent changes
+      if (changedProp.isFirstChange()) {
+        log.push(`Initial villains of ${propName} set to ${currentValues}`);
+      } else {
+        let previousArray = changedProp.previousValue;
+        let previousValues: Array<string> = [];
+        previousArray.forEach(element => {
+          previousValues.push(element.alt);
+        });
+        log.push(`${propName} changed from ${previousValues} to  ${currentValues}`);
+      }
+
+    }
+    this.changeLog.push(log.join(', '));
+    console.info("Change logs", this.changeLog);
+  }  
 
 }
