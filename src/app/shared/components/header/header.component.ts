@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { AnimeAppState } from '../../../core/redux/store';
+
+import { SignupComponent } from './../../../user/components/signup/signup.component';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +14,9 @@ export class HeaderComponent implements OnInit {
   @Input('title') headerTitle: string;
   today: number = Date.now();
   
+  signUpModal :SignupComponent;
+  
   constructor(private ngRedux: NgRedux<AnimeAppState>) { }
-  // {{ (animes | async).length }}
 
   ngOnInit() {
   }

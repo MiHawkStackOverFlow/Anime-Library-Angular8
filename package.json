@@ -32,6 +32,7 @@
     "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "ng2-izitoast": "^2.0.0",
+    "ngx-bootstrap": "^3.0.1",
     "popper.js": "^1.14.3",
     "redux": "^4.0.0",
     "rxjs": "^6.2.1",
