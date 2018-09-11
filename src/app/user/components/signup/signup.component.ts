@@ -1,4 +1,5 @@
 import { Component, ViewChild, Input } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
@@ -8,9 +9,16 @@ import { ModalDirective } from 'ngx-bootstrap';
 })
 export class SignupComponent {
   @ViewChild('signUpModal') public signUpModal:ModalDirective;
-  // @Input() title:string;
+  signUpForm = this.fb.group({
+     name: [''],
+     email: ['', Validators.required ],
+     password: ['', Validators.required ],
+     confirmPassword: ['', Validators.required ],
+     gender: [''],
+     updates: ['']
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   show(){
     this.signUpModal.show();
