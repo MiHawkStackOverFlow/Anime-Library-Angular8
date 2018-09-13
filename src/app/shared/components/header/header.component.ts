@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ViewChild, ViewContainerRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgRedux, select } from '@angular-redux/store';
-import { AnimeAppState } from '../../../core/redux/store';
 
+import { AnimeAppState } from '../../../core/redux/store';
 import { SignupComponent } from './../../../user/components/signup/signup.component';
 
 @Component({
@@ -16,9 +17,12 @@ export class HeaderComponent implements OnInit {
   
   signUpModal :SignupComponent;
   
-  constructor(private ngRedux: NgRedux<AnimeAppState>) { }
+  constructor(private ngRedux: NgRedux<AnimeAppState>, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  goToUserList() {
+    this.router.navigateByUrl('/user-list');
   }
 
 }

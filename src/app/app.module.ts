@@ -3,8 +3,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
-
 
 // created modules
 import { AnimeModule } from './anime/anime.module';
@@ -28,6 +28,7 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
     // external modules
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     NgReduxModule,
     Ng2IziToastModule,
     // app modules
