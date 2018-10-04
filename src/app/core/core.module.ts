@@ -8,9 +8,12 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 // created pipes
 import { NaturalType } from './../shared/pipes/natural-type.pipe';
 
+// created directives
+import { RainbowDirective } from './directives/rainbow.directive';
+
 @NgModule({
   imports: [ CommonModule, SharedModule, VillainModule ],
   exports: [ LandingPageComponent ],
-  declarations: [ LandingPageComponent, NaturalType ]
+  declarations: [ LandingPageComponent, NaturalType, RainbowDirective ]
 })
 export class CoreModule { }
