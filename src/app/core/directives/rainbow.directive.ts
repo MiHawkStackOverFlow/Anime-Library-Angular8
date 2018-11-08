@@ -12,7 +12,8 @@ export class RainbowDirective {
     @HostBinding('style.color') color: string;
     @HostBinding('style.border-color') borderColor: string;
 
-    @HostListener('keydown') newColor() {
+    @HostListener('keydown', ['$event']) 
+    newColor() {
         const colorPick = Math.floor(Math.random() * this.possibleColors.length);
         this.color = this.borderColor = this.possibleColors[colorPick];
     }

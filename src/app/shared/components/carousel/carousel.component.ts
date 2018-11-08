@@ -13,14 +13,14 @@ export class CarouselComponent implements OnInit {
   @Input() sliderHeight: number;
   @Input() slideShow: boolean;  
   
-  subscribe: Subscription;
+  subscription: Subscription;
 
   constructor() { }
 
   // start carousel slideshow using rxjs timer
   startSlideShow(): void {
     let source: Observable<number> = timer(3000, 4000);
-    this.subscribe = source.subscribe(() => {
+    this.subscription = source.subscribe(() => {
       ($("#myCarousel") as any).carousel("next");
     });
   }
@@ -40,8 +40,8 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if(this.subscribe) {
-      this.subscribe.unsubscribe();
+    if(this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 
