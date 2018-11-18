@@ -1,0 +1,9 @@
+<main role="main">
+    <section class="content listSection" style="
+    background-image: url('https://pre00.deviantart.net/59bc/th/pre/i/2013/143/c/1/edo_minato_vs_edo_madara_by_lukebig-d666fxa.png');">  
+       <h1 class="headerDecorator">{{ popularAnimeHeading }}</h1>    
+    </section>
+    <section role="section" class="lightGrey">
+        <app-anime-pic-list [popularAnimes]= "popularAnimes" (toggledAnime)="toggleLike($event)"></app-anime-pic-list>              
+    </section>   
+</main>

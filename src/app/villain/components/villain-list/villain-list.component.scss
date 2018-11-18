@@ -1,0 +1,27 @@
+@import '~scss/variables';
+
+// animation css
+
+.tp-wrapper {
+    perspective: 800px;
+}
+  
+.tp-box {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.tp-box__side {
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.tp-box__front {
+    background: $black;
+}
+.tp-box__back {
+    @extend .tp-box__front;
+    transform: rotateY(179.9deg);
+}
+  
+// animation css end

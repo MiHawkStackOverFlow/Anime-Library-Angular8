@@ -28,10 +28,10 @@ import { click }              from '../testing';
 
 import { AppModule }            from './app.module';
 import { AppComponent }         from './app.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AnimeListComponent }   from './anime-list/anime-list.component';
-import { PopularAnimeComponent } from './popular-anime/popular-anime.component';
-import { HeaderComponent } from './shared/header/header.component';
+import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
+import { AnimeListComponent }   from './anime/components/anime-list/anime-list.component';
+import { PopularAnimeComponent } from './anime/components/popular-anime/popular-anime.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 let comp:     AppComponent;
 let fixture:  ComponentFixture<AppComponent>;
