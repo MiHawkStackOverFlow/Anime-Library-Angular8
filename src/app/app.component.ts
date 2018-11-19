@@ -8,12 +8,12 @@ import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, Navigatio
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = `Abhishek's Anime Library`;
+  title = `Abhishek's Anime Library`;
 
-  constructor(public spinner: SpinnerService, private router: Router){
+  constructor(public spinner: SpinnerService, private router: Router) {
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
-    })
+    });
   }
 
   // Shows and hides the loading spinner during RouterEvent changes
@@ -39,5 +39,4 @@ export class AppComponent {
       }, 2000);
     }
   }
- 
 }

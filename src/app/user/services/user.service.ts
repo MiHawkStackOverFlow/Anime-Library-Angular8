@@ -23,7 +23,7 @@ export class UserService {
   constructor(private http: HttpClient,  httpErrorHandler: HttpErrorHandler) {
     this.handleError = httpErrorHandler.createHandleError('UserService');
   }
-  
+
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.url, user, httpOptions)
       .pipe(
@@ -48,8 +48,8 @@ export class UserService {
         catchError(this.handleError('updateUser' , user))
       );
   }
-  
-  deleteUser(id:number): Observable<{}> {
+
+  deleteUser(id: number): Observable<{}> {
     const deleteUrl = `${this.url}/${id}`;
     return this.http.delete(deleteUrl, httpOptions)
       .pipe(
