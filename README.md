@@ -111,10 +111,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     
     to app module add following:- 
     
-    import { NgRedux, NgReduxModule } from '@angular-redux/store';
-    imports [NgReduxModule]
-    import { IAppState, rootReducer, INITIAL_STATE } from './store';
+    `import { NgRedux, NgReduxModule } from '@angular-redux/store';`
+    
+    `imports [NgReduxModule]`
+    
+    `import { IAppState, rootReducer, INITIAL_STATE } from './store';`
 
-    constructor(ngRedux: NgRedux<IAppState>) {
-      ngRedux.configureStore(rootReducer, INITIAL_STATE);
-    }
+    
+    `constructor(ngRedux: NgRedux<IAppState>) {`
+    
+    `  ngRedux.configureStore(rootReducer, INITIAL_STATE);`
+    
+    `}`
