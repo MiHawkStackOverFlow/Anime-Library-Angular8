@@ -85,3 +85,34 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 8. Added iziToast as following :-
     - https://www.npmjs.com/package/ng2-izitoast
     - Note :- (Had to add css and js to angular json file importing them from node modules) 
+
+9. Flux and Redux reads and installation :-
+
+// what is flux
+Flux (English) means :-
+1. the action or process of flowing or flowing out.
+2. continuous/constant change.
+
+// what is a flux architecture and FLUX vs MVC design pattern 
+https://medium.com/hacking-and-gonzo/flux-vs-mvc-design-patterns-57b28c0f71b7
+https://stackoverflow.com/questions/33447710/mvc-vs-flux-bidirectional-vs-unidirectional/33455847
+https://softwareengineering.stackexchange.com/questions/295119/understanding-flux-pattern
+
+Understanding need of redux
+https://almerosteyn.com/2016/08/redux-explained-again
+https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/
+
+// redux with angular2
+
+npm install redux @angular-redux/store --save
+
+to app module add following:- 
+
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
+imports [NgReduxModule]
+
+import { IAppState, rootReducer, INITIAL_STATE } from './store';
+
+constructor(ngRedux: NgRedux<IAppState>) {
+  ngRedux.configureStore(rootReducer, INITIAL_STATE);
+}
