@@ -3,7 +3,7 @@
         <form id="indexSearchForm">
             <label for="search">{{ searchTitle | naturalType:100 }}</label>
             <div class="input-group">
-                <input searchRainbow list="topAnimes" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
+                <input searchRainbow [(ngModel)]="anime.name" name="animeSearch" list="topAnimes" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
@@ -15,7 +15,8 @@
                     <option value="Attack On Titan">
                 </datalist>
             </div>
-        </form>           
+        </form>
+        <app-do-check [anime]="anime"></app-do-check>           
     </section>
 
     <section class="darkGreyBackGround">
