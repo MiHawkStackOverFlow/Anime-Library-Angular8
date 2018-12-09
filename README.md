@@ -64,6 +64,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    
    `b. https://www.sitepoint.com/creating-web-style-guide/`
 
+## Installations
+
 5. SASS installation into project and usage.
 
     - ng config schematics.@schematics/angular:component.styleext sass (angular6+)
@@ -86,7 +88,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - https://www.npmjs.com/package/ng2-izitoast
     - Note :- (Had to add css and js to angular json file importing them from node modules) 
 
-9. Flux and Redux reads and installation :-
+## Flux and Redux reads and installation :-
 
     // what is flux
 
