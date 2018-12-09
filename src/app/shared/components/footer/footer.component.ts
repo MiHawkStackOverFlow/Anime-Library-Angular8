@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   footerTitle = '';
-  constructor() { }
+  constructor(private router: Router) { }
 
   @Input()
-  set title(title:string) {
+  set title(title: string) {
     this.footerTitle = (title.toUpperCase()) || `ABHISHEK'S ANIME LIBRARY`;
   }
 
   ngOnInit() { }
+
+  goToContactUs() {
+    this.router.navigateByUrl('/contact-us');
+  }
 
 }

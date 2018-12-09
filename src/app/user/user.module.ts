@@ -8,12 +8,13 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 
 import { HttpErrorHandler } from '../shared/services/http-error-handler.service';
-import { MessageService } from '../shared/services/message.service'; 
+import { MessageService } from '../shared/services/message.service';
+import { ContactComponent } from './components/contact/contact.component'; 
 
 @NgModule({
   imports: [ CommonModule, ModalModule.forRoot(), ReactiveFormsModule, FormsModule ],
   exports: [ FavouriteAnimeComponent, SignupComponent ],
-  declarations: [ FavouriteAnimeComponent, SignupComponent, UserListComponent ],
+  declarations: [ FavouriteAnimeComponent, SignupComponent, UserListComponent, ContactComponent ],
   providers: [ HttpErrorHandler, MessageService ]
 })
 export class UserModule { }

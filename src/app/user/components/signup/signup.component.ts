@@ -8,7 +8,10 @@ import { ModalDirective } from 'ngx-bootstrap';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  @ViewChild('signUpModal') public signUpModal:ModalDirective;
+  @ViewChild('signUpModal') public signUpModal: ModalDirective;
+
+  constructor(private fb: FormBuilder) { }
+
   signUpForm = this.fb.group({
      name: [''],
      email: ['', Validators.required ],
@@ -18,14 +21,12 @@ export class SignupComponent {
      updates: ['']
   });
 
-  constructor(private fb: FormBuilder) { }
-
-  show(){
+  show() {
     this.signUpModal.show();
   }
-  
-  hide(){
+
+  hide() {
     this.signUpModal.hide();
-  }  
+  }
 
 }
