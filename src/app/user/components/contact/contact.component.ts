@@ -10,7 +10,7 @@ import { ContactRequest } from './../../model/contact-request';
 export class ContactComponent {
   title = 'Contact Us';
   contactForm: FormGroup;
-  countries = [ 'India', 'Japan', 'USA', 'Germany', 'Italy', 'France'];
+  countries = ['India', 'Japan', 'USA', 'Germany', 'Italy', 'France'];
   requestTypes = ['Claim', 'Feedback', 'Help Request'];
 
   constructor() {
