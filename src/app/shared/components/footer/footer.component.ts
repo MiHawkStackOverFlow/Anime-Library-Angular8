@@ -17,8 +17,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() { }
 
-  goToContactUs() {
-    this.router.navigateByUrl('/contact-us');
+  goToPage(routeName: string) {
+    this.router.navigateByUrl('/' + routeName);
   }
-
 }
