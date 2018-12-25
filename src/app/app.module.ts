@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    Additional benefits of HttpClient include testability features, typed request and response objects,
    request and response interception, Observable apis, and streamlined error handling. */
 import { HttpClientModule } from '@angular/common/http';
+/*An in-memory web api for Angular demos and tests that emulates CRUD operations over a RESTy API.
+It intercepts Angular Http and HttpClient requests that would otherwise go to the remote server and
+redirects them to an in-memory data store that you control.*/
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';

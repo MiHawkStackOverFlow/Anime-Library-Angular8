@@ -15,10 +15,10 @@ export class InMemoryDataService implements InMemoryDbService {
 
     // Overrides the genId method to ensure that a anime always has an id.
     // If the animes array is empty,
-    // the method below returns the initial number (11).
+    // the method below returns the initial number (1).
     // if the animes array is not empty, the method below returns the highest
-    // hero id + 1.
-    // genId(animes: Anime[]): number {
-    //    return animes.length > 0 ? Math.max(...animes.map(anime => anime.id)) + 1 : 1;
-    // }
+    // anime id + 1.
+    genId(animes: Anime[]): number {
+       return animes.length > 0 ? Math.max(...animes.map(anime => anime.id)) + 1 : 1;
+    }
 }
