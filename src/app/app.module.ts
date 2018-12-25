@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    Additional benefits of HttpClient include testability features, typed request and response objects,
    request and response interception, Observable apis, and streamlined error handling. */
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 // created modules
@@ -34,6 +36,12 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     NgReduxModule,
     Ng2IziToastModule,
     // app modules
