@@ -3,17 +3,19 @@
         <form id="indexSearchForm">
             <label for="search">{{ searchTitle | naturalType:100 }}</label>
             <div class="input-group">
-                <input searchRainbow list="topAnimes" type="text" class="form-control borderRadiusZero" size="50" placeholder="What are you looking for?" required>
-                <div class="input-group-btn">
+                <input searchRainbow list="topAnimes" type="text" class="form-control borderRadiusZero" 
+                       size="50" placeholder="What are you looking for?" #searchBox id="search-box" (input)="search(searchBox.value)"
+                        required>
+                <!-- <div class="input-group-btn">
                     <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
-                </div>
-                <datalist id="topAnimes">
-                    <option value="Dragon Ball Z">
-                    <option value="One Piece">
-                    <option value="Code Geass">
-                    <option value="Naruto">
-                    <option value="Attack On Titan">
-                </datalist>
+                </div> -->
+                <ul class="search-result">
+                    <li *ngFor="let anime of animes$ | async" >
+                        <a routerLink="/detail/{{anime.id}}">
+                            {{anime.name}}
+                        </a>
+                    </li>
+                </ul>
             </div>
         </form>           
     </section>

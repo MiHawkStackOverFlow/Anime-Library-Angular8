@@ -1,7 +1,7 @@
 <div *ngFor="let anime of popularAnimes" class="col-md-3 textCenter">
   <div class="tp-box">
       <div class="tp-box__side">
-          <img src="{{ anime.imageUrl }}" alt="{{ anime.name }}" class="inheritHeightWidth">
+          <img src="{{ anime.imageUrl }}" alt="{{ anime.name }}" class="inheritHeightWidth" routerLink="/detail/{{anime.id}}">
           <div class="animeLike" (click)="likeDislikeAnime(anime);">                       
               <!-- <i class="fa fa-heart-o"> </i> Like -->
               <i class="fa" [ngClass]="{ 'fa-heart': anime.isLiked, 'fa-heart-o': !anime.isLiked  }"></i> 

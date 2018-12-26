@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { AnimeListComponent } from './anime/components/anime-list/anime-list.component';
+import { AnimeDetailComponent } from './anime/components/anime-detail/anime-detail.component';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { PopularAnimeComponent } from './anime/components/popular-anime/popular-anime.component';
 import { UserListComponent } from './user/components/user-list/user-list.component';
@@ -13,6 +14,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: LandingPageComponent },
       { path: 'anime-list', component: AnimeListComponent },
+      { path: 'detail/:id', component: AnimeDetailComponent },
       { path: 'popular-anime', component: PopularAnimeComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'contact-us', component: ContactComponent },
