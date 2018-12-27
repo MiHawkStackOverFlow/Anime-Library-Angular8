@@ -13,9 +13,9 @@ import { OrderComponent } from './user/components/order/order.component';
 export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: LandingPageComponent },
-      { path: 'anime-list', component: AnimeListComponent },
-      { path: 'detail/:id', component: AnimeDetailComponent },
-      { path: 'popular-anime', component: PopularAnimeComponent },
+      { path: 'anime-list', loadChildren: './anime/anime.module#AnimeModule' },
+      { path: 'detail/:id', loadChildren: './anime/anime.module#AnimeModule' },
+      { path: 'popular-anime', loadChildren: './anime/anime.module#AnimeModule' },
       { path: 'user-list', component: UserListComponent },
       { path: 'contact-us', component: ContactComponent },
       { path: 'order', component: OrderComponent }
