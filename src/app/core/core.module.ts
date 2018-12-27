@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 import { VillainModule } from '../villain/villain.module';
@@ -12,7 +13,7 @@ import { NaturalType } from './../shared/pipes/natural-type.pipe';
 import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
-  imports: [ CommonModule, SharedModule, VillainModule ],
+  imports: [ CommonModule, SharedModule, VillainModule, RouterModule ],
   exports: [ LandingPageComponent ],
   declarations: [ LandingPageComponent, NaturalType, RainbowDirective ]
 })

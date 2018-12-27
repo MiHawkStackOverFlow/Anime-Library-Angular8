@@ -2,7 +2,8 @@ import { Anime } from './anime';
 
 export const myAnimeList: Array<Anime> = [
     { id: 1, name: 'Angel Beats',         episodes: 13,  genre: 'Drama',       rating: 7.8, popularity: 'Low',      isLiked: false,
-          imageUrl: 'https://i.ebayimg.com/images/g/YrUAAOSwvg9XfB5h/s-l300.jpg' },
+          imageUrl: 'https://i.ebayimg.com/images/g/YrUAAOSwvg9XfB5h/s-l300.jpg',
+      description: 'Angel Beats! is a multimedia project consisting of an anime series, a manga series, 4-panel comic strips (4-koma) and a novel. The anime series acts as the central plot source for the remaining material, while the mini-novel and manga act as an expansion to the series as prequel and adaptation-expansion respectively.' },
     { id: 2, name: 'Attack On Titan',     episodes: 40,  genre: 'Apocalyptic', rating: 8.7, popularity: 'High',     isLiked: false,
           imageUrl: 'https://cdn.europosters.eu/image/750/posters/attack-on-titan-shingeki-no-kyojin-attack-i22797.jpg' },
     { id: 3, name: 'Clannad',             episodes: 24,  genre: 'Fantasy',     rating: 7.5, popularity: 'Low',      isLiked: false,

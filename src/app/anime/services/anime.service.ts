@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class AnimeService {
 
-  private animesUrl = 'api/animes';  // URL to web api
+  private animesUrl = 'api/myAnimeList';  // URL to web api
 
   constructor(private http: HttpClient,
               private messageService: MessageService) { }

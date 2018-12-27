@@ -10,7 +10,7 @@ import { myAnimeList } from '../../anime/model/mock-animes';
 })
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
-        return myAnimeList;
+        return { myAnimeList };
     }
 
     // Overrides the genId method to ensure that a anime always has an id.

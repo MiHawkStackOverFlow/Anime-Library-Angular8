@@ -7,4 +7,5 @@ export interface Anime {
     popularity: string;
     isLiked: boolean;
     imageUrl: string;
+    description?: string;
 }
