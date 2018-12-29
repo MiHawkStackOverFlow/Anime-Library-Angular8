@@ -1,43 +1,41 @@
-<main role="main">
-    <section class="jumbotron content text-center" style="background-image: url('https://images4.alphacoders.com/738/thumb-1920-73806.jpg');">
-        <form id="indexSearchForm">
-            <label for="search">{{ searchTitle | naturalType:100 }}</label>
-            <div class="input-group">
-                <input searchRainbow list="topAnimes" type="text" class="form-control borderRadiusZero" 
-                       size="50" placeholder="What are you looking for?" #searchBox id="search-box" (input)="search(searchBox.value)"
-                        required>
-                <!-- <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
-                </div> -->
-                <ul class="search-result">
-                    <li *ngFor="let anime of animes$ | async" >
-                        <a routerLink="/detail/{{anime.id}}">
-                            {{anime.name}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </form>           
-    </section>
-
-    <section class="darkGreyBackGround">
-        <h3 class="headerDecorator">{{animeVillainsTitle}}</h3>
-        <div class="button-container">
-            <button (click)="sliceData('backward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span></button>
-            <button (click)="sliceData('forward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-right"></span></button>
-            <button type="button" class="btn btn-default slider-button">See All <span class="glyphicon glyphicon-chevron-right"></span></button>
-        </div>    
-    </section>
-
-    <section role="section" class="darkGreyBackGround p10-top">
-        <app-villain-list [animeVillains]="animeVillains" style="width:100%;"></app-villain-list>
-    </section>        
-    
-    <section role="section" class="displayBlock">
-        <div class="carousel-button">
-            <button (click)="mainPageCarousel.previousSlide()" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span>Previous Slide</button>
-            <button (click)="mainPageCarousel.nextSlide()" type="button" class="btn btn-default slider-button">Next Slide <span class="glyphicon glyphicon-chevron-right"></span></button>
+<section class="jumbotron content text-center" style="background-image: url('https://images4.alphacoders.com/738/thumb-1920-73806.jpg');">
+    <form id="indexSearchForm">
+        <label for="search">{{ searchTitle | naturalType:100 }}</label>
+        <div class="input-group">
+            <input searchRainbow list="topAnimes" type="text" class="form-control borderRadiusZero" 
+                    size="50" placeholder="What are you looking for?" #searchBox id="search-box" (input)="search(searchBox.value)"
+                    required>
+            <!-- <div class="input-group-btn">
+                <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
+            </div> -->
+            <ul class="search-result">
+                <li *ngFor="let anime of animes$ | async" >
+                    <a routerLink="/detail/{{anime.id}}">
+                        {{anime.name}}
+                    </a>
+                </li>
+            </ul>
         </div>
-        <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight" [slideShow]="slideShow" #mainPageCarousel></app-carousel>
-    </section>
-</main>
+    </form>           
+</section>
+
+<section class="darkGreyBackGround">
+    <h3 class="headerDecorator">{{animeVillainsTitle}}</h3>
+    <div class="button-container">
+        <button (click)="sliceData('backward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span></button>
+        <button (click)="sliceData('forward')" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button type="button" class="btn btn-default slider-button">See All <span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>    
+</section>
+
+<section role="section" class="darkGreyBackGround p10-top">
+    <app-villain-list [animeVillains]="animeVillains" style="width:100%;"></app-villain-list>
+</section>        
+
+<section role="section" class="displayBlock">
+    <div class="carousel-button">
+        <button (click)="mainPageCarousel.previousSlide()" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span>Previous Slide</button>
+        <button (click)="mainPageCarousel.nextSlide()" type="button" class="btn btn-default slider-button">Next Slide <span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
+    <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight" [slideShow]="slideShow" #mainPageCarousel></app-carousel>
+</section>
