@@ -21,8 +21,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() { }
 
-  goToUserList() {
-    this.router.navigateByUrl('/user-list');
-  }
-
 }

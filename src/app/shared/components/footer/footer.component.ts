@@ -17,7 +17,4 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() { }
 
-  goToPage(routeName: string) {
-    this.router.navigateByUrl('/' + routeName);
-  }
 }
