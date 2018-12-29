@@ -1,46 +1,44 @@
-<main role="main">
-  <section class="content listSection" style="
-  background-image: url('https://wallpapercave.com/wp/wp2598834.jpg');">
-      <h1 class="headerDecorator"> {{title}} </h1>
-  </section>
-  <section role="section" style="
-  background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18042265.jpg');">
-    <form style="margin: 0 auto; padding: 10px;" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-      <div> 
-        <div class="row" formGroupName="personalData" novalidate>
-            <div class="form-group col">
-              <label for="name" style="color: white">Name</label> 
-              <input formControlName="name" class="form-control">
-            </div>
-            
-            <div class="form-group col">
-              <label for="email" style="color: white">Email</label>
-              <input formControlName="email" class="form-control">
-            </div>
-            
-            <div class="form-group col">
-              <label for="country" style="color: white">Country</label>
-              <select formControlName="country" class="form-control">
-                  <option *ngFor="let country of countries" [value]="country">{{country}}</option>
-              </select>
-            </div>  
-        </div>
-        
-        <div class="form-group">
-          <label for="request" style="color: white">Request Type</label>
-          <select formControlName="requestType" class="form-control">
-              <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
-          </select>
-        </div>
+<section class="content listSection" style="
+                      background-image: url('https://wallpapercave.com/wp/wp2598834.jpg');">
+    <h1 class="headerDecorator"> {{title}} </h1>
+</section>
+<section role="section" style="
+background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18042265.jpg');">
+  <form style="margin: 0 auto; padding: 10px;" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div> 
+      <div class="row" formGroupName="personalData" novalidate>
+          <div class="form-group col">
+            <label for="name" style="color: white">Name</label> 
+            <input formControlName="name" class="form-control">
+          </div>
+          
+          <div class="form-group col">
+            <label for="email" style="color: white">Email</label>
+            <input formControlName="email" class="form-control">
+          </div>
+          
+          <div class="form-group col">
+            <label for="country" style="color: white">Country</label>
+            <select formControlName="country" class="form-control">
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+            </select>
+          </div>  
+      </div>
+      
+      <div class="form-group">
+        <label for="request" style="color: white">Request Type</label>
+        <select formControlName="requestType" class="form-control">
+            <option *ngFor="let requestType of requestTypes" [value]="requestType">{{requestType}}</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="message" style="color: white">Message</label>  
-          <textarea formControlName="message" class="form-control"></textarea>
-        </div>
-        
-        <button class="btn btn-default" type="submit" [disabled]="contactForm.pristine">Save</button>
-        <button style="margin:10px;" class="btn btn-warning" type="reset" (click)="revert()" [disabled]="contactForm.pristine">Revert</button>
-    </div>  
-  </form>
-  </section>
-</main>
+      <div class="form-group">
+        <label for="message" style="color: white">Message</label>  
+        <textarea formControlName="message" class="form-control"></textarea>
+      </div>
+      
+      <button class="btn btn-default" type="submit" [disabled]="contactForm.pristine">Save</button>
+      <button style="margin:10px;" class="btn btn-warning" type="reset" (click)="revert()" [disabled]="contactForm.pristine">Revert</button>
+  </div>  
+</form>
+</section>

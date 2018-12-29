@@ -17,7 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       })),
       transition('active => inactive', animate('500ms ease-out')),
       transition('inactive => active', animate('500ms ease-in'))
-    ])  
+    ])
   ]
 })
 export class VillainListComponent implements OnChanges {
@@ -32,18 +32,18 @@ export class VillainListComponent implements OnChanges {
   // set flip property to inactive
   setFlip(villains: Array<Villain>): void {
     villains.forEach(villain => {
-      villain['flip'] = "inactive";
+      villain['flip'] = 'inactive';
     });
   }
 
   // toggle flip to show/hide villain details
   toggleFlip(villain: Villain): void {
-   villain['flip'] = (villain['flip'] == 'active') ? 'inactive' : 'active';
+   villain['flip'] = (villain['flip'] === 'active') ? 'inactive' : 'active';
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
     // console.log("Changes", changes);
-    let log: string[] = [];
+    const log: string[] = [];
     for (let propName in changes) {
       // get the animeVillains changes object
       let changedProp = changes[propName];
@@ -69,7 +69,7 @@ export class VillainListComponent implements OnChanges {
 
     }
     this.changeLog.push(log.join(', '));
-    console.info("Change logs", this.changeLog);
-  }  
+    console.log('Change logs', this.changeLog);
+  }
 
 }

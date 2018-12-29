@@ -1,70 +1,68 @@
-<main role="main">
-    <section class="content listSection" style="
-    background-image: url('https://pixelz.cc/wp-content/uploads/2018/08/fate-stay-night-unlimited-blade-works-uhd-4k-wallpaper.jpg');">
-        <h1 class="headerDecorator"> {{title}} </h1>
-    </section>
-    <section role="section" style="background-color: darkslategray;">
-      <form style="margin: 0 auto; padding: 10px;" [formGroup]="orderForm" (ngSubmit)="onSubmit()" novalidate>
-        
-        <div class="row" formGroupName="personalData" novalidate>
-          <div class="form-group col">
-            <label for="name" style="color: white">Name</label> 
-            <input formControlName="name" class="form-control" placeholder="Name">
-          </div>
-          
-          <div class="form-group col">
-            <label for="email" style="color: white">Email</label>
-            <input formControlName="email" class="form-control" placeholder="Email">
-          </div>
-          
-          <div class="form-group col">
-            <label for="country" style="color: white">Country</label>
-            <select formControlName="country" class="form-control">
-                <option *ngFor="let country of countries" [value]="country" placeholder="country">{{country}}</option>
-            </select>
-          </div>  
-        </div>        
-       
-        <div formArrayName="items" *ngFor="let item of orderForm.get('items').controls; let i = index;">
-          <div class="row" [formGroupName]="i">
-            <div class="form-group col">
-              <input formControlName="name" placeholder="Item name" class="form-control">
-            </div>
-            <div class="form-group col">
-              <input formControlName="description" placeholder="Item description" class="form-control">
-            </div>
-            <div class="form-group col">
-              <input formControlName="price" placeholder="Item price" class="form-control">
-            </div>
-            <div class="form-group col">  
-              <button (click)="deleteItem(i)" class="btn btn-danger">Delete</button>
-            </div>
-            <div *ngIf="item.controls.name.invalid && (item.controls.name.dirty || item.controls.name.touched)" class="alert alert-danger">
-                <div *ngIf="item.controls.name.errors.required">
-                  Name is required.
-                </div>
-                <div *ngIf="item.controls.name.errors.minlength">
-                  Name must be at least 4 characters long.
-                </div>
-                <div *ngIf="item.controls.name.errors.forbiddenName">
-                  Name cannot have word admin
-                </div>
-            </div>
-          </div>
-          <!-- <div style="color: white;">Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }} </div> -->
+<section class="content listSection" style="
+background-image: url('https://pixelz.cc/wp-content/uploads/2018/08/fate-stay-night-unlimited-blade-works-uhd-4k-wallpaper.jpg');">
+    <h1 class="headerDecorator"> {{title}} </h1>
+</section>
+<section role="section" style="background-color: darkslategray;">
+  <form style="margin: 0 auto; padding: 10px;" [formGroup]="orderForm" (ngSubmit)="onSubmit()" novalidate>
+    
+    <div class="row" formGroupName="personalData" novalidate>
+      <div class="form-group col">
+        <label for="name" style="color: white">Name</label> 
+        <input formControlName="name" class="form-control" placeholder="Name">
+      </div>
+      
+      <div class="form-group col">
+        <label for="email" style="color: white">Email</label>
+        <input formControlName="email" class="form-control" placeholder="Email">
+      </div>
+      
+      <div class="form-group col">
+        <label for="country" style="color: white">Country</label>
+        <select formControlName="country" class="form-control">
+            <option *ngFor="let country of countries" [value]="country" placeholder="country">{{country}}</option>
+        </select>
+      </div>  
+    </div>        
+    
+    <div formArrayName="items" *ngFor="let item of orderForm.get('items').controls; let i = index;">
+      <div class="row" [formGroupName]="i">
+        <div class="form-group col">
+          <input formControlName="name" placeholder="Item name" class="form-control">
         </div>
-        
-        <div class="row" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-          <div *ngIf="email.errors.required">
-            Email is required.
-          </div>
-          <div *ngIf="!email.errors.required">
-             Email is invalid  
-          </div>
+        <div class="form-group col">
+          <input formControlName="description" placeholder="Item description" class="form-control">
         </div>
-        
-        <button style="margin:10px;" class="btn btn-success" (click)="addItem()"> Add a Item </button>
-        <button class="btn btn-default" type="submit" [disabled]="orderForm.pristine">Order</button>
-      </form>  
-    </section>
-</main>
+        <div class="form-group col">
+          <input formControlName="price" placeholder="Item price" class="form-control">
+        </div>
+        <div class="form-group col">  
+          <button (click)="deleteItem(i)" class="btn btn-danger">Delete</button>
+        </div>
+        <div *ngIf="item.controls.name.invalid && (item.controls.name.dirty || item.controls.name.touched)" class="alert alert-danger">
+            <div *ngIf="item.controls.name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="item.controls.name.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="item.controls.name.errors.forbiddenName">
+              Name cannot have word admin
+            </div>
+        </div>
+      </div>
+      <!-- <div style="color: white;">Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }} </div> -->
+    </div>
+    
+    <div class="row" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="!email.errors.required">
+          Email is invalid  
+      </div>
+    </div>
+    
+    <button style="margin:10px;" class="btn btn-success" (click)="addItem()"> Add a Item </button>
+    <button class="btn btn-default" type="submit" [disabled]="orderForm.pristine">Order</button>
+  </form>  
+</section>
