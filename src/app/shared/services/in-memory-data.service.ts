@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 
 // for animes
 import { Anime } from '../../anime/model/anime';
-import { myAnimeList } from '../../anime/model/mock-animes';
+import { animes } from '../../anime/model/mock-animes';
+import { villains } from '../../villain/model/mock-villains';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
-        return { myAnimeList };
+        return { animes, villains };
     }
 
     // Overrides the genId method to ensure that a anime always has an id.
