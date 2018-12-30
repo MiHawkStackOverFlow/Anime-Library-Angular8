@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../../model/anime';
-import { myAnimeList } from '../../model/mock-animes';
+import { animes } from '../../model/mock-animes';
 
 import { NgRedux, select } from '@angular-redux/store';
 import { AnimeAppState } from '../../../core/redux/store';
@@ -13,7 +13,7 @@ import { LIKE_ANIME, DISLIKE_ANIME } from '../../../core/redux/actions';
 })
 export class TableComponent implements OnInit {
   isLiked: boolean = false;
-  allAnimes: Array<Anime> = myAnimeList;   
+  allAnimes: Array<Anime> = animes;   
   
   constructor(private ngRedux: NgRedux<AnimeAppState>) { }
 

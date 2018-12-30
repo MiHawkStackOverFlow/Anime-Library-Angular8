@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { myAnimeList } from '../../model/mock-animes';
+import { animes } from '../../model/mock-animes';
 import { Anime } from '../../model/anime';
 
 import { NgRedux, select } from '@angular-redux/store';
@@ -15,7 +15,7 @@ import { Ng2IzitoastService } from 'ng2-izitoast';
 })
 export class PopularAnimeComponent implements OnInit {
   @select() animes;
-  popularAnimes: Array<Anime> = myAnimeList;
+  popularAnimes: Array<Anime> = animes;
   popularAnimeHeading: string = 'Popular Anime Series'; 
 
   constructor(private ngRedux: NgRedux<AnimeAppState>, public iziToast: Ng2IzitoastService) { }

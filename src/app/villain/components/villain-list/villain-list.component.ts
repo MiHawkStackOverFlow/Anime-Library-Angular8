@@ -42,7 +42,7 @@ export class VillainListComponent implements OnChanges {
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    // console.log("Changes", changes);
+    console.log("Changes", changes);
     const log: string[] = [];
     for (let propName in changes) {
       // get the animeVillains changes object
@@ -51,9 +51,11 @@ export class VillainListComponent implements OnChanges {
       // get current values
       let currentArray = changedProp.currentValue;
       let currentValues: Array<string> = [];
-      currentArray.forEach(element => {
-        currentValues.push(element.alt);
-      });
+      if(currentArray) {
+        currentArray.forEach(element => {
+          currentValues.push(element.alt);
+        });
+      }  
 
       // log the first change and then subsequent changes
       if (changedProp.isFirstChange()) {
@@ -61,9 +63,11 @@ export class VillainListComponent implements OnChanges {
       } else {
         let previousArray = changedProp.previousValue;
         let previousValues: Array<string> = [];
-        previousArray.forEach(element => {
-          previousValues.push(element.alt);
-        });
+        if(previousArray) {
+          previousArray.forEach(element => {
+            previousValues.push(element.alt);
+          });
+        }  
         log.push(`${propName} changed from ${previousValues} to  ${currentValues}`);
       }
 

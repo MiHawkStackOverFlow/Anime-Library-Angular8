@@ -24,6 +24,7 @@ export class AnimeDetailComponent implements OnInit {
   }
 
   getAnime(): void {
+    // get id from route parameters and get anime by that id
     this.route.params.subscribe(params => {
         if (params['id']) {
           this.animeService.getAnime(params['id']).subscribe(anime => this.anime = anime);

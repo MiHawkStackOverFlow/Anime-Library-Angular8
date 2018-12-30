@@ -9,7 +9,7 @@ import { Carousel } from '../../../shared/model/carousel';
 import { Villain } from '../../../villain/model/villain';
 
 import { sliderImages } from '../../model/mock-carousel';
-import { villains } from '../../../villain/model/mock-villains';
+import { VillainService } from '../../../villain/services/villain.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -30,13 +30,11 @@ export class LandingPageComponent implements OnInit {
   animes$: Observable<Array<Anime>>;
   private searchTerms = new Subject<string>();
 
-  constructor(private animeService: AnimeService) { }
+  constructor(private animeService: AnimeService, private villainService: VillainService) { }
 
   ngOnInit(): void {
     // set anime villains from data
-    this.allVillains = villains;
-    // anime villains section set to show 4 anime villains
-    this.sliceData('backward');
+    this.getVillains();
     // input to carousel component
     this.carouselImages = sliderImages;
 
@@ -53,13 +51,29 @@ export class LandingPageComponent implements OnInit {
     );
   }
 
+  getVillains(): void {
+    /**
+     * the .subscribe() method of any observable accepts 3 callbacks like this:
+        obs.subscribe(
+          nextCallback,
+          errorCallback,
+          completeCallback
+        );
+     */
+    this.villainService.getVillains().subscribe(
+        villains => this.allVillains = villains,
+        error =>  console.log("Error: ", error),
+        () => this.sliceData('backward')          // on observable call completion call sliceData method
+    ); 
+  }
+
   // slide data to show for villains section
   sliceData(direction: string): void {
-    if (direction === 'backward') {
-      this.animeVillains = this.allVillains.slice(0, 4);
-    } else if (direction === 'forward') {
-      this.animeVillains = this.allVillains.slice(4, 8);
-    }
+      if (direction === 'backward') {
+        this.animeVillains = this.allVillains.slice(0, 4);
+      } else if (direction === 'forward') {
+        this.animeVillains = this.allVillains.slice(4, 8);
+      }
   }
 
   // Push a search term into the observable stream.

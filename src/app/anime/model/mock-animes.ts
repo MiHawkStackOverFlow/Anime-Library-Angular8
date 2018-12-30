@@ -1,6 +1,6 @@
 import { Anime } from './anime';
 
-export const myAnimeList: Array<Anime> = [
+export const animes: Array<Anime> = [
     { id: 1, name: 'Angel Beats',         episodes: 13,  genre: 'Drama',       rating: 7.8, popularity: 'Low',      isLiked: false,
           imageUrl: 'https://i.ebayimg.com/images/g/YrUAAOSwvg9XfB5h/s-l300.jpg',
       description: 'Angel Beats! is a multimedia project consisting of an anime series, a manga series, 4-panel comic strips (4-koma) and a novel. The anime series acts as the central plot source for the remaining material, while the mini-novel and manga act as an expansion to the series as prequel and adaptation-expansion respectively.' },
