@@ -10,9 +10,9 @@ export const routes: Routes = [
       { path: 'anime-list', loadChildren: './anime/anime.module#AnimeModule' },
       { path: 'detail/:id', loadChildren: './anime/anime.module#AnimeModule' },
       { path: 'popular-anime', loadChildren: './anime/anime.module#AnimeModule' },
-      { path: 'user-list', loadChildren: './user/user.module#UserModule' },
-      { path: 'contact-us', loadChildren: './user/user.module#UserModule' },
-      { path: 'order', loadChildren: './user/user.module#UserModule' }
+      // { path: 'user-list', loadChildren: './user/user.module#UserModule' },
+      // { path: 'contact-us', loadChildren: './user/user.module#UserModule' },
+      // { path: 'order', loadChildren: './user/user.module#UserModule' }
 ];
 
 @NgModule({
