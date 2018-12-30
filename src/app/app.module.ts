@@ -18,6 +18,7 @@ import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 // created modules
 import { AnimeModule } from './anime/anime.module';
+import { UserModule } from  './user/user.module'; 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +50,7 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
     Ng2IziToastModule,
     // app modules
     AnimeModule,
+    UserModule,
     AppRoutingModule,
     CoreModule,
     SharedModule
