@@ -1,5 +1,6 @@
 export interface Villain {
-    image: string;
-    alt: string;
-    description: string;
+    id: number,
+    image: string,
+    alt: string,
+    description: string
 }

@@ -1,5 +1,5 @@
 export interface Anime {
-    id?: number;
+    id: number;
     name: string;
     episodes: number;
     genre: string;
@@ -7,4 +7,5 @@ export interface Anime {
     popularity: string;
     isLiked: boolean;
     imageUrl: string;
+    description?: string;
 }

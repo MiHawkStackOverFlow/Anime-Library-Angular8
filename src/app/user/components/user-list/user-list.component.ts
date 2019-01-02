@@ -9,7 +9,7 @@ import { UserService } from './../../services/user.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  users:Array<User>;
+  users: Array<User>;
   editUser: any; // the user currently being edited
 
   constructor(private userService: UserService) { }
@@ -22,7 +22,7 @@ export class UserListComponent implements OnInit {
     this.editUser = user;
   }
 
-  populateUsers() : void {
+  populateUsers(): void {
     this.userService.getUsers().subscribe(users => this.users = users);
   }
 

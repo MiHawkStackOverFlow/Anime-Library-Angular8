@@ -17,7 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       })),
       transition('active => inactive', animate('500ms ease-out')),
       transition('inactive => active', animate('500ms ease-in'))
-    ])  
+    ])
   ]
 })
 export class VillainListComponent implements OnChanges {
@@ -32,18 +32,18 @@ export class VillainListComponent implements OnChanges {
   // set flip property to inactive
   setFlip(villains: Array<Villain>): void {
     villains.forEach(villain => {
-      villain['flip'] = "inactive";
+      villain['flip'] = 'inactive';
     });
   }
 
   // toggle flip to show/hide villain details
   toggleFlip(villain: Villain): void {
-   villain['flip'] = (villain['flip'] == 'active') ? 'inactive' : 'active';
+   villain['flip'] = (villain['flip'] === 'active') ? 'inactive' : 'active';
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    // console.log("Changes", changes);
-    let log: string[] = [];
+    console.log("Changes", changes);
+    const log: string[] = [];
     for (let propName in changes) {
       // get the animeVillains changes object
       let changedProp = changes[propName];
@@ -51,9 +51,11 @@ export class VillainListComponent implements OnChanges {
       // get current values
       let currentArray = changedProp.currentValue;
       let currentValues: Array<string> = [];
-      currentArray.forEach(element => {
-        currentValues.push(element.alt);
-      });
+      if(currentArray) {
+        currentArray.forEach(element => {
+          currentValues.push(element.alt);
+        });
+      }  
 
       // log the first change and then subsequent changes
       if (changedProp.isFirstChange()) {
@@ -61,15 +63,17 @@ export class VillainListComponent implements OnChanges {
       } else {
         let previousArray = changedProp.previousValue;
         let previousValues: Array<string> = [];
-        previousArray.forEach(element => {
-          previousValues.push(element.alt);
-        });
+        if(previousArray) {
+          previousArray.forEach(element => {
+            previousValues.push(element.alt);
+          });
+        }  
         log.push(`${propName} changed from ${previousValues} to  ${currentValues}`);
       }
 
     }
     this.changeLog.push(log.join(', '));
-    console.info("Change logs", this.changeLog);
-  }  
+    console.log('Change logs villains ngOnChanges', this.changeLog);
+  }
 
 }

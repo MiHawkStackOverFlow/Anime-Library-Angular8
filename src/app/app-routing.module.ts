@@ -1,18 +1,18 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { AnimeListComponent }   from './anime/components/anime-list/anime-list.component';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
-import { PopularAnimeComponent } from './anime/components/popular-anime/popular-anime.component';
-import { UserListComponent } from './user/components/user-list/user-list.component';
 
 export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: LandingPageComponent },
-      { path: 'anime-list', component: AnimeListComponent },
-      { path: 'popular-anime', component: PopularAnimeComponent },
-      { path: 'user-list', component: UserListComponent }
+      { path: 'anime-list', loadChildren: './anime/anime.module#AnimeModule' },
+      { path: 'detail/:id', loadChildren: './anime/anime.module#AnimeModule' },
+      { path: 'popular-anime', loadChildren: './anime/anime.module#AnimeModule' },
+      { path: 'user-list', loadChildren: './user/user.module#UserModule' },
+      { path: 'contact-us', loadChildren: './user/user.module#UserModule' },
+      { path: 'order', loadChildren: './user/user.module#UserModule' }
 ];
 
 @NgModule({

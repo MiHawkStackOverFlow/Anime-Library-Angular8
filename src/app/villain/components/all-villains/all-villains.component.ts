@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Villain } from '../../../villain/model/villain';
-import { villains } from '../../../villain/model/mock-villains';
+import { VillainService } from '../../services/villain.service';
 
 @Component({
   selector: 'app-all-villains',
@@ -11,11 +11,16 @@ import { villains } from '../../../villain/model/mock-villains';
 export class AllVillainsComponent implements OnInit {
   allVillains: Array<Villain>;
 
-  constructor() { }
+  constructor(private villainService: VillainService) { }
 
   ngOnInit() {
-    // set anime villains from data
-    this.allVillains = villains;
+    // get anime villains from service
+    this.getVillains();
+  }
+
+  getVillains(): void {
+     this.villainService.getVillains()
+                        .subscribe(villains => this.allVillains = villains); 
   }
 
 }

@@ -27,7 +27,7 @@ export class DoCheckComponent implements DoCheck {
         this.noChangeCount = 0;
       } else {
         const count = this.noChangeCount += 1;
-        const noChangeMsg = `DoCheck called ${count}x when no change to hero or power`;
+        const noChangeMsg = `DoCheck called ${count}x when no change to anime name`;
         if (count === 1) {
           // add new "no change" message
           this.changeLog.push(noChangeMsg);
@@ -38,6 +38,6 @@ export class DoCheckComponent implements DoCheck {
       }
 
       this.changeDetected = false;
-      console.log('Change log ', this.changeLog);
+      console.log('Change log anime ngdocheck', this.changeLog);
   }
 }

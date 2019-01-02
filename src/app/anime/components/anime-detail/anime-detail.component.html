@@ -1,0 +1,19 @@
+<section class="content listSection" style="
+         background-image: url('https://i.ytimg.com/vi/98jm_t_wOh4/maxresdefault.jpg');">
+    <h1 class="headerDecorator"> Details Page </h1>
+</section>
+<section *ngIf="anime">    
+  <div class="col-md-3 textCenter">
+    <div class="tp-box">
+      <div class="tp-box__side">
+          <img src="{{ anime.imageUrl }}" alt="{{ anime.name }}" class="inheritHeightWidth"> 
+      </div> 
+      <h4 class="animeName"> {{anime.name}} </h4>
+    </div>
+  </div>
+  <div class="col-md-9" style="margin-top:20px;">
+      {{ anime.description }}
+  </div>
+</section>
+
+ 

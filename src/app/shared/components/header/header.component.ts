@@ -14,15 +14,11 @@ export class HeaderComponent implements OnInit {
   @select() animes;
   @Input('title') headerTitle: string;
   today: number = Date.now();
-  
-  signUpModal :SignupComponent;
-  
+
+  signUpModal: SignupComponent;
+
   constructor(private ngRedux: NgRedux<AnimeAppState>, private router: Router) { }
 
   ngOnInit() { }
-
-  goToUserList() {
-    this.router.navigateByUrl('/user-list');
-  }
 
 }
