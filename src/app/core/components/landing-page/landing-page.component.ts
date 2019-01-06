@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Ng2IzitoastService } from 'ng2-izitoast';
 
 import { Carousel } from '../../../shared/model/carousel';
 import { Villain } from '../../../villain/model/villain';
 import { sliderImages } from '../../model/mock-carousel';
 
 import { DoCheckComponent } from './../do-check/do-check.component';
+import { AnimeSearchComponent } from './../../../anime/components/anime-search/anime-search.component';
+
+import { LoggerService } from '../../../shared/services/logger.service';
 import { VillainService } from '../../../villain/services/villain.service';
 
 @Component({
@@ -15,17 +19,24 @@ import { VillainService } from '../../../villain/services/villain.service';
 export class LandingPageComponent implements OnInit {
   carouselHeight = 500;
   slideShow = true; 
+  comment = '';
+  private prevAnime = '';
   // titles on landing page
   searchTitle = 'Search Anime Manga And Videos';
   animeVillainsTitle = 'Popular Anime Villains';
-  
+
   allVillains: Array<Villain>;
   // inputs to other components
   animeVillains: Array<Villain>;
   carouselImages: Array<Carousel>;
+
+  // Query for a VIEW child of type `AnimeSearchComponent`
+  @ViewChild(AnimeSearchComponent) viewChild: AnimeSearchComponent;
   @ViewChild(DoCheckComponent) childView: DoCheckComponent;
 
-  constructor(private villainService: VillainService) { }
+  constructor(private villainService: VillainService, 
+              private logger: LoggerService, 
+              public iziToast: Ng2IzitoastService) { }
 
   ngOnInit(): void {
     // set anime villains from data
@@ -37,6 +48,48 @@ export class LandingPageComponent implements OnInit {
   ngAfterViewInit() {
     // viewChild is set after the view has been initialized
    console.log('AfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    // viewChild is updated after the view has been checked
+    if (this.prevAnime === this.viewChild.anime.name) {
+      this.logIt('AfterViewChecked (no change)');
+    } else {
+      this.prevAnime = this.viewChild.anime.name;
+      this.logIt('AfterViewChecked');
+      this.doSomething();
+    }
+  }
+
+
+  // This surrogate for real business logic sets the `comment`
+  private doSomething() {
+    let commentMessage = this.viewChild.anime.name.length > 30 ? `That's a long name` : '';
+    if (commentMessage !== this.comment) {
+      // Wait a tick because the component's view has already been checked
+      this.logger.tick_then(() => this.comment = commentMessage);
+    }
+    if(commentMessage === `That's a long name`) {
+      // show alert for too long name
+      console.log("TEST", this.iziToast);
+      this.iziToast.destroy();
+      this.iziToast.show({
+        title: "Long name", 
+        message: commentMessage,
+        timeout: 3000,
+        position: "topCenter",
+        close: true,
+        backgroundColor: "orange",
+        icon: "fa fa-exclamation-triangle",
+        toastOnce: true
+      });
+    }
+  }
+
+  private logIt(method: string) {
+    let child = this.viewChild;
+    let message = `${method}: ${child ? child.anime.name : 'no'} child view`;
+    this.logger.log(message);
   }
 
   getVillains(): void {

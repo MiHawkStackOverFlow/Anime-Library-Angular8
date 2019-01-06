@@ -5,8 +5,8 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 })
 export class RainbowDirective {
     possibleColors = [
-        'darksalmon', 'hotpink', 'lightskyblue', 'goldenrod', 'peachpuff',
-        'mediumspringgreen', 'cornflowerblue', 'blanchedalmond', 'lightslategrey'
+        'black', 'darkred', 'indigo', 'darkolivegreen', 
+        'maroon', 'olive', 'brown', 'watercourse' 
     ];
 
     @HostBinding('style.color') color: string;
