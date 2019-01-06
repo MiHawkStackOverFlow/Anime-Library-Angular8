@@ -1,23 +1,9 @@
 <section class="jumbotron content text-center" style="background-image: url('https://images4.alphacoders.com/738/thumb-1920-73806.jpg');">
     <form id="indexSearchForm">
         <label for="search">{{ searchTitle | naturalType:100 }}</label>
-        <div class="input-group">
-            <input searchRainbow [(ngModel)]="anime.name" name="animeSearch" list="topAnimes" type="text" class="form-control borderRadiusZero" 
-                    size="50" placeholder="What are you looking for?" #searchBox id="search-box" (input)="search(searchBox.value)"
-                    required>
-            <!-- <div class="input-group-btn">
-                <button type="button" class="btn btn-danger borderRadiusZero"><span class="glyphicon glyphicon-search"></span></button>
-            </div> -->
-            <ul class="search-result">
-                <li *ngFor="let anime of animes$ | async" >
-                    <a routerLink="/detail/{{anime.id}}">
-                        {{anime.name}}
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <app-anime-search></app-anime-search>
     </form>
-    <app-do-check [anime]="anime"></app-do-check>           
+    <!-- <app-do-check [anime]="anime"></app-do-check>  -->
 </section>
 
 <section class="darkGreyBackGround">
