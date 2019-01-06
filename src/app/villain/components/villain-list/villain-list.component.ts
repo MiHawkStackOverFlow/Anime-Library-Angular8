@@ -73,7 +73,7 @@ export class VillainListComponent implements OnChanges {
 
     }
     this.changeLog.push(log.join(', '));
-    console.log('Change logs', this.changeLog);
+    console.log('Change logs villains ngOnChanges', this.changeLog);
   }
 
 }

@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-
-import { Anime } from '../../../anime/model/anime';
-import { AnimeService } from '../../../anime/services/anime.service';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ViewChild } from '@angular/core';
+import { Ng2IzitoastService } from 'ng2-izitoast';
 
 import { Carousel } from '../../../shared/model/carousel';
 import { Villain } from '../../../villain/model/villain';
-
 import { sliderImages } from '../../model/mock-carousel';
+
+import { DoCheckComponent } from './../do-check/do-check.component';
+import { AnimeSearchComponent } from './../../../anime/components/anime-search/anime-search.component';
+
+import { LoggerService } from '../../../shared/services/logger.service';
 import { VillainService } from '../../../villain/services/villain.service';
 
 @Component({
@@ -16,39 +16,80 @@ import { VillainService } from '../../../villain/services/villain.service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChecked {
   carouselHeight = 500;
-  slideShow = true;
+  slideShow = true; 
+  comment = '';
+  private prevAnime = '';
+  // titles on landing page
+  searchTitle = 'Search Anime Manga And Videos';
+  animeVillainsTitle = 'Popular Anime Villains';
+
   allVillains: Array<Villain>;
   // inputs to other components
   animeVillains: Array<Villain>;
   carouselImages: Array<Carousel>;
-  // titles on landing page
-  searchTitle = 'Search Anime Manga And Videos';
-  animeVillainsTitle = 'Popular Anime Villains';
-  // search anime variables
-  animes$: Observable<Array<Anime>>;
-  private searchTerms = new Subject<string>();
 
-  constructor(private animeService: AnimeService, private villainService: VillainService) { }
+  // Query for a VIEW child of type `AnimeSearchComponent`
+  @ViewChild(AnimeSearchComponent) viewChild: AnimeSearchComponent;
+  @ViewChild(DoCheckComponent) childView: DoCheckComponent;
+
+  constructor(private villainService: VillainService, 
+              private logger: LoggerService, 
+              public iziToast: Ng2IzitoastService) { }
 
   ngOnInit(): void {
     // set anime villains from data
     this.getVillains();
     // input to carousel component
     this.carouselImages = sliderImages;
+  }
 
-    // search using subject and service call
-    this.animes$ = this.searchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
+  ngAfterViewInit() {
+    // viewChild is set after the view has been initialized
+   console.log('AfterViewInit');
+  }
 
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
+  ngAfterViewChecked() {
+    // viewChild is updated after the view has been checked
+    if (this.prevAnime === this.viewChild.anime.name) {
+      this.logIt('AfterViewChecked (no change)');
+    } else {
+      this.prevAnime = this.viewChild.anime.name;
+      this.logIt('AfterViewChecked');
+      this.doSomething();
+    }
+  }
 
-      // switch to new search observable each time the term changes
-      switchMap((term: string) => this.animeService.searchAnimes(term))
-    );
+
+  // This surrogate for real business logic sets the `comment`
+  private doSomething() {
+    let commentMessage = this.viewChild.anime.name.length > 30 ? `That's a long name` : '';
+    if (commentMessage !== this.comment) {
+      // Wait a tick because the component's view has already been checked
+      this.logger.tick_then(() => this.comment = commentMessage);
+    }
+    if(commentMessage === `That's a long name`) {
+      // show alert for too long name
+      console.log("TEST", this.iziToast);
+      this.iziToast.destroy();
+      this.iziToast.show({
+        title: "Long name", 
+        message: commentMessage,
+        timeout: 3000,
+        position: "topCenter",
+        close: true,
+        backgroundColor: "orange",
+        icon: "fa fa-exclamation-triangle",
+        toastOnce: true
+      });
+    }
+  }
+
+  private logIt(method: string) {
+    let child = this.viewChild;
+    let message = `${method}: ${child ? child.anime.name : 'no'} child view`;
+    this.logger.log(message);
   }
 
   getVillains(): void {
@@ -74,11 +115,6 @@ export class LandingPageComponent implements OnInit {
       } else if (direction === 'forward') {
         this.animeVillains = this.allVillains.slice(4, 8);
       }
-  }
-
-  // Push a search term into the observable stream.
-  search(term: string): void {
-    this.searchTerms.next(term);
   }
 
 }
