@@ -9,12 +9,13 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 // no need to export spinner service as providedIn flag will inject it in app module
 
 @NgModule({
   imports: [ CommonModule, AppRoutingModule, UserModule ],
-  exports: [ CarouselComponent, HeaderComponent, FooterComponent, SpinnerComponent ],
-  declarations: [ CarouselComponent, HeaderComponent, FooterComponent, SpinnerComponent ]
+  exports: [ CarouselComponent, HeaderComponent, FooterComponent, SpinnerComponent, PanelComponent ],
+  declarations: [ CarouselComponent, HeaderComponent, FooterComponent, SpinnerComponent, PanelComponent ]
 })
 export class SharedModule { }

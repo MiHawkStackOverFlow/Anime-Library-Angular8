@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AnimeRoutingModule } from './anime-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { AnimeListComponent } from './components/anime-list/anime-list.component';
 import { PopularAnimeComponent } from './components/popular-anime/popular-anime.component';
@@ -15,7 +16,7 @@ import { AnimeSearchComponent } from './components/anime-search/anime-search.com
 import { RainbowDirective } from './../core/directives/rainbow.directive';
 
 @NgModule({
-  imports: [ CommonModule, AnimeRoutingModule, FormsModule ],
+  imports: [ CommonModule, AnimeRoutingModule, FormsModule, SharedModule ],
   exports: [ AnimeListComponent, PopularAnimeComponent, TableComponent, AnimeSearchComponent ],
   declarations: [ AnimeListComponent, PopularAnimeComponent, TableComponent, AnimePicListComponent, 
                   AnimeDetailComponent, AnimeSearchComponent, RainbowDirective ]

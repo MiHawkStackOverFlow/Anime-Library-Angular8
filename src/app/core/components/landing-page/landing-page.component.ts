@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ViewChild } from '@angular/core';
 import { Ng2IzitoastService } from 'ng2-izitoast';
 
 import { Carousel } from '../../../shared/model/carousel';
@@ -16,7 +16,7 @@ import { VillainService } from '../../../villain/services/villain.service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChecked {
   carouselHeight = 500;
   slideShow = true; 
   comment = '';
