@@ -39,6 +39,7 @@ export class CarouselComponent implements OnInit {
     ($("#myCarousel") as any).carousel("prev");
   }
 
+  // unsubsribe from subscription
   ngOnDestroy() {
     if(this.subscription) {
       this.subscription.unsubscribe();

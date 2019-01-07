@@ -24,6 +24,8 @@ export class AnimeDetailComponent implements OnInit, AfterContentInit, AfterCont
     private location: Location
   ) {}
 
+  // get all animes on component initialization
+  // Called once, after the first ngOnChanges(). 
   ngOnInit(): void {
     this.getAnime();
   }
