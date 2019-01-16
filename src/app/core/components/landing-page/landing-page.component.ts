@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ViewChild, Optional } from '@angular/core';
 import { Ng2IzitoastService } from 'ng2-izitoast';
 
 import { Carousel } from '../../../shared/model/carousel';
@@ -34,8 +34,11 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
   @ViewChild(AnimeSearchComponent) viewChild: AnimeSearchComponent;
   @ViewChild(DoCheckComponent) childView: DoCheckComponent;
 
+  /** You can tell Angular that the dependency is optional by annotating the constructor parameter with @Optional(). */
   constructor(private villainService: VillainService, 
-              private logger: LoggerService, 
+              @Optional() private logger: LoggerService,
+              // When using @Optional(), your code must be prepared for a null value. 
+              // If you don't register a logger provider anywhere, the injector sets the value of logger to null. 
               public iziToast: Ng2IzitoastService) { }
 
   ngOnInit(): void {
