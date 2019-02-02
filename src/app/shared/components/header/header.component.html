@@ -15,8 +15,14 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li><a href="https://nationaltoday.com/what-is-today/">{{ today | date }}</a></li> -->
-                    <li><a routerLink="/anime-list">Anime List</a></li>
-                    <li><a routerLink="/popular-anime">Popular Anime</a></li>
+                    <li><a routerLink="/dashboard">Dashboard</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Animes <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a style="cursor: pointer;" routerLink="/anime-list">Anime List</a></li>
+                            <li><a style="cursor: pointer;" routerLink="/popular-anime">Popular Anime</a></li> 
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
                         <ul class="dropdown-menu">
