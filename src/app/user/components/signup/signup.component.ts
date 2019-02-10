@@ -29,4 +29,8 @@ export class SignupComponent {
     this.signUpModal.hide();
   }
 
+  onSubmit() {
+    console.log("Form value", this.signUpForm.value);
+  }
+
 }

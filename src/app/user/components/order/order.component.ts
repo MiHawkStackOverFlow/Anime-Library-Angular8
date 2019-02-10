@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { Order } from './../../model/order';
 import { forbiddenNameValidator } from './../../../shared/directives/forbidden-name.directive';
 
@@ -9,6 +9,7 @@ import { forbiddenNameValidator } from './../../../shared/directives/forbidden-n
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+  title = 'Order Form';
   orderForm: FormGroup;
   items: FormArray;
   countries = ['India', 'Japan', 'USA', 'Germany', 'Italy', 'France'];

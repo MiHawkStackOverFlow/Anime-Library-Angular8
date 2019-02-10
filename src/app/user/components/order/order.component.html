@@ -24,7 +24,7 @@ background-image: url('https://pixelz.cc/wp-content/uploads/2018/08/fate-stay-ni
       </div>  
     </div>        
     
-    <div formArrayName="items" *ngFor="let item of orderForm.get('items').controls; let i = index;">
+    <div formArrayName="items" *ngFor="let item of orderForm.get('items')['controls']; let i = index;">
       <div class="row" [formGroupName]="i">
         <div class="form-group col">
           <input formControlName="name" placeholder="Item name" class="form-control">
@@ -53,7 +53,7 @@ background-image: url('https://pixelz.cc/wp-content/uploads/2018/08/fate-stay-ni
       <!-- <div style="color: white;">Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }} </div> -->
     </div>
     
-    <div class="row" *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+    <div class="row" *ngIf="email && email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
       <div *ngIf="email.errors.required">
         Email is required.
       </div>
