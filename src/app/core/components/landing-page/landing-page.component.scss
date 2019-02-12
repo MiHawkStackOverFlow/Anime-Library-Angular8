@@ -87,10 +87,23 @@
   color: white; 
   border-color: rgb(217, 83, 79); 
   border-radius: 0;
-  margin:2px;
+  margin:20px;
+  @media only screen and (max-width: 500px) {
+    margin: 0px;
+  }
 }
 
 .carousel-button {
   text-align: center;
   background-color: $silver;
+}
+
+.carousel-header {
+  display: inline-block; 
+  padding: 5px; 
+  border-width: 5px; 
+  border-style: dotted;
+  @media only screen and (max-width: 500px) {
+    width: 34%;
+  }
 }

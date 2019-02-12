@@ -1,4 +1,4 @@
-<div *ngFor="let villain of animeVillains" class="tp-wrapper col-md-3">
+<div *ngFor="let villain of animeVillains" class="tp-wrapper col-md-3 col-sm-3">
     <div class="tp-box" (mouseenter)="toggleFlip(villain)" (mouseleave)="toggleFlip(villain)" [@flipState]="villain.flip">
         <div class="tp-box__side tp-box__front">
             <img [src]="villain.image" alt="{{ villain.alt }}" class="inheritHeightWidth"> 

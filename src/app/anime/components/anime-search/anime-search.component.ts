@@ -12,7 +12,7 @@ import { AnimeService } from '../../services/anime.service';
 })
 export class AnimeSearchComponent implements OnInit {
   anime: Anime = {
-    id: 1, name: 'Dragon Ball Z', episodes: 500, genre: 'Adventure', rating: 9.0,
+    id: 1, name: 'Dragon Ball Super', episodes: 500, genre: 'Adventure', rating: 9.0,
     popularity: 'High', isLiked: false, imageUrl: ''
   };
   // search anime variables

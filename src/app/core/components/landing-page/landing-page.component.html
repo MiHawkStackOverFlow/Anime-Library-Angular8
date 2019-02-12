@@ -21,8 +21,9 @@
 
 <section role="section" class="displayBlock">
     <div class="carousel-button">
-        <button (click)="mainPageCarousel.previousSlide()" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span>Previous Slide</button>
-        <button (click)="mainPageCarousel.nextSlide()" type="button" class="btn btn-default slider-button">Next Slide <span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button style="float: left;" (click)="mainPageCarousel.previousSlide()" type="button" class="btn btn-default slider-button"><span class="glyphicon glyphicon-chevron-left"></span>Previous Slide</button>
+        <h3 class="carousel-header"> Now Streaming </h3> 
+        <button style="float: right;" (click)="mainPageCarousel.nextSlide()" type="button" class="btn btn-default slider-button">Next Slide <span class="glyphicon glyphicon-chevron-right"></span></button>
     </div>
     <app-carousel [sliderImages]="carouselImages" [sliderHeight]="carouselHeight" [slideShow]="slideShow" #mainPageCarousel></app-carousel>
 </section>
