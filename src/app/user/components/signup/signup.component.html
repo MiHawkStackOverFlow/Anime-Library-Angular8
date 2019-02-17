@@ -11,17 +11,34 @@
                 
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" formControlName="name">
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <label for="email">Email *:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
+                </div>
+
+                <div class="row" *ngIf="signUpForm.get('email').errors?.required && 
+                                       (signUpForm.get('email').touched || signUpForm.get('email').dirty)" 
+                                       class="alert alert-danger">
+                   Email is required   
                 </div>
 
                 <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <label for="pwd">Password *:</label>
+                  <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pwd" placeholder="Enter password" name="pwd" formControlName="password">
+                  <span class="fa fa-fw field-icon" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('password')"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">Confirm Password *:</label>
+                    <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="cfpwd" placeholder="Confirm password" name="cfpwd" formControlName="confirmPassword">
+                    <span class="fa fa-fw fa-eye field-icon" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('confirmPassword')"></span>
+                </div>
+
+                <div class="row" *ngIf="signUpForm.errors?.passwordMismatch && (signUpForm.controls.confirmPassword.touched || signUpForm.controls.confirmPassword.dirty)" class="alert alert-danger">
+                    Password and Confirm Password should match
                 </div>
 
                 <div class="form-group">
@@ -32,21 +49,28 @@
                             Female
                         </label>
                          
-                        <label style="margin-left: 5px;">
+                        <label style="margin-left: 10px;">
                             <input type="radio" value="male" name="gender" formControlName="gender">     
                             Male
+                        </label>
+
+                        <label style="margin-left: 10px;">
+                            <input type="radio" value="other" name="gender" formControlName="gender">     
+                            Other
                         </label>
                     </div>
                 </div>
 
                 <div class="checkbox">
                   <label>
-                      <input type="checkbox" name="updates" checked>
+                      <input type="checkbox" name="updates" checked formControlName="updates">
                       Yes, Keep me posted on updates related to Abhishek's Anime Library
                   </label>
                 </div>
 
-                <button type="submit" class="btn btn-default">Submit</button>
+                <div class="form-group text-center"> 
+                    <button type="submit" class="btn btn-success" [disabled]="!signUpForm.valid" style="margin: 0 auto;">Submit</button>
+                </div>
             </form>
           </div>
           <div class="modal-footer">

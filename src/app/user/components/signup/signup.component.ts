@@ -1,6 +1,8 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Ng2IzitoastService } from 'ng2-izitoast';
 import { ModalDirective } from 'ngx-bootstrap';
+import { passwordConfirmValidator } from '../../directives/password-confirm.directive';
 
 @Component({
   selector: 'app-signup',
@@ -8,29 +10,49 @@ import { ModalDirective } from 'ngx-bootstrap';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
   @ViewChild('signUpModal') public signUpModal: ModalDirective;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public iziToast: Ng2IzitoastService) { }
 
   signUpForm = this.fb.group({
      name: [''],
      email: ['', Validators.required ],
-     password: ['', Validators.required ],
-     confirmPassword: ['', Validators.required ],
-     gender: [''],
-     updates: ['']
-  });
+     password: ['', [Validators.required, Validators.minLength(4)]],
+     confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
+     gender: ['male'],
+     updates: [true]
+  }, { validators: passwordConfirmValidator });
 
   show() {
     this.signUpModal.show();
   }
 
   hide() {
+    this.signUpForm.reset();
     this.signUpModal.hide();
   }
 
+  showHidePassword(type: string): void {
+    (type === 'password') ? (this.showPassword = !this.showPassword): (this.showConfirmPassword = !this.showConfirmPassword);
+  }
+
   onSubmit() {
+    // Perform API call to submit data to server
     console.log("Form value", this.signUpForm.value);
+    // show success or error on API call
+    this.iziToast.show({
+      title: "Success", 
+      message: "You have been signed up successfully.",
+      timeout: 5000,
+      position: "topCenter",
+      close: true,
+      backgroundColor: "green",
+      icon: "fa fa-thumbs-o-up"
+    });
+    // reset the form and close modal
+    this.hide();
   }
 
 }

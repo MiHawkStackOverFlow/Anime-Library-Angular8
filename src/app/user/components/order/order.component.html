@@ -63,6 +63,6 @@ background-image: url('https://pixelz.cc/wp-content/uploads/2018/08/fate-stay-ni
     </div>
     
     <button style="margin:10px;" class="btn btn-success" (click)="addItem()"> Add a Item </button>
-    <button class="btn btn-default" type="submit" [disabled]="orderForm.pristine">Order</button>
+    <button class="btn btn-default" type="submit" [disabled]="orderForm.valid">Order</button>
   </form>  
 </section>

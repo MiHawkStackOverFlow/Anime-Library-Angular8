@@ -47,16 +47,17 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
 
   ngAfterViewInit() {
     // viewChild is set after the view has been initialized
-   console.log('AfterViewInit');
+   console.log('AfterViewInit called.');
   }
 
+  // commenting the logging below for now as frequency of calling is high
   ngAfterViewChecked() {
     // viewChild is updated after the view has been checked
     if (this.prevAnime === this.viewChild.anime.name) {
-      this.logIt('AfterViewChecked (no change)');
+      // this.logIt('AfterViewChecked (no change)');
     } else {
       this.prevAnime = this.viewChild.anime.name;
-      this.logIt('AfterViewChecked');
+      // this.logIt('AfterViewChecked');
       this.doSomething();
     }
   }
@@ -71,7 +72,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
     }
     if(commentMessage === `That's a long name`) {
       // show alert for too long name
-      console.log("TEST", this.iziToast);
       this.iziToast.destroy();
       this.iziToast.show({
         title: "Long name", 
