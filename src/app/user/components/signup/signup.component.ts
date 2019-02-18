@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Ng2IzitoastService } from 'ng2-izitoast';
 import { ModalDirective } from 'ngx-bootstrap';
 import { passwordConfirmValidator } from '../../directives/password-confirm.directive';
@@ -9,28 +9,31 @@ import { passwordConfirmValidator } from '../../directives/password-confirm.dire
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
+  signUpForm: FormGroup;
   @ViewChild('signUpModal') public signUpModal: ModalDirective;
 
   constructor(private fb: FormBuilder, public iziToast: Ng2IzitoastService) { }
 
-  signUpForm = this.fb.group({
-     name: [''],
-     email: ['', Validators.required ],
-     password: ['', [Validators.required, Validators.minLength(4)]],
-     confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
-     gender: ['male'],
-     updates: [true]
-  }, { validators: passwordConfirmValidator });
+  ngOnInit(): void {
+    this.signUpForm = this.fb.group({
+      name: [''],
+      email: ['', Validators.required ],
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
+      gender: ['male'],
+      updates: [true]
+    }, { validators: passwordConfirmValidator });
+  }
 
   show() {
     this.signUpModal.show();
   }
 
   hide() {
-    this.signUpForm.reset();
+    this.signUpForm.reset({ gender: "male", updates: true });
     this.signUpModal.hide();
   }
 
