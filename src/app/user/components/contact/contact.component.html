@@ -37,7 +37,7 @@ background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1804
         <textarea formControlName="message" class="form-control"></textarea>
       </div>
       
-      <button class="btn btn-default" type="submit" [disabled]="contactForm.pristine">Save</button>
+      <button class="btn btn-default" type="submit" [disabled]="contactForm.valid">Save</button>
       <button style="margin:10px;" class="btn btn-warning" type="reset" (click)="revert()" [disabled]="contactForm.pristine">Revert</button>
   </div>  
 </form>

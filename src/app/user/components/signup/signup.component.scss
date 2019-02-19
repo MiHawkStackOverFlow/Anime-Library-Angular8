@@ -1,0 +1,48 @@
+@import '~scss/variables';
+
+.field-icon {
+  float: right;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 20;
+}
+
+.modal-dialog {
+    width: 30%;
+    margin: auto;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #fff;
+    @media only screen and (max-width: 768px) and (min-width: 501px) {
+        width: 55%;
+    }
+    @media only screen and (max-width: 500px) {
+        width: 90%;
+    }
+    .text-white {
+        color: #fff;
+    }
+    .submit {
+        background: $lightRed;
+        cursor: pointer;
+        &:hover { 
+          background: #13a456;
+        }
+    }
+}
+
+.modal-header, .modal-footer {
+    background-color: black;
+    color: white;
+    .close {
+        color: #fff; 
+        opacity: 1;
+    }
+    .close-button {
+        background: $lightRed;
+        color: #fff;
+        cursor: pointer;
+    }
+}
