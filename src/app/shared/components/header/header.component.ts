@@ -4,6 +4,7 @@ import { NgRedux, select } from '@angular-redux/store';
 
 import { AnimeAppState } from '../../../core/redux/store';
 import { SignupComponent } from './../../../user/components/signup/signup.component';
+import { SignInComponent } from '../../../user/components/sign-in/sign-in.component';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
   today: number = Date.now();
 
   signUpModal: SignupComponent;
+  signInModal: SignInComponent;
 
   constructor(private ngRedux: NgRedux<AnimeAppState>, private router: Router) { }
 

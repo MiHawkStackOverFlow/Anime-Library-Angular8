@@ -1,0 +1,46 @@
+<!-- Modal box for sign in -->
+<div bsModal #signInModal="bs-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+              <h4 class="modal-title">Sign In</h4>
+          </div>
+          <div class="modal-body content" style="background-image: url('https://www.pngkey.com/png/detail/158-1586792_whitebeard-logo-by-dmnpc-on-deviantart-whitebeard-pirates.png');">
+            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                  <label for="email" class="text-white">Email *:</label>
+                  <input type="email" class="form-control" id="email-signin" placeholder="Enter email" name="email" formControlName="email">
+                </div>
+
+                <div class="row" *ngIf="email.errors.required && (email.touched || email.dirty)" class="alert alert-danger">
+                    Email is required   
+                </div>
+
+                <div class="form-group">
+                  <label for="pwd-signin" class="text-white">Password *:</label>
+                  <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pwd-signin" placeholder="Enter password" name="pwd" formControlName="password">
+                  <span class="fa fa-fw field-icon" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword()"></span>
+                </div>
+
+                <div class="row" *ngIf="password.invalid && (password.touched || password.dirty)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        Name must be at least 4 characters long.
+                    </div>   
+                </div>
+
+                <div class="form-group text-center"> 
+                    <button type="submit" class="btn submit text-white" [disabled]="!signInForm.valid">Submit</button>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default close-button" data-dismiss="modal" (click)="hide()">Close</button>
+          </div>
+      </div>
+  </div>    
+</div>   

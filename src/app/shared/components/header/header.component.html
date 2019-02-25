@@ -26,7 +26,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Log In</a></li>
+                            <li><a style="cursor: pointer;" (click)="signInModal.show()">Log In</a></li>
                             <li><a style="cursor: pointer;" (click)="signUpModal.show()">Sign Up</a></li>
                             <li><a style="cursor: pointer;" routerLink="/user-list">Users List</a></li>
                             <li><a href="#">My <i class="fa fa-heart"></i>  Animes  {{ (animes | async).length }}</a></li> 
@@ -37,4 +37,5 @@
         </div>
   </nav>
   <app-signup #signUpModal></app-signup>
+  <app-signin #signInModal></app-signin>
 </header>
