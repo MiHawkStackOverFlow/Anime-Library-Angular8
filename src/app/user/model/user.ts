@@ -3,12 +3,14 @@ import { Address } from './address';
 
 export interface User {
     id: number;
-    name: string;
+    name?: string;
     username?: string;
+    password?: string;
     email: string;
     address?: Address;
     phone?: number;
     website?: string;
     company?: Company;
     country?: string;
+    token?: string;
 }
