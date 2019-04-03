@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// guard
+import { AuthGuard } from './user/guards/auth.guard';
+
 // components
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { AnimeListComponent } from './anime/components/anime-list/anime-list.component';
@@ -16,7 +19,7 @@ export const routes: Routes = [
       { path: 'anime-list', component: AnimeListComponent },
       { path: 'popular-anime', component: PopularAnimeComponent },
       { path: 'detail/:id', component: AnimeDetailComponent },
-      { path: 'user-list', component: UserListComponent },
+      { path: 'user-list', component: UserListComponent, canActivate: [AuthGuard] },
       { path: 'contact-us',  component: ContactComponent },
       { path: 'order',  component: OrderComponent }
 ];

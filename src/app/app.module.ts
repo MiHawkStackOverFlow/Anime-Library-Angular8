@@ -8,12 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    that rests on the XMLHttpRequest interface exposed by browsers.
    Additional benefits of HttpClient include testability features, typed request and response objects,
    request and response interception, Observable apis, and streamlined error handling. */
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /*An in-memory web api for Angular demos and tests that emulates CRUD operations over a RESTy API.
 It intercepts Angular Http and HttpClient requests that would otherwise go to the remote server and
 redirects them to an in-memory data store that you control.*/
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/services/in-memory-data.service';
+import { fakeBackendProvider } from './user/helpers/fake-backend';
+import { JwtInterceptor } from './user/helpers/jwt.interceptor';
+import { ErrorInterceptor } from './user/helpers/error.interceptor';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 // created modules
@@ -55,7 +58,12 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
   declarations: [
     AppComponent
   ],
-  providers: [ ],
+  providers: [ 
+     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+     // provider used to create fake backend
+     fakeBackendProvider   
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

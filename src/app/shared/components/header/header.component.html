@@ -29,7 +29,8 @@
                             <li><a style="cursor: pointer;" (click)="signInModal.show()">Log In</a></li>
                             <li><a style="cursor: pointer;" (click)="signUpModal.show()">Sign Up</a></li>
                             <li><a style="cursor: pointer;" routerLink="/user-list">Users List</a></li>
-                            <li><a href="#">My <i class="fa fa-heart"></i>  Animes  {{ (animes | async).length }}</a></li> 
+                            <li><a href="#">My <i class="fa fa-heart"></i>  Animes  {{ (animes | async).length }}</a></li>
+                            <li><a style="cursor: pointer;" (click)="logout()">Log Out</a></li> 
                         </ul>
                     </li>
                 </ul>

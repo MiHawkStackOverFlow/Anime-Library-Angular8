@@ -9,7 +9,7 @@ import { User } from '../model/user';
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // create an array of anime website users
-        const users: User[] = [ { id: 1, email: 'admin@angular.com', username: "Admin", name: "Abhishek" } ];
+        const users: User[] = [ { id: 1, email: 'admin@angular.com', password: 'admin', username: "Admin", name: "Abhishek" } ];
         const authHeader    = request.headers.get('Authorization');
         const isLoggedIn    = authHeader && authHeader.startsWith('Bearer fake-jwt-token');
 
@@ -53,3 +53,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }));
     }
 }
+
+export let fakeBackendProvider = {
+    // use fake backend in place of Http service for backend-less development
+    provide: HTTP_INTERCEPTORS,
+    useClass: FakeBackendInterceptor,
+    multi: true
+};
