@@ -9,16 +9,18 @@ import { AnimeDetailComponent } from './anime/components/anime-detail/anime-deta
 import { UserListComponent } from './user/components/user-list/user-list.component';
 import { ContactComponent } from './user/components/contact/contact.component';
 import { OrderComponent } from './user/components/order/order.component';
+import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 
 export const routes: Routes = [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: LandingPageComponent },
-      { path: 'anime-list', component: AnimeListComponent },
-      { path: 'popular-anime', component: PopularAnimeComponent },
-      { path: 'detail/:id', component: AnimeDetailComponent },
-      { path: 'user-list', component: UserListComponent },
-      { path: 'contact-us',  component: ContactComponent },
-      { path: 'order',  component: OrderComponent }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: LandingPageComponent },
+    { path: 'anime-list', component: AnimeListComponent },
+    { path: 'popular-anime', component: PopularAnimeComponent },
+    { path: 'detail/:id', component: AnimeDetailComponent },
+    { path: 'user-list', component: UserListComponent },
+    { path: 'contact-us',  component: ContactComponent },
+    { path: 'order',  component: OrderComponent },
+    { path: 'dashboard',  component: DashboardComponent }
 ];
 
 @NgModule({

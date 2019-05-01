@@ -20,6 +20,7 @@ import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
 
 // no need to import spinner service because of providedIn flag
@@ -50,6 +51,7 @@ import { Ng2IziToastModule } from 'ng2-izitoast';
     // app modules
     CoreModule,
     SharedModule,
+    DashboardModule,
     AppRoutingModule
   ],
   declarations: [
