@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AnimeModule } from './../anime/anime.module';
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
@@ -21,6 +23,7 @@ export function highchartsFactory() {
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
+    AnimeModule,
     ChartModule,
     DashboardRoutingModule
   ],

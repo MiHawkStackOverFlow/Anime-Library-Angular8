@@ -2,12 +2,12 @@ import { Anime } from './anime';
 
 export const animes: Array<Anime> = [
     { id: 1, name: 'Angel Beats',         episodes: 13,  genre: 'Drama',       rating: 7.8, popularity: 'Low',      isLiked: false,
-          imageUrl: 'https://i.ebayimg.com/images/g/YrUAAOSwvg9XfB5h/s-l300.jpg',
+      imageUrl: 'https://i.ebayimg.com/images/g/YrUAAOSwvg9XfB5h/s-l300.jpg',
       description: 'Angel Beats! is a multimedia project consisting of an anime series, a manga series, 4-panel comic strips (4-koma) and a novel. The anime series acts as the central plot source for the remaining material, while the mini-novel and manga act as an expansion to the series as prequel and adaptation-expansion respectively.' },
     { id: 2, name: 'Attack On Titan',     episodes: 40,  genre: 'Apocalyptic', rating: 8.7, popularity: 'High',     isLiked: false,
-          imageUrl: 'https://cdn.europosters.eu/image/750/posters/attack-on-titan-shingeki-no-kyojin-attack-i22797.jpg' },
+      imageUrl: 'https://cdn.europosters.eu/image/750/posters/attack-on-titan-shingeki-no-kyojin-attack-i22797.jpg' },
     { id: 3, name: 'Clannad',             episodes: 24,  genre: 'Fantasy',     rating: 7.5, popularity: 'Low',      isLiked: false,
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZDc4HEH2qW0vG-PD0xQ18pl-uPgmSdfPxN4pGorUSWTjLMU0' },
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZDc4HEH2qW0vG-PD0xQ18pl-uPgmSdfPxN4pGorUSWTjLMU0' },
     { id: 4, name: 'Code Geass',          episodes: 50,  genre: 'Mecha',       rating: 9.8, popularity: 'High',     isLiked: false,
       imageUrl: `https://pre00.deviantart.net/2517/th/pre/i/2015/312/f/e/code_geass_poster__farcry_3__blood_dragon_themed_by_yolokas-d91a845.jpg` },
     { id: 5, name: 'Cowboy Bebop',        episodes: 26,  genre: 'Space',       rating: 7.9, popularity: 'Moderate', isLiked: false,
