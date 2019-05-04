@@ -18,7 +18,7 @@ export const animes: Array<Anime> = [
       imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51aeinDgJyL.jpg' },
     { id: 8, name: 'Dragon Ball Super',   episodes: 125, genre: 'Adventure',   rating: 9.1, popularity: 'High',     isLiked: false,
       imageUrl: 'https://pre00.deviantart.net/8506/th/pre/f/2017/188/1/9/dragon_ball_super_universe_survival___poster_by_robertdb-dbfijxj.jpg' },
-    { id: 9, name: 'Ergo Proxy',          episodes: 23,  genre: 'Science',     rating: 8.1, popularity: 'Low',      isLiked: false,
+    { id: 9, name: 'Ergo Proxy',          episodes: 23,  genre: 'Fantasy',     rating: 8.1, popularity: 'Low',      isLiked: false,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DkZ0nQRY6IZMASScYmVCtTLpm7VnrnEoQaMjldGAD1WDE0t7' },
     { id: 10, name: 'Fate Stay Night',     episodes: 23,  genre: 'Action',      rating: 7.6, popularity: 'Moderate', isLiked: false,
       imageUrl: 'https://store.hmv.com/HMVStore/media/product/189142/01-189142.jpg' }, 

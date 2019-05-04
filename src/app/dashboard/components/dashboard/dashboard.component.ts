@@ -10,12 +10,16 @@ import { AnimeService } from '../../../anime/services/anime.service';
 export class DashboardComponent implements OnInit {
   options: Object;
   options1: Object;
+  options2: Object;
   animes: Anime[] = [];
   categories: any[] = [];
   ratings: any[] = [];
   genresArray: Array<string> = [];
   counts: Object = {};
   data: Array<any> = [];
+  episodes: Array<number> = [];
+  bigAnimes: Anime[] = [];
+  episodeCategories: any[] = [];
 
   constructor(public animeService: AnimeService) { }
 
@@ -29,15 +33,26 @@ export class DashboardComponent implements OnInit {
 
         for (var i = 0; i < this.genresArray.length; i++) {
           var num = this.genresArray[i];
-          this.counts[num] = this.counts[num] ? this.counts[num] + 1 : 1;
+          this.counts[num] = (this.counts[num] || 0) + 1
         }
-        console.log("arey", this.genresArray);
+        console.log("genresArray", this.genresArray);
 
         this.animes = animes.filter((anime) => {
           return anime.popularity == 'High' && anime.episodes >= 40;   
-        }).sort(function() {
+        }).sort(() => {
           return .5 - Math.random();
         });
+
+        this.bigAnimes = animes.filter((anime) => {
+          return anime.episodes >= 100;   
+        }).sort((a, b) => {
+          return a.episodes - b.episodes;
+        });
+
+        this.bigAnimes.forEach((anime) => {
+          this.episodeCategories.push(anime.name);
+          this.episodes.push(anime.episodes);
+        })
 
         this.animes.forEach((anime) => {
           this.categories.push(anime.name);
@@ -100,6 +115,37 @@ export class DashboardComponent implements OnInit {
               name: 'Genre',
               colorByPoint: true,
               data: this.data
+          }]
+        };
+        console.log("Histogram", this.episodes);
+        this.options2 = {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Most Anime Episodes'
+          },
+          xAxis :{
+            categories: this.episodeCategories,
+            crosshair: true                
+          },
+          yAxis: {
+            min: 0,
+            title: {
+              text: ''
+            }
+          },
+          plotOptions: {
+            column: {
+              pointPadding: 0,
+              borderWidth: 0,
+              groupPadding: 0,
+              shadow: false
+            }
+          },
+          series: [{
+            name: 'Episodes',
+            data: this.episodes
           }]
         };
       }
