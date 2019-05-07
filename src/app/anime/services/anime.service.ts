@@ -16,10 +16,20 @@ const httpOptions = {
 })
 export class AnimeService {
 
-  private animesUrl = 'api/animes';  // URL to web api
+  private animesUrl  = 'api/animes';  // URL to web api
+  private stockData  = 'api/animestock'; 
 
   constructor(private http: HttpClient,
               private messageService: MessageService) { }
+
+  /** GET animes from the server */
+  getStockData(): Observable<any[]> {
+    return this.http.get<any[]>(this.stockData)
+      .pipe(
+        tap(_ => this.log('fetched stock data')),
+        catchError(this.handleError('getStocks', []))
+      );
+  }
 
   /** GET animes from the server */
   getAnimes(): Observable<Anime[]> {

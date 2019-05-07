@@ -10,13 +10,14 @@ import { User } from '../../user/model/user';
 import { animes } from '../../anime/model/mock-animes';
 import { villains } from '../../villain/model/mock-villains';
 import { users } from '../../user/model/mock-users';
+import { animeStock } from '../../dashboard/model/mock-anime-stock';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
-        return { animes, villains, users };
+        return { animes, villains, users, animeStock };
     }
 
     // Overrides the genId method to ensure that a anime always has an id.
