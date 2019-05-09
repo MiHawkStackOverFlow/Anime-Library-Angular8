@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../../../anime/model/anime';
 import { AnimeService } from '../../../anime/services/anime.service';
-
+declare var Highcharts : any;
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -215,8 +215,7 @@ export class DashboardComponent implements OnInit {
       }
     );
     
-    this.animeService.getStockData().subscribe(
-      data => { 
+    this.animeService.getStockData().subscribe( data => { 
         let dataLength = data.length, i = 0;
         for (i; i < dataLength; i += 1) {
           this.ohlc.push([
@@ -231,8 +230,9 @@ export class DashboardComponent implements OnInit {
               data[i][0], // the date
               data[i][5] // the volume
           ]);
+        };
 
-          this.options4 = {
+        Highcharts.stockChart('container', {
             yAxis: [{
                 labels: {
                     align: 'left'
@@ -283,13 +283,13 @@ export class DashboardComponent implements OnInit {
             },
             series: [{
                 type: 'ohlc',
-                id: 'aapl-ohlc',
-                name: 'AAPL Stock Price',
+                id: 'anime-ohlc',
+                name: 'Anime Views',
                 data: this.ohlc
             }, {
                 type: 'column',
-                id: 'aapl-volume',
-                name: 'AAPL Volume',
+                id: 'anime-volume',
+                name: 'Views Volume',
                 data: this.volume,
                 yAxis: 1
             }],
@@ -305,10 +305,7 @@ export class DashboardComponent implements OnInit {
                     }
                 }]
             }
-          };  
-
-      }
+        });        
     });
   }
-
 }

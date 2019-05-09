@@ -17,7 +17,7 @@ const httpOptions = {
 export class AnimeService {
 
   private animesUrl  = 'api/animes';  // URL to web api
-  private stockData  = 'api/animestock'; 
+  private stockData  = 'api/animeStock'; 
 
   constructor(private http: HttpClient,
               private messageService: MessageService) { }
