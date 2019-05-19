@@ -1,0 +1,12 @@
+chart {
+    display: block;
+}
+
+#container {
+	max-height: 800px;
+	height: 75vh;
+}
+
+.highcharts-bindings-wrapper * {
+	box-sizing: content-box;
+}
