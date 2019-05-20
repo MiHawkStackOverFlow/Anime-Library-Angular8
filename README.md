@@ -125,3 +125,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     `  ngRedux.configureStore(rootReducer, INITIAL_STATE);`
     
     `}`
+
+
+## Deployment
+
+Refer to `https://github.com/MiHawkStackOverFlow/Anime-Library-Angular7/wiki/Deployment`
