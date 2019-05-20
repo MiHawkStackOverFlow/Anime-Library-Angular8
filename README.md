@@ -1,4 +1,4 @@
-<!-- Use https://stackedit.io/app to edit and test md files  -->
+<!-- Use https://stackedit.io/app to edit and test md files  --> 
 
 # Anime Library Managment System
 
@@ -29,6 +29,26 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+
+## Deploy or publish an Angular app on GitHub pages.  
+
+1. Have ghpages package installed on your computer. The ghpages package is used to deploy your build file to GitHub pages. run the following command to install it globally:  
+
+	`npm install -g angular-cli-ghpages`
+ 
+
+2. Specify the base reference of your build files with the following command:
+
+	`ng build --prod --base-href https://MiHawkStackOverFlow.github.io/Anime-Library-Angular7/`
+
+
+3. Run ngh to invoke the hgpage command line interface tool we installed earlier.
+
+	`ngh`  
+
+4. Go to url 
+    `https://mihawkstackoverflow.github.io/Anime-Library-Angular7/home`
+  
 
 ## Style Guide
 
