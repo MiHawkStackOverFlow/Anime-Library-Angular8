@@ -12,7 +12,7 @@ import { passwordConfirmValidator } from '../../directives/password-confirm.dire
 export class SignupComponent implements OnInit {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
-  signUpForm: FormGroup;
+  signUpForm: any;
   @ViewChild('signUpModal') public signUpModal: ModalDirective;
 
   constructor(private fb: FormBuilder, public iziToast: Ng2IzitoastService) { }
