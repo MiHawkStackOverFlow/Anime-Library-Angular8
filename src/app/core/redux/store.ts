@@ -10,10 +10,10 @@ export interface AnimeAppState {
 export const INITIAL_STATE: AnimeAppState = {
     animes: [],
     lastUpdate: new Date()
-}
+};
 
 export function rootReducer(state: AnimeAppState, action): AnimeAppState {
-    switch(action.type) {
+    switch (action.type) {
         case LIKE_ANIME:
             action.anime.id = state.animes.length + 1;
             return Object.assign({}, state, {
@@ -24,7 +24,7 @@ export function rootReducer(state: AnimeAppState, action): AnimeAppState {
             return Object.assign({}, state, {
                 animes: state.animes.filter(anime => anime.id !== action.id),
                 lastUpdate: new Date()
-            });    
+            });
     }
     return state;
-} 
+}

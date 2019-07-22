@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ContentChild, 
+import { Component, OnInit, Input, ContentChild,
          AfterContentInit, AfterContentChecked,  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -17,7 +17,7 @@ export class AnimeDetailComponent implements OnInit, AfterContentInit, AfterCont
   @Input() anime: Anime;
   // Query for a CONTENT child of type `PanelComponent`
   @ContentChild(PanelComponent) contentChild: PanelComponent;
-  
+
   constructor(
     private route: ActivatedRoute,
     private animeService: AnimeService,
@@ -25,7 +25,7 @@ export class AnimeDetailComponent implements OnInit, AfterContentInit, AfterCont
   ) {}
 
   // get all animes on component initialization
-  // Called once, after the first ngOnChanges(). 
+  // Called once, after the first ngOnChanges().
   ngOnInit(): void {
     this.getAnime();
   }

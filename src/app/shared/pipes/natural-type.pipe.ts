@@ -6,10 +6,10 @@ import { Pipe, PipeTransform, ChangeDetectorRef, NgZone } from '@angular/core';
 
 @Pipe({name: 'naturalType', pure: false})
 export class NaturalType implements PipeTransform {
-  private typed: string = '';
-  private target: string = '';
-  private currentIndex: number = -1;
-  private timeoutHandle: number = -1;
+  private typed = '';
+  private target = '';
+  private currentIndex = -1;
+  private timeoutHandle = -1;
 
   constructor( private changeDetector: ChangeDetectorRef, private ngZone: NgZone ) { }
 
@@ -23,7 +23,7 @@ export class NaturalType implements PipeTransform {
       }
       return this.typed;
   }
-   
+
   private typeNextCharacter(mintypingSpeed: number) {
     this.currentIndex++;
     this.typed = this.target.substr(0, this.currentIndex);
@@ -31,10 +31,10 @@ export class NaturalType implements PipeTransform {
     if (this.typed !== this.target) {
       const time = Math.round(Math.random() * 70) + mintypingSpeed;
       this.ngZone.runOutsideAngular(() => {
-        this.timeoutHandle = <any> setTimeout(()=> {
+        this.timeoutHandle = <any> setTimeout(() => {
           this.ngZone.run(() => this.typeNextCharacter(mintypingSpeed));
-        },time);
-      });  
+        }, time);
+      });
     }
   }
 }

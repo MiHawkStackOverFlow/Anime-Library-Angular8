@@ -16,7 +16,7 @@ describe('HeaderComponent', () => {
   let routerLinks: RouterLinkDirectiveStub[];
   let linkDes: DebugElement[];
 
-  let mockNgRedux: NgRedux<AnimeAppState>; 
+  let mockNgRedux: NgRedux<AnimeAppState>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

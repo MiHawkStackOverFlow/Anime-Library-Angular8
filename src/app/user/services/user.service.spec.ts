@@ -21,18 +21,18 @@ fdescribe('UserService', () => {
       imports: [ HttpClientTestingModule ],
       providers: [ UserService, HttpErrorHandler, MessageService ]
     });
-    
+
     // Inject the http service and test controller for each test
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
     userService = TestBed.get(UserService);
   });
-  
+
   afterEach(() => {
     // After every test, assert that there are no more pending requests.
     httpTestingController.verify();
   });
-  
+
   describe('#getUsers', () => {
     let expectedUsers: User[];
 
@@ -41,48 +41,48 @@ fdescribe('UserService', () => {
       expectedUsers = [
         {
           id: 1,
-          name: "Test1",
-          username: "Test1",
-          email: "test@gmail.com",
+          name: 'Test1',
+          username: 'Test1',
+          email: 'test@gmail.com',
           address: {
-            street: "Test street",
-            suite: "Apt. Test1",
-            city: "Testing",
-            zipcode: "8881212",
+            street: 'Test street',
+            suite: 'Apt. Test1',
+            city: 'Testing',
+            zipcode: '8881212',
             geo: {
               lat: -37.3159,
               lng: 81.1496
             }
           },
-          phone: 1-770-736-8031,
-          website: "wwf.com",
+          phone: 1 - 770 - 736 - 8031,
+          website: 'wwf.com',
           company: {
-            name: "Romaguera-Crona",
-            catchPhrase: "Multi-layered client-server neural-net",
-            bs: "harness real-time e-markets"
+            name: 'Romaguera-Crona',
+            catchPhrase: 'Multi-layered client-server neural-net',
+            bs: 'harness real-time e-markets'
           }
         },
         {
           id: 2,
-          name: "Test2",
-          username: "Test2",
-          email: "test2@gmail.com",
+          name: 'Test2',
+          username: 'Test2',
+          email: 'test2@gmail.com',
           address: {
-            street: "Test2 street",
-            suite: "Apt. Test2",
-            city: "Testing2",
-            zipcode: "8881212",
+            street: 'Test2 street',
+            suite: 'Apt. Test2',
+            city: 'Testing2',
+            zipcode: '8881212',
             geo: {
               lat: -33.3159,
               lng: 82.1496
             }
           },
-          phone: 1-771-726-8031,
-          website: "wwf2.com",
+          phone: 1 - 771 - 726 - 8031,
+          website: 'wwf2.com',
           company: {
-            name: "Romaguera",
-            catchPhrase: "Single Layered client-server neural-net",
-            bs: "careness for realtime markets"
+            name: 'Romaguera',
+            catchPhrase: 'Single Layered client-server neural-net',
+            bs: 'careness for realtime markets'
           }
         }
        ] as User[];
@@ -102,7 +102,7 @@ fdescribe('UserService', () => {
       // Respond with the mock users
       req.flush(expectedUsers);
     });
-    
+
     it('should be OK returning no users', () => {
 
       userService.getUsers().subscribe(
@@ -146,7 +146,7 @@ fdescribe('UserService', () => {
       requests[1].flush([{id: 1, name: 'bob'}]);
       requests[2].flush(expectedUsers);
     });
-    
+
   });
- 
+
 });

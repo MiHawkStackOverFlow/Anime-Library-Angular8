@@ -18,7 +18,7 @@ import { VillainService } from '../../../villain/services/villain.service';
 })
 export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChecked {
   carouselHeight = 500;
-  slideShow = true; 
+  slideShow = true;
   comment = '';
   private prevAnime = '';
   // titles on landing page
@@ -34,8 +34,8 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
   @ViewChild(AnimeSearchComponent) viewChild: AnimeSearchComponent;
   @ViewChild(DoCheckComponent) childView: DoCheckComponent;
 
-  constructor(private villainService: VillainService, 
-              private logger: LoggerService, 
+  constructor(private villainService: VillainService,
+              private logger: LoggerService,
               public iziToast: Ng2IzitoastService) { }
 
   ngOnInit(): void {
@@ -65,30 +65,30 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
 
   // This surrogate for real business logic sets the `comment`
   private doSomething() {
-    let commentMessage = this.viewChild.anime.name.length > 30 ? `That's a long name` : '';
+    const commentMessage = this.viewChild.anime.name.length > 30 ? `That's a long name` : '';
     if (commentMessage !== this.comment) {
       // Wait a tick because the component's view has already been checked
       this.logger.tick_then(() => this.comment = commentMessage);
     }
-    if(commentMessage === `That's a long name`) {
+    if (commentMessage === `That's a long name`) {
       // show alert for too long name
       this.iziToast.destroy();
       this.iziToast.show({
-        title: "Long name", 
+        title: 'Long name',
         message: commentMessage,
         timeout: 3000,
-        position: "topCenter",
+        position: 'topCenter',
         close: true,
-        backgroundColor: "orange",
-        icon: "fa fa-exclamation-triangle",
+        backgroundColor: 'orange',
+        icon: 'fa fa-exclamation-triangle',
         toastOnce: true
       });
     }
   }
 
   private logIt(method: string) {
-    let child = this.viewChild;
-    let message = `${method}: ${child ? child.anime.name : 'no'} child view`;
+    const child = this.viewChild;
+    const message = `${method}: ${child ? child.anime.name : 'no'} child view`;
     this.logger.log(message);
   }
 
@@ -103,9 +103,9 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
      */
     this.villainService.getVillains().subscribe(
         villains => this.allVillains = villains,
-        error =>  console.log("Error: ", error),
+        error =>  console.log('Error: ', error),
         () => this.sliceData('backward')          // on observable call completion call sliceData method
-    ); 
+    );
   }
 
   // slide data to show for villains section

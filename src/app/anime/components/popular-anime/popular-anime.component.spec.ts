@@ -8,11 +8,11 @@ import { Ng2IzitoastService } from 'ng2-izitoast';
 describe('PopularAnimeComponent', () => {
   let component: PopularAnimeComponent;
   let fixture: ComponentFixture<PopularAnimeComponent>;
-  let dummyAnimes: Array<Anime> = [
-    { name: "Test",  episodes: 13, genre: "Drama",  rating: 1, popularity: "Low",      isLiked: false, imageUrl: "" },
-    { name: "Test1", episodes: 23, genre: "Action", rating: 2, popularity: "Moderate", isLiked: false, imageUrl: "" },
-    { name: "Test2", episodes: 33, genre: "Comedy", rating: 3, popularity: "High",     isLiked: false, imageUrl: "" }
-  ];   
+  const dummyAnimes: Array<Anime> = [
+    { name: 'Test',  episodes: 13, genre: 'Drama',  rating: 1, popularity: 'Low',      isLiked: false, imageUrl: '' },
+    { name: 'Test1', episodes: 23, genre: 'Action', rating: 2, popularity: 'Moderate', isLiked: false, imageUrl: '' },
+    { name: 'Test2', episodes: 33, genre: 'Comedy', rating: 3, popularity: 'High',     isLiked: false, imageUrl: '' }
+  ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -54,6 +54,6 @@ describe('PopularAnimeComponent', () => {
     expect(dummyAnimes[0].isLiked).toBe(true, 'liked after click');
     component.toggleLike(dummyAnimes[0]);
     expect(dummyAnimes[0].isLiked).toBe(false, 'unliked after second click');
-  }); 
+  });
 
 });

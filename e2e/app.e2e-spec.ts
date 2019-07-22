@@ -11,7 +11,7 @@ describe('library App', () => {
     page.navigateTo('home');
     expect(page.getParagraphText()).toEqual(`Abhishek's Anime Library`);
   });
-  
+
   it('should display anime list link', () => {
     page.navigateTo('home');
     expect(page.getAnimeListLink().getText()).toEqual('Anime List');

@@ -9,7 +9,7 @@ import { AnimeAppState } from '../../../core/redux/store';
 describe('FavouriteAnimeComponent', () => {
   let component: FavouriteAnimeComponent;
   let fixture: ComponentFixture<FavouriteAnimeComponent>;
-  let mockNgRedux: NgRedux<AnimeAppState>;   
+  let mockNgRedux: NgRedux<AnimeAppState>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

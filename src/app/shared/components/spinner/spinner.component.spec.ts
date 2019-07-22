@@ -26,18 +26,18 @@ describe('SpinnerComponent (class only)', () => {
     expect(comp.active).toBeUndefined();
   });
 
-  it('subject should set spinner active value from observable (false)', (done: DoneFn) => {  
+  it('subject should set spinner active value from observable (false)', (done: DoneFn) => {
     comp.ngOnInit();
-    spinnerService.status.subscribe(value => { 
+    spinnerService.status.subscribe(value => {
       expect(comp.active).toBe(false);
       done();
     });
     spinnerService.active = false;
   });
 
-  it('subject should set spinner active value from observable (true)', (done: DoneFn) => {  
+  it('subject should set spinner active value from observable (true)', (done: DoneFn) => {
     comp.ngOnInit();
-    spinnerService.status.subscribe(value => { 
+    spinnerService.status.subscribe(value => {
       expect(comp.active).toBe(true);
       done();
     });
@@ -66,7 +66,7 @@ describe('SpinnerComponent', () => {
 
     fixture = TestBed.createComponent(SpinnerComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
+    // fixture.detectChanges();
 
     // SpinnerService actually injected into the component
     spinnerService = fixture.debugElement.injector.get(SpinnerService);

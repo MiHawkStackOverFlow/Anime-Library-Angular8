@@ -20,7 +20,7 @@ describe('CarouselComponent when tested directly', () => {
     })
     .compileComponents();
   }));
-    
+
   beforeEach(() => {
     fixture = TestBed.createComponent(CarouselComponent);
     comp    = fixture.componentInstance;
@@ -41,14 +41,14 @@ describe('CarouselComponent when tested directly', () => {
     fixture.whenStable().then(() => {
       // after something in the component changes, you should detect changes
       fixture.detectChanges();
-  
+
       // everything else in the beforeEach needs to be done here.
       carouselItemDe = fixture.debugElement.queryAll(By.css('div.test'));
-      console.log("test", carouselItemDe);
-      //carouselItemEl = carouselItemDe.nativeElement;
-    })
+      console.log('test', carouselItemDe);
+      // carouselItemEl = carouselItemDe.nativeElement;
+    });
   });
-  
+
   it('should have carousel height set to passed input value', () => {
     expect(parseInt(<any>carouselEl.style.height)).toEqual(50);
   });
