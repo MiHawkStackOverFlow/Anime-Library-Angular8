@@ -31,8 +31,8 @@ export class LandingPageComponent implements OnInit, AfterViewInit, AfterViewChe
   carouselImages: Array<Carousel>;
 
   // Query for a VIEW child of type `AnimeSearchComponent`
-  @ViewChild(AnimeSearchComponent) viewChild: AnimeSearchComponent;
-  @ViewChild(DoCheckComponent) childView: DoCheckComponent;
+  @ViewChild(AnimeSearchComponent, { static: false }) viewChild: AnimeSearchComponent;
+  @ViewChild(DoCheckComponent, { static: false }) childView: DoCheckComponent;
 
   constructor(private villainService: VillainService,
               private logger: LoggerService,

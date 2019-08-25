@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   showPassword = false;
   showConfirmPassword = false;
   signUpForm: FormGroup;
-  @ViewChild('signUpModal') public signUpModal: ModalDirective;
+  @ViewChild('signUpModal', { static: true }) public signUpModal: ModalDirective;
 
   constructor(private fb: FormBuilder, public iziToast: Ng2IzitoastService) { }
 

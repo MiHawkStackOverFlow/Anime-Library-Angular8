@@ -16,7 +16,7 @@ import { PanelComponent } from '../../../shared/components/panel/panel.component
 export class AnimeDetailComponent implements OnInit, AfterContentInit, AfterContentChecked {
   @Input() anime: Anime;
   // Query for a CONTENT child of type `PanelComponent`
-  @ContentChild(PanelComponent) contentChild: PanelComponent;
+  @ContentChild(PanelComponent, { static: false }) contentChild: PanelComponent;
 
   constructor(
     private route: ActivatedRoute,
