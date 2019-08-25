@@ -3,8 +3,8 @@ import { Carousel } from '../../shared/model/carousel';
 export const sliderImages: Array<Carousel> = [
     { image: 'https://www.animelab.com/assets/images/home/covers/one-piece.png',
       name: 'One Piece',
-      description: 'One Piece is a Japanese manga series written and illustrated by Eiichiro Oda'   
-    }, 
+      description: 'One Piece is a Japanese manga series written and illustrated by Eiichiro Oda'
+    },
     { image: 'https://www.animelab.com/assets/images/home/covers/attack-on-titan-s2.png',
       name: 'Attack On Titan',
       description: 'Attack on Titan is a Japanese manga series written and illustrated by Hajime Isayama'

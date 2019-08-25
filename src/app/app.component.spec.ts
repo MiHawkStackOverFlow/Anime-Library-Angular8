@@ -27,7 +27,7 @@ describe('AppComponent', () => {
         HeaderStubComponent,
         RouterOutletStubComponent,
         FooterStubComponent,
-        SpinnerStubComponent 
+        SpinnerStubComponent
       ],
       schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents().then(() => {

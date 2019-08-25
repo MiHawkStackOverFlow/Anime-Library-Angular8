@@ -15,7 +15,7 @@ export class AnimePicListComponent implements OnInit {
   ngOnInit() { }
 
   // like & dislike anime
-  likeDislikeAnime(selectedAnime:Anime) : void {
+  likeDislikeAnime(selectedAnime: Anime): void {
      this.toggledAnime.emit(selectedAnime);
   }
 

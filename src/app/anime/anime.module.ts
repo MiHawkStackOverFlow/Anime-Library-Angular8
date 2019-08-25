@@ -18,7 +18,7 @@ import { RainbowDirective } from './../core/directives/rainbow.directive';
 @NgModule({
   imports: [ CommonModule, AnimeRoutingModule, FormsModule, SharedModule ],
   exports: [ AnimeListComponent, PopularAnimeComponent, TableComponent, AnimeSearchComponent ],
-  declarations: [ AnimeListComponent, PopularAnimeComponent, TableComponent, AnimePicListComponent, 
+  declarations: [ AnimeListComponent, PopularAnimeComponent, TableComponent, AnimePicListComponent,
                   AnimeDetailComponent, AnimeSearchComponent, RainbowDirective ]
 })
 export class AnimeModule { }

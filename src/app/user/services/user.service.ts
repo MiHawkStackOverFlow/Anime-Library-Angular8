@@ -49,7 +49,7 @@ export class UserService {
       );
   }
 
-  deleteUser(id: number): Observable<{}> {
+  deleteUser(id: number): Observable<any> {
     const deleteUrl = `${this.url}/${id}`;
     return this.http.delete(deleteUrl, httpOptions)
       .pipe(

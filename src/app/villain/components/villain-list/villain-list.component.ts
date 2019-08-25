@@ -42,32 +42,32 @@ export class VillainListComponent implements OnChanges {
   }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    console.log("Changes", changes);
+    console.log('Changes', changes);
     const log: string[] = [];
-    for (let propName in changes) {
+    for (const propName in changes) {
       // get the animeVillains changes object
-      let changedProp = changes[propName];
-      
+      const changedProp = changes[propName];
+
       // get current values
-      let currentArray = changedProp.currentValue;
-      let currentValues: Array<string> = [];
-      if(currentArray) {
+      const currentArray = changedProp.currentValue;
+      const currentValues: Array<string> = [];
+      if (currentArray) {
         currentArray.forEach(element => {
           currentValues.push(element.alt);
         });
-      }  
+      }
 
       // log the first change and then subsequent changes
       if (changedProp.isFirstChange()) {
         log.push(`Initial villains of ${propName} set to ${currentValues}`);
       } else {
-        let previousArray = changedProp.previousValue;
-        let previousValues: Array<string> = [];
-        if(previousArray) {
+        const previousArray = changedProp.previousValue;
+        const previousValues: Array<string> = [];
+        if (previousArray) {
           previousArray.forEach(element => {
             previousValues.push(element.alt);
           });
-        }  
+        }
         log.push(`${propName} changed from ${previousValues} to  ${currentValues}`);
       }
 

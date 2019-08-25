@@ -59,12 +59,12 @@ describe('AppComponent & RouterTestingModule', () => {
     createComponent();
     click(page.animeList);
     // page.aboutLinkDe.nativeElement.click(); // ok but fails in phantom
-     
+
     advance();
     tick(5000);
     expectPathToBe('/anime-list');
     expectElementOf(AnimeListComponent);
-    
+
   }));
 
   xit('should navigate to "Anime-List" w/ browser location URL change', fakeAsync(() => {
@@ -80,11 +80,11 @@ describe('AppComponent & RouterTestingModule', () => {
     createComponent();
     click(page.popularAnime);
     // page.aboutLinkDe.nativeElement.click(); // ok but fails in phantom
-     
+
     advance();
     tick(5000);
     expectPathToBe('/popular-anime');
-    expectElementOf(PopularAnimeComponent);    
+    expectElementOf(PopularAnimeComponent);
   }));
 
   xit('should navigate to "Popular Anime" w/ browser location URL change', fakeAsync(() => {
@@ -104,9 +104,9 @@ describe('AppComponent & RouterTestingModule', () => {
  * Wait a tick, then detect changes, and tick again
  */
 function advance(): void {
-  //tick(); // wait while navigating
+  // tick(); // wait while navigating
   fixture.detectChanges(); // update view
-  //tick(); // wait for async data to arrive
+  // tick(); // wait for async data to arrive
 }
 
 function createComponent() {

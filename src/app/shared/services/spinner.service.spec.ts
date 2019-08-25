@@ -12,11 +12,11 @@ describe('SpinnerService (no TestBed)', () => {
 
   it(`#set should set spinner's active value`, () => {
     service.active = true;
-    expect(service.active).toBe(true); 
+    expect(service.active).toBe(true);
   });
 
   it('subject should return value from observable', (done: DoneFn) => {
-    service.status.subscribe(value => { 
+    service.status.subscribe(value => {
       expect(value).toBe(false);
       done();
     });

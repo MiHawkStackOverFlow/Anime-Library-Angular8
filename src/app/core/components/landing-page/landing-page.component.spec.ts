@@ -11,13 +11,13 @@ class CarouselStubComponent {}
 
 describe('LandingPageComponent (class only)', () => {
   let comp: LandingPageComponent;
-  let dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
-  
+  const dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ LandingPageComponent ]               // injected component in configuration here
-    });  
-    comp = TestBed.get(LandingPageComponent); 
+    });
+    comp = TestBed.get(LandingPageComponent);
   });
 
   it('should not have all villains after construction', () => {
@@ -55,16 +55,16 @@ describe('LandingPageComponent (class only)', () => {
   it('should set villains flip property to inactive after Angular calls ngOnInit', () => {
     comp.animeVillains = dummyVillainArray;
     comp.ngOnInit();
-    expect(comp.animeVillains[0]['flip']).toBe("inactive");
+    expect(comp.animeVillains[0]['flip']).toBe('inactive');
   });
 
-});  
+});
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
   let fixture: ComponentFixture<LandingPageComponent>;
-  let dummyVillain: Villain = { image: '', alt: '', description: '' };
-  let dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
+  const dummyVillain: Villain = { image: '', alt: '', description: '' };
+  const dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -99,17 +99,17 @@ describe('LandingPageComponent', () => {
 
   it(`should set flip property to inactive on calling setFlip`, () => {
     component.animeVillains = dummyVillainArray;
-    //component.setFlip(component.animeVillains);
-    expect(component.animeVillains[0]['flip']).toEqual("inactive");
+    // component.setFlip(component.animeVillains);
+    expect(component.animeVillains[0]['flip']).toEqual('inactive');
   });
-  
+
   it(`toggle flip should toggle anime flipping`, () => {
     expect(dummyVillain['flip']).toBeUndefined('Property does not exist on object');
     dummyVillain['flip'] = 'inactive';
-    //component.toggleFlip(dummyVillain);
+    // component.toggleFlip(dummyVillain);
     expect(dummyVillain['flip']).toBe('active', 'set active on mouseover');
-    //component.toggleFlip(dummyVillain);
-    expect(dummyVillain['flip']).toBe('inactive', 'set inactive on mouseout'); 
+    // component.toggleFlip(dummyVillain);
+    expect(dummyVillain['flip']).toBe('inactive', 'set inactive on mouseout');
   });
 
   it(`should slice data as per direction given`, () => {

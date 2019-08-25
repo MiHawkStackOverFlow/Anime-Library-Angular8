@@ -20,7 +20,7 @@ export class AllVillainsComponent implements OnInit {
 
   getVillains(): void {
      this.villainService.getVillains()
-                        .subscribe(villains => this.allVillains = villains); 
+                        .subscribe(villains => this.allVillains = villains);
   }
 
 }

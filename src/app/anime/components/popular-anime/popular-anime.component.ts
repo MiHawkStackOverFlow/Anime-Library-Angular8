@@ -16,13 +16,13 @@ import { Ng2IzitoastService } from 'ng2-izitoast';
 export class PopularAnimeComponent implements OnInit {
   @select() animes;
   popularAnimes: Array<Anime> = animes;
-  popularAnimeHeading: string = 'Popular Anime Series'; 
+  popularAnimeHeading = 'Popular Anime Series';
 
   constructor(private ngRedux: NgRedux<AnimeAppState>, public iziToast: Ng2IzitoastService) { }
 
   // sort anime using rating values
   sortAnime(animeList: Array<Anime>) {
-    let sortedArray = animeList.sort((anime1: Anime, anime2:Anime) => {
+    const sortedArray = animeList.sort((anime1: Anime, anime2: Anime) => {
       return anime2.rating - anime1.rating;
     });
     return sortedArray;
@@ -39,30 +39,30 @@ export class PopularAnimeComponent implements OnInit {
   }
 
   // like & dislike anime
-  toggleLike(selectedAnime:Anime) : void {
+  toggleLike(selectedAnime: Anime): void {
     selectedAnime.isLiked = !selectedAnime.isLiked;
     this.iziToast.destroy();
-    if(selectedAnime.isLiked) {
+    if (selectedAnime.isLiked) {
       this.ngRedux.dispatch({type: LIKE_ANIME, anime: selectedAnime});
       this.iziToast.show({
-        title: "You liked " + selectedAnime.name, 
-        message: selectedAnime.name + " anime added to your favourite list.",
+        title: 'You liked ' + selectedAnime.name,
+        message: selectedAnime.name + ' anime added to your favourite list.',
         timeout: 3000,
-        position: "topCenter",
+        position: 'topCenter',
         close: true,
-        backgroundColor: "green",
-        icon: "fa fa-thumbs-o-up"
+        backgroundColor: 'green',
+        icon: 'fa fa-thumbs-o-up'
       });
     } else {
       this.ngRedux.dispatch({type: DISLIKE_ANIME, id: selectedAnime.id});
       this.iziToast.show({
-        title: "You disliked " + selectedAnime.name, 
-        message: selectedAnime.name + " anime removed from your favourite list.",
+        title: 'You disliked ' + selectedAnime.name,
+        message: selectedAnime.name + ' anime removed from your favourite list.',
         timeout: 3000,
-        position: "topCenter",
+        position: 'topCenter',
         close: true,
-        backgroundColor: "red",
-        icon: "fa fa-thumbs-o-down"
+        backgroundColor: 'red',
+        icon: 'fa fa-thumbs-o-down'
       });
     }
   }

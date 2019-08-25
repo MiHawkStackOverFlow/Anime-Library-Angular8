@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./anime-list.component.scss']
 })
 export class AnimeListComponent implements OnInit {
-  title: string = 'Anime-List';
+  title = 'Anime-List';
 
   constructor() { }
 

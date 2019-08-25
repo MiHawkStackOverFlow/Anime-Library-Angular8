@@ -7,7 +7,7 @@ describe('NaturalTypePipe', () => {
     let pipe: NaturalType;
 
     beforeEach(() => {
-        pipe = new NaturalType(changeDetector, ngZone);  
+        pipe = new NaturalType(changeDetector, ngZone);
     });
 
     it('should create an instance of natural pipe', () => {

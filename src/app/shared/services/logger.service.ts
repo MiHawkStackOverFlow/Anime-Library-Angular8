@@ -18,7 +18,7 @@ export class LoggerService {
       this.prevMsgCount = 1;
       this.logs.push(msg);
     }
-    console.log("Logs ", this.logs);
+    console.log('Logs ', this.logs);
   }
 
   clear() { this.logs = []; }

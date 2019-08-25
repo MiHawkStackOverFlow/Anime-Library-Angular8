@@ -28,9 +28,9 @@ describe('TableComponent', () => {
   });
 
   xit('should have a table to display the animes', () => {
-    //expect(element.innerHTML).toContain("thead");
-    //expect(element.innerHTML).toContain("tbody");
-  })
+    // expect(element.innerHTML).toContain("thead");
+    // expect(element.innerHTML).toContain("tbody");
+  });
 
   it('should have table 2nd column header as `Name`', () => {
     const secondColumnHeader = fixture.nativeElement.querySelector('table th:nth-child(2)');

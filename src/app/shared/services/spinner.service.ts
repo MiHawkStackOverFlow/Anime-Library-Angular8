@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class SpinnerService {
   public status: Subject<boolean> = new Subject();
-  private _active: boolean = false;
+  private _active = false;
 
   public get active(): boolean {
     return this._active;
@@ -20,7 +20,7 @@ export class SpinnerService {
   public start(): void {
     this.active = true;
   }
-  
+
   public stop(): void {
     this.active = false;
   }

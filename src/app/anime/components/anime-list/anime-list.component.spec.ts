@@ -29,9 +29,9 @@ describe('AnimeListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have heading as `Anime-List`', async(()=>{
+  it('should have heading as `Anime-List`', async(() => {
      expect(component.title).toEqual('Anime-List');
   }));
 
-  
+
 });

@@ -10,10 +10,10 @@ import { passwordConfirmValidator } from '../../directives/password-confirm.dire
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  showPassword: boolean = false;
-  showConfirmPassword: boolean = false;
-  signUpForm: any;
-  @ViewChild('signUpModal') public signUpModal: ModalDirective;
+  showPassword = false;
+  showConfirmPassword = false;
+  signUpForm: FormGroup;
+  @ViewChild('signUpModal', { static: true }) public signUpModal: ModalDirective;
 
   constructor(private fb: FormBuilder, public iziToast: Ng2IzitoastService) { }
 
@@ -33,26 +33,26 @@ export class SignupComponent implements OnInit {
   }
 
   hide() {
-    this.signUpForm.reset({ gender: "male", updates: true });
+    this.signUpForm.reset({ gender: 'male', updates: true });
     this.signUpModal.hide();
   }
 
   showHidePassword(type: string): void {
-    (type === 'password') ? (this.showPassword = !this.showPassword): (this.showConfirmPassword = !this.showConfirmPassword);
+    (type === 'password') ? (this.showPassword = !this.showPassword) : (this.showConfirmPassword = !this.showConfirmPassword);
   }
 
   onSubmit() {
     // Perform API call to submit data to server
-    console.log("Form value", this.signUpForm.value);
+    console.log('Form value', this.signUpForm.value);
     // show success or error on API call
     this.iziToast.show({
-      title: "Success", 
-      message: "You have been signed up successfully.",
+      title: 'Success',
+      message: 'You have been signed up successfully.',
       timeout: 5000,
-      position: "topCenter",
+      position: 'topCenter',
       close: true,
-      backgroundColor: "green",
-      icon: "fa fa-thumbs-o-up"
+      backgroundColor: 'green',
+      icon: 'fa fa-thumbs-o-up'
     });
     // reset the form and close modal
     this.hide();

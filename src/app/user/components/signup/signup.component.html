@@ -7,71 +7,73 @@
               <h4 class="modal-title">Sign Up</h4>
           </div>
           <div class="modal-body content" style="background-image: url('https://ih0.redbubble.net/image.492859003.3834/flat,550x550,075,f.u23.jpg');">
-            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-                
-                <div class="form-group">
-                    <label for="name" class="text-white">Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" formControlName="name">
-                </div>
-
-                <div class="form-group">
-                  <label for="email" class="text-white">Email *:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
-                </div>
-
-                <div class="row" *ngIf="signUpForm.get('email').errors?.required && 
-                                       (signUpForm.get('email').touched || signUpForm.get('email').dirty)" 
-                                       class="alert alert-danger">
-                   Email is required   
-                </div>
-
-                <div class="form-group">
-                  <label for="pwd" class="text-white">Password *:</label>
-                  <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pwd" placeholder="Enter password" name="pwd" formControlName="password">
-                  <span class="fa fa-fw field-icon" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('password')"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="cfpwd" class="text-white">Confirm Password *:</label>
-                    <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="cfpwd" placeholder="Confirm password" name="cfpwd" formControlName="confirmPassword">
-                    <span class="fa fa-fw fa-eye field-icon" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('confirmPassword')"></span>
-                </div>
-
-                <div class="row" *ngIf="signUpForm.errors?.passwordMismatch && (signUpForm.controls.confirmPassword.touched || signUpForm.controls.confirmPassword.dirty)" class="alert alert-danger">
-                    Password and Confirm Password should match
-                </div>
-
-                <div class="form-group">
-                    <label for="gender" class="text-white">Please select your gender :</label>
-                    <div>
-                        <label class="text-white">
-                            <input type="radio" value="female" name="gender" formControlName="gender">
-                            Female
-                        </label>
-                         
-                        <label style="margin-left: 10px;" class="text-white">
-                            <input type="radio" value="male" name="gender" formControlName="gender">     
-                            Male
-                        </label>
-
-                        <label style="margin-left: 10px;" class="text-white">
-                            <input type="radio" value="other" name="gender" formControlName="gender">     
-                            Other
-                        </label>
+            <ng-container *ngIf="signUpForm">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                    
+                    <div class="form-group">
+                        <label for="name" class="text-white">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" formControlName="name">
                     </div>
-                </div>
 
-                <div class="checkbox">
-                  <label class="text-white">
-                      <input type="checkbox" name="updates" checked formControlName="updates">
-                      Yes, Keep me posted on updates related to Abhishek's Anime Library.
-                  </label>
-                </div>
+                    <div class="form-group">
+                    <label for="email" class="text-white">Email *:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName="email">
+                    </div>
 
-                <div class="form-group text-center"> 
-                    <button type="submit" class="btn submit text-white" [disabled]="!signUpForm.valid">Submit</button>
-                </div>
-            </form>
+                    <div class="row" *ngIf="signUpForm.get('email')!.errors?.required && 
+                                        (signUpForm.get('email')!.touched || signUpForm.get('email')!.dirty)" 
+                                        class="alert alert-danger">
+                    Email is required   
+                    </div>
+
+                    <div class="form-group">
+                    <label for="pwd" class="text-white">Password *:</label>
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pwd" placeholder="Enter password" name="pwd" formControlName="password">
+                    <span class="fa fa-fw field-icon" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('password')"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cfpwd" class="text-white">Confirm Password *:</label>
+                        <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="cfpwd" placeholder="Confirm password" name="cfpwd" formControlName="confirmPassword">
+                        <span class="fa fa-fw fa-eye field-icon" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="showHidePassword('confirmPassword')"></span>
+                    </div>
+
+                    <div class="row" *ngIf="signUpForm.errors?.passwordMismatch && (signUpForm.controls.confirmPassword.touched || signUpForm.controls.confirmPassword.dirty)" class="alert alert-danger">
+                        Password and Confirm Password should match
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender" class="text-white">Please select your gender :</label>
+                        <div>
+                            <label class="text-white">
+                                <input type="radio" value="female" name="gender" formControlName="gender">
+                                Female
+                            </label>
+                            
+                            <label style="margin-left: 10px;" class="text-white">
+                                <input type="radio" value="male" name="gender" formControlName="gender">     
+                                Male
+                            </label>
+
+                            <label style="margin-left: 10px;" class="text-white">
+                                <input type="radio" value="other" name="gender" formControlName="gender">     
+                                Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                    <label class="text-white">
+                        <input type="checkbox" name="updates" checked formControlName="updates">
+                        Yes, Keep me posted on updates related to Abhishek's Anime Library.
+                    </label>
+                    </div>
+
+                    <div class="form-group text-center"> 
+                        <button type="submit" class="btn submit text-white" [disabled]="!signUpForm.valid">Submit</button>
+                    </div>
+                </form>
+            </ng-container>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default close-button" data-dismiss="modal" (click)="hide()">Close</button>
