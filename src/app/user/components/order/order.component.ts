@@ -10,7 +10,7 @@ import { forbiddenNameValidator } from './../../../shared/directives/forbidden-n
 })
 export class OrderComponent implements OnInit {
   title = 'Order Form';
-  orderForm: FormGroup;
+  orderForm: any;
   items: FormArray;
   countries = ['India', 'Japan', 'USA', 'Germany', 'Italy', 'France'];
 

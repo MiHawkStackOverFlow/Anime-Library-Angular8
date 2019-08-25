@@ -1,4 +1,4 @@
-<!-- Use https://stackedit.io/app to edit and test md files  -->
+<!-- Use https://stackedit.io/app to edit and test md files  --> 
 
 # Anime Library Managment System
 
@@ -28,7 +28,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
+  
 
 ## Style Guide
 
@@ -125,3 +125,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     `  ngRedux.configureStore(rootReducer, INITIAL_STATE);`
     
     `}`
+
+
+## Deployment
+
+Refer to `https://github.com/MiHawkStackOverFlow/Anime-Library-Angular7/wiki/Deployment`
