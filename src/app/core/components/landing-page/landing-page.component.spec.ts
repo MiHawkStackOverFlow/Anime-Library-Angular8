@@ -11,7 +11,7 @@ class CarouselStubComponent {}
 
 describe('LandingPageComponent (class only)', () => {
   let comp: LandingPageComponent;
-  const dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
+  const dummyVillainArray: Array<Villain> = [{ id: 1, image: '', alt: '', description: '' }];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -63,8 +63,8 @@ describe('LandingPageComponent (class only)', () => {
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
   let fixture: ComponentFixture<LandingPageComponent>;
-  const dummyVillain: Villain = { image: '', alt: '', description: '' };
-  const dummyVillainArray: Array<Villain> = [{ image: '', alt: '', description: '' }];
+  const dummyVillain: Villain = { id: 1, image: '', alt: '', description: '' };
+  const dummyVillainArray: Array<Villain> = [{ id: 1, image: '', alt: '', description: '' }];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

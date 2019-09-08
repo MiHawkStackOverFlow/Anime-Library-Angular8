@@ -9,9 +9,9 @@ describe('PopularAnimeComponent', () => {
   let component: PopularAnimeComponent;
   let fixture: ComponentFixture<PopularAnimeComponent>;
   const dummyAnimes: Array<Anime> = [
-    { name: 'Test',  episodes: 13, genre: 'Drama',  rating: 1, popularity: 'Low',      isLiked: false, imageUrl: '' },
-    { name: 'Test1', episodes: 23, genre: 'Action', rating: 2, popularity: 'Moderate', isLiked: false, imageUrl: '' },
-    { name: 'Test2', episodes: 33, genre: 'Comedy', rating: 3, popularity: 'High',     isLiked: false, imageUrl: '' }
+    { id: 1, name: 'Test',  episodes: 13, genre: 'Drama',  rating: 1, popularity: 'Low',      isLiked: false, imageUrl: '' },
+    { id: 2, name: 'Test1', episodes: 23, genre: 'Action', rating: 2, popularity: 'Moderate', isLiked: false, imageUrl: '' },
+    { id: 3, name: 'Test2', episodes: 33, genre: 'Comedy', rating: 3, popularity: 'High',     isLiked: false, imageUrl: '' }
   ];
 
   beforeEach(async(() => {
@@ -33,7 +33,7 @@ describe('PopularAnimeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have heading as 'Popular Anime Series'`, async(() => {
+  it(`should have heading as 'Pop: 1ular Anime Series'`, async(() => {
     expect(component.popularAnimeHeading).toEqual(`Popular Anime Series`);
   }));
 
