@@ -31,7 +31,7 @@
         "core-js": "^2.5.7",
         "font-awesome": "^4.7.0",
         "hoek": "^5.0.4",
-        "jquery": "^3.3.1",
+        "jquery": "^3.5.0",
         "ng2-izitoast": "^2.0.0",
         "ngx-bootstrap": "^5.1.2",
         "popper.js": "^1.14.5",
