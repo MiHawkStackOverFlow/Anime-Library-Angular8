@@ -106,6 +106,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     
     - https://almerosteyn.com/2016/08/redux-explained-again
     - https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/
+    
+     Sample apps
+    
+    - https://github.com/DeborahK/Angular-NgRx-GettingStarted
 
     // redux with angular2
 
